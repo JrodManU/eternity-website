@@ -5,6 +5,6 @@ Meteor.subscribe("orderFormLinks");
 
 Template.orderFormLinksTemplate.helpers({
   "orderFormLinks": function(){
-      return OrderFormLinks.find();
+    return OrderFormLinks.find({});
   }
 });

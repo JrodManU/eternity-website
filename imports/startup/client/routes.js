@@ -3,16 +3,22 @@ import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
 import "../../ui/layouts/mainLayout/mainLayout.js";
 
+import "../../ui/pages/homePage/homePage.js";
+import "../../ui/pages/orderFormPage/orderFormPage.js"
+
 import "../../ui/components/footer/footer.js";
 import "../../ui/components/header/header.js";
 import "../../ui/components/navigation/navigation.js";
-import "../../ui/components/orderForm/orderForm.js";
 import "../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
-import "../../ui/components/orderFormLinkTemplate/orderFormLinkTemplate.js";
 
 FlowRouter.route("/", {
-  action: function() {
-    console.log("Wew lad");
+  action: function(params, queryParams) {
     BlazeLayout.render("mainLayout", {page: "homePage"});
+  }
+});
+
+FlowRouter.route("/orderForm/:orderFormLinkId", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "orderFormPage"});
   }
 });

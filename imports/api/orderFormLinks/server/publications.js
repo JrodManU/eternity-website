@@ -1,3 +1,3 @@
 Meteor.publish("orderFormLinks", function() {
-  return OrderFormLinks.find();
+  return OrderFormLinks.find({});
 });
