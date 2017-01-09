@@ -1,10 +1,1 @@
-import { Meteor } from 'meteor/meteor';
-
-Meteor.startup(() => {
-  // code to run on server at startup
-  Meteor.methods({
-    "submitOrderForm": function(){
-      console.log("Hello world");
-    }
-  });
-});
+import "/imports/startup/server";
