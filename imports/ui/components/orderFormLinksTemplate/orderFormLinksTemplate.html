@@ -1,6 +1,8 @@
 <template name="orderFormLinksTemplate">
-  orderformlinkstemplate!
   {{#each orderFormLinks}}
-    <a href={{pathForOrderForm}}>{{title}}</a>
+    <a href={{pathForOrderForm}}>
+        <img src="/SpiciestMeme.jpg" alt="spicy" />
+        <span class="textContent"><span>This {{title}} looks super neat.</span></span>
+    </a>
   {{/each}}
 </template>
