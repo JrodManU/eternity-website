@@ -1,8 +1,15 @@
+<head>
+  <link rel="stylesheet" href="./orderFormLinksTemplate.css">
+</head>
 <template name="orderFormLinksTemplate">
-  {{#each orderFormLinks}}
-    <a href={{pathForOrderForm}}>
-        <img src="/SpiciestMeme.jpg" alt="spicy" />
-        <span class="textContent"><span>This {{title}} looks super neat.</span></span>
-    </a>
-  {{/each}}
+  <ul class="imgList">
+    {{#each orderFormLinks}}
+      <li>
+        <div class="orderFormLinkImgWrap">
+            <img class="orderFormLinkImg" src="/SpiciestMeme.jpg">
+          <a class="orderFormLinkDesc" href={{pathForOrderForm}}><span>This {{title}} looks super neat.</span></a>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
 </template>

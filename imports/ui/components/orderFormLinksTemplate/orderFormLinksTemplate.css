@@ -1,0 +1,20 @@
+.orderFormLinkImgWrap, .orderFormLinkImg {
+  width: 150px;
+  height: 150px;
+}
+.orderFormLinkImgWrap {
+  position: relative;
+}
+.orderFormLinkDesc {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(153, 153, 153, 0);
+}
+.orderFormLinkImgWrap:hover .orderFormLinkDesc {
+  visibility: visible;
+  background-color: rgba(153, 153, 153, .5);
+}

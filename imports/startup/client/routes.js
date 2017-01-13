@@ -1,6 +1,8 @@
 import { FlowRouter } from "meteor/kadira:flow-router";
 import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
+import "./reset.css";
+
 import "../../ui/layouts/mainLayout/mainLayout.js";
 
 import "../../ui/pages/homePage/homePage.js";
