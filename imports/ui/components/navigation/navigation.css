@@ -1,4 +1,4 @@
-#navigation{
+/*#navigation{
   position:fixed;
        top: 0;
        margin:auto;
@@ -12,4 +12,35 @@
 
 #navItems {
   position: relative;
+}
+*/
+
+.navbarFixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
+
+#navigation {
+	border: 0;
+	background-color: #202020;
+	border-radius: 0px;
+	margin-bottom: 0;
+    height: 30px;
+}
+
+.navLinks {
+    margin: 0;
+}
+
+.navLinks li {
+	display: inline-block;
+    margin-top: 4px;
+}
+
+.navLinks li a {
+	padding: 0 15.5px;
+	color: #3498db;
+	text-decoration: none;
 }
