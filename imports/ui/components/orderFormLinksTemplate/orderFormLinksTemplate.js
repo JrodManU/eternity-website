@@ -1,5 +1,5 @@
-import "./orderFormLinksTemplate.html";
 import "./orderFormLinksTemplate.css";
+import "./orderFormLinksTemplate.html";
 import {Meteor} from "meteor/meteor";
 
 Meteor.subscribe("orderFormLinks");

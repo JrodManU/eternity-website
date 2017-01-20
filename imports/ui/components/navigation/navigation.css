@@ -3,19 +3,15 @@
   top: 0;
   z-index: 100;
   position: fixed;
-  width: 100%;
 }
 
-#navigation {
-  vertical-align:middle;
-  border: 1px solid #000000;
-  width: fixed;
+.navbar {
+  width: 100%;
   background-color: var(--mainColor);
 }
 
 .navLinks {
   display:inline-block;
-  text-align: center;
   font-family: "Comic Sans MS";
   font-size: 22px;
   font-weight: bold;
@@ -41,7 +37,8 @@
   color: #CC5803;
 }
 /* login/register buttons */
-.button {
+.loginButton {
+  cursor: pointer;
   float:right;
   display: block;
   border-radius: 2px;
@@ -52,19 +49,17 @@
   font-size: 14px;
   padding: 10px;
   width: 100px;
-  transition: all 0.5s;
-  cursor: pointer;
   margin: 2.5px;
 }
 
-.button span {
+.loginButton span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.45s;
 }
 
-.button span:after {
+.loginButton span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -73,15 +68,11 @@
   transition: 0.5s;
 }
 
-.button:hover span {
+.loginButton:hover span {
   padding-right: 12.5px;
 }
 
-.button:hover span:after {
+.loginButton:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-#login {
-
 }

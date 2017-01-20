@@ -9,6 +9,7 @@ import "../../ui/layouts/mainLayout/mainLayout.js";
 import "../../ui/pages/homePage/homePage.js";
 import "../../ui/pages/orderFormPage/orderFormPage.js"
 
+import "../../ui/components/banner/banner.js";
 import "../../ui/components/footer/footer.js";
 import "../../ui/components/header/header.js";
 import "../../ui/components/navigation/navigation.js";

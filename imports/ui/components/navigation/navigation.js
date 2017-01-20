@@ -1,5 +1,5 @@
-import "./navigation.html";
 import "./navigation.css";
+import "./navigation.html";
 
 Template.navigation.rendered = function() {
   $(window).scroll(function () {
@@ -7,10 +7,10 @@ Template.navigation.rendered = function() {
       //.log to determine when you want the
       //nav bar to stick.
     if ($(window).scrollTop() > 280) {
-      $('#navigation').addClass('navbarFixed');
+      $('.navbar').addClass('navbarFixed');
     }
     if ($(window).scrollTop() < 281) {
-      $('#navigation').removeClass('navbarFixed');
+      $('.navbar').removeClass('navbarFixed');
     }
   });
 }
