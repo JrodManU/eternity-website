@@ -6,7 +6,8 @@
 }
 
 #navigation {
-  border: 0;
+  border: 1px solid #000000;
+  width: fixed;
   background-color: var(--mainColor);
   border-radius: 0px;
   margin-bottom: 0;
@@ -16,7 +17,10 @@
   margin: 0;
   text-align: center;
   font-family: "Comic Sans MS";
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px 10px 20px;
 }
 
 .navLinks li {
@@ -28,8 +32,55 @@
 	padding: 0 15.5px;
 	text-decoration: none;
   color: #FFC15E;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: all 0.45s;
 }
 
 .navLinks li:hover a {
   color: #CC5803;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2.5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.45s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 12.5px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#login {
+
 }
