@@ -1,3 +1,3 @@
 import "../../api/orderFormLinks/orderFormLinks.js";
 
-import './routes.js';
+import './js/routes.js';
