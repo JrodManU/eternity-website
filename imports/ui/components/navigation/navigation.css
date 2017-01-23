@@ -27,7 +27,7 @@
 .navLinks li a {
 	padding: 0 15.5px;
 	text-decoration: none;
-  color: #FFC15E;
+  color: var(--thirdColor);
   margin-left: 20px;
   margin-right: 20px;
   transition: all 0.45s;
@@ -42,7 +42,7 @@
   float:right;
   display: block;
   border-radius: 2px;
-  background-color: #f4511e;
+  background-color: var(--secondColor);
   border: none;
   color: #FFFFFF;
   text-align: center;
