@@ -1,7 +1,16 @@
+#bannerInfo {
+  margin: 10%;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+}
+
 .imageContainer {
   width: 100%;
   overflow:hidden;
-}
-.bannerImage {
-  width:100%;
 }

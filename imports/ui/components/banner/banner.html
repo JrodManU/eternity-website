@@ -2,7 +2,12 @@
   <link rel="stylesheet" href="./banner.css">
 </head>
 <template name="banner">
-  <div class="imageContainer" style="height:{{bannerHeight}}px;">
-    <img class="bannerImage" src="/hubble.jpg">
-  </div>
+  <header role="banner">
+    <section class="imageContainer" style="height:{{bannerHeight}}px;">
+      <img src="/hubble.jpg">
+      <section id="bannerInfo">
+        <p>The eternity website banner information goes here.</p>
+      </section>
+    </section>
+  </header>
 </template>
