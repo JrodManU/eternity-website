@@ -14,9 +14,12 @@ import "../../../ui/pages/orderFormPage/orderFormPage.js"
 import "../../../ui/components/banner/banner.js";
 import "../../../ui/components/footer/footer.js";
 import "../../../ui/components/header/header.js";
-import "../../../ui/components/.js";
+import "../../../ui/components/login/login.js";
+import "../../../ui/components/loginButtons/loginButtons.js";
+import "../../../ui/components/logout/logout.js";
 import "../../../ui/components/navigation/navigation.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
+import "../../../ui/components/register/register.js";
 
 FlowRouter.route("/", {
   action: function(params, queryParams) {
