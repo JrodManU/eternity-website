@@ -3,10 +3,11 @@
 </head>
 <template name="navigation">
   <nav role="navigation" class="navbar">
-    <div class="loginButtons">
+    {{> loginButtons}}
+    <!--<div class="loginButtons">
       <button class="loginButton"><span>Login</span></button>
       <button class="loginButton"><span>Register</span></button>
-    </div>
+    </div>-->
     <ul class="navLinks">
       <li><a href="http://google.com" title="Home">Home</a></li>
       <li><a href="http://google.com" title="Products">Products</a></li>

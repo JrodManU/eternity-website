@@ -1,0 +1,8 @@
+<template name="loginButtons">
+  {{if currentUser}}
+    {{> logout}}
+  {{else}}
+    {{> register}}
+    {{> login}}
+  {{/if}}
+</template>
