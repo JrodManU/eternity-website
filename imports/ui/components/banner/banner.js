@@ -5,8 +5,12 @@ import { Template } from "meteor/templating";
 
 Template.banner.helpers({
   "bannerHeight": function() {
-    console.log("helper");
-    console.log(Session.get("bannerHeight"));
     return Session.get("bannerHeight");
+  },
+  "bannerInfoHeight": function() {
+    return Session.get("bannerHeight") * .8;
+  },
+  "bannerInfoMargin": function() {
+    return Session.get("bannerHeight") * .1;
   }
 });
