@@ -15,3 +15,12 @@
   width: 100%;
   overflow:hidden;
 }
+
+#logo {
+  max-width:90%;
+  max-height:90%;
+  display:inline-block;
+}
+#logoInfo {
+  display:inline-block;
+}
