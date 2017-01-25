@@ -17,6 +17,7 @@ import "../../../ui/components/login/login.js";
 import "../../../ui/components/loginButtons/loginButtons.js";
 import "../../../ui/components/logout/logout.js";
 import "../../../ui/components/navigation/navigation.js";
+import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
 import "../../../ui/components/register/register.js";
 
