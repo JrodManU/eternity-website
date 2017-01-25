@@ -5,7 +5,10 @@
 }
 
 footer {
+    color: #FFC15E; /* For IE, Safari, and Opera */
     color: var(--thirdColor);
+
+    background-color: #1F1300; /* For IE, Safari, and Opera */
     background: var(--mainColor);
 }
 
@@ -27,6 +30,7 @@ ul {
     margin: 0 auto;
 }
 .social-icon {
+    color: #1F1300; /* For IE, Safari, and Opera */
     color: var(--mainColor);
 }
 ul.social-icons {
@@ -48,6 +52,7 @@ ul.social-icons {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition: .5s;
+  background-color: #f4511e; /* For IE, Safari, and Opera */
   background-color: var(--secondColor);
 }
 .fa-facebook {
