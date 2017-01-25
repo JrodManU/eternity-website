@@ -12,5 +12,8 @@ Template.banner.helpers({
   },
   "bannerInfoMargin": function() {
     return Session.get("bannerHeight") * .1;
+  },
+  "titleFontSize": function() {
+    return Session.get("bannerHeight") * .3;
   }
 });

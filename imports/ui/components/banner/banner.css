@@ -4,6 +4,8 @@
   top: 0;
   left: 0;
   width: 80%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius:10px;
 }
 
 .imageContainer {
@@ -18,6 +20,6 @@
 }
 #logoInfo {
   display:inline-block;
-  font-size: 6em;
-  color: rgb(226, 132, 35);
+  color: var(--thirdColor);
+  font-family: monospace;
 }
