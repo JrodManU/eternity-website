@@ -8,8 +8,10 @@ import "./startupFunctions.js";
 
 import "../../../ui/layouts/mainLayout/mainLayout.js";
 
+import "../../../ui/pages/aboutUsPage/aboutUsPage.js";
 import "../../../ui/pages/homePage/homePage.js";
 import "../../../ui/pages/orderFormPage/orderFormPage.js"
+
 
 import "../../../ui/components/banner/banner.js";
 import "../../../ui/components/footer/footer.js";
@@ -24,7 +26,8 @@ import "../../../ui/components/register/register.js";
 FlowRouter.route("/", {
   action: function(params, queryParams) {
     BlazeLayout.render("mainLayout", {page: "homePage"});
-  }
+  },
+  name: "home"
 });
 
 FlowRouter.route("/orderForm", {
@@ -33,3 +36,10 @@ FlowRouter.route("/orderForm", {
   },
   name: "orderForm"
 });
+
+FlowRouter.route("/aboutUs", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "aboutUsPage"});
+  },
+  name: "aboutUs"
+})
