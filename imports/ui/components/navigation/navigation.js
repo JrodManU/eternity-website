@@ -1,6 +1,8 @@
+import { Meteor } from "meteor/meteor";
+import { Session } from "meteor/session";
+
 import "./navigation.css";
 import "./navigation.html";
-import { Session } from "meteor/session";
 
 Template.navigation.rendered = function() {
   $(window).scroll(function () {
@@ -15,3 +17,18 @@ Template.navigation.rendered = function() {
     }
   });
 }
+
+Template.navigation.events({
+  "click #orderFormNavButton": function(event) {
+    event.preventDefault();
+    var orderId;
+    Meteor.call("insertOrder", null, function(error, result) {
+      if(error) {
+        console.log(error);
+      } else {
+        orderId = result;
+        console.log(result);
+      }
+    });
+  }
+});

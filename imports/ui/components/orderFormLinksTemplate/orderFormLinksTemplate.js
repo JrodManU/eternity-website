@@ -11,7 +11,7 @@ Template.orderFormLinksTemplate.helpers({
   "pathForOrderForm": function() {
     var orderFormLink = this;
     var routeName = "orderForm";
-    var params = null;
+    var params = "lol";
     var queryParams = { type: orderFormLink.title };
     var path = FlowRouter.path(routeName, params, queryParams);
     return path;
