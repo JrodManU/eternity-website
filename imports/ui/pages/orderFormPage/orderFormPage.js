@@ -2,7 +2,7 @@ import { Meteor } from "meteor/meteor";
 import { Template } from "meteor/templating";
 import "./orderFormPage.html";
 
-Meteor.subscribe("orders");
+//Meteor.subscribe("orders");
 
 Template.orderFormPage.events({
   "submit .orderForm"(event){

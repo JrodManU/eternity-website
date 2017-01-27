@@ -31,7 +31,7 @@ FlowRouter.route("/", {
   name: "home"
 });
 
-FlowRouter.route("/orderForm", {
+FlowRouter.route("/orderForm/:orderId", {
   action: function(params, queryParams) {
     BlazeLayout.render("mainLayout", {page: "orderFormPage"});
   },
