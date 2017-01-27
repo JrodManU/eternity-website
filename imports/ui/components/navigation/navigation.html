@@ -14,5 +14,24 @@
       <li><a id="orderFormNavButton" href="#" title="Products">Products</a></li>
       <li><a href="/aboutUs" title="About Us">About Us.</a></li>
     </ul>
+    <ul>
+      <li id="login">
+        <a id="login-trigger" href="#">
+          Log in <span>▼</span>
+        </a>
+        <div id="login-content">
+          <form>
+            <fieldset id="inputs">
+              <input id="username" type="email" name="Email" placeholder="Your email address" required>
+              <input id="password" type="password" name="Password" placeholder="Password" required>
+            </fieldset>
+            <fieldset id="actions">
+              <input type="submit" id="submit" value="Log in">
+              <label><input type="checkbox" checked="checked"> Keep me signed in</label>
+            </fieldset>
+          </form>
+        </div>
+      </li>
+    </ul>
   </nav>
 </template>
