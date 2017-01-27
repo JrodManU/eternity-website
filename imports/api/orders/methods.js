@@ -7,7 +7,6 @@ Meteor.methods({
       userId: this.userId,
       text: text,
       createdAt: new Date()
-    }
     });
   },
   "insertOrderAndGo"(text) {
