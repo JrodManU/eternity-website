@@ -15,7 +15,7 @@ Template.orderForm.events({
     var target = event.target;
     var text = target.orderDescription.value;
     //insert task into current collection
-    Meteor.call("insertOrder", text);
+    Meteor.call("updateOrder", text);
     target.orderDescription.value="";
   }
 });
