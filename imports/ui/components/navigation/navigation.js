@@ -21,6 +21,6 @@ Template.navigation.rendered = function() {
 Template.navigation.events({
   "click #orderFormNavButton": function(event) {
     event.preventDefault();
-    Meteor.call("insertOrder", null);
+    Meteor.call("insertOrderAndGo", null);
   }
 });
