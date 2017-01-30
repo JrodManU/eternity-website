@@ -24,9 +24,8 @@ Meteor.methods({
     });
     FlowRouter.go("orderForm", {orderId: orderId}, null);
   },
-  "updateOrder"(text){
-    Orders.update(FlowRouter.getParam("orderId"), {$set: { text: text}});
-
+  "updateOrder"(orderId, text){
+    Orders.update(orderId, {$set: { text: text}});
   }
 
 });
