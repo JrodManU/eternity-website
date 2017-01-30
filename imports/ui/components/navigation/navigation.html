@@ -4,7 +4,6 @@
 </head>
 <template name="navigation">
   <nav role="navigation" class="navbar">
-    {{> loginButtons}}
     <!--<div class="loginButtons">
       <button class="loginButton"><span>Login</span></button>
       <button class="loginButton"><span>Register</span></button>
@@ -14,7 +13,7 @@
       <li><a id="orderFormNavButton" href="#" title="Products">Products</a></li>
       <li><a href="/aboutUs" title="About Us">About Us.</a></li>
     </ul>
-    <ul>
+    <ul id="floatRightLinks" class="navLinks">
       <li id="login">
         <a id="login-trigger" href="#">
           Log in <span>▼</span>

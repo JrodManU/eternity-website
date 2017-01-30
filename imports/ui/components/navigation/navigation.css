@@ -26,7 +26,7 @@
 }
 
 .navLinks li a {
-	padding: 0 15.5px;
+  padding: 0 15.5px;
 	text-decoration: none;
   color: #FFC15E; /* For IE, Safari and Opera */
   color: var(--thirdColor);
@@ -81,10 +81,14 @@
 }
 */
 
-nav #login {
-  position: absolute;
+#floatRightLinks {
   float: right;
+}
 
+nav #login {
+  position: relative;
+  display: block;
+  float: right;
 }
 
 nav #login-trigger {
@@ -106,7 +110,8 @@ nav #signup a:hover {
 }
 
 nav #login-content {
-  position: relative;
+  display: none;
+  position: absolute;
   top: 24px;
   right: 0;
   z-index: 999;
