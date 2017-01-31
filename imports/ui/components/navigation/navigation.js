@@ -26,10 +26,3 @@ Template.navigation.rendered = function() {
     })
 });
 }
-
-Template.navigation.events({
-  "click #orderFormNavButton": function(event) {
-    event.preventDefault();
-    Meteor.call("insertOrderAndGo", null);
-  }
-});
