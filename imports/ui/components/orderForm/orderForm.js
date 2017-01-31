@@ -19,7 +19,10 @@ Template.orderForm.events({
     target.orderDescription.value="";
   },
   "click .deleteOrder"(){
-    Meteor.call("deleteOrder", FlowRouter.getParam("orderId"))
+    Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));
+  },
+  "click .newOrder"(){
+    Meteor.call("insertOrderAndGo", "");
   }
 
 });
