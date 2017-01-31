@@ -11,7 +11,7 @@
   background-color: var(--mainColor);
 }
 
-.navLinks {
+#navLinks {
   display:inline-block;
   font-family: "Comic Sans MS";
   font-size: 22px;
@@ -20,12 +20,12 @@
   padding: 10px 20px 10px 20px;
 }
 
-.navLinks li {
+#navLinks li {
   display: inline-block;
   margin-top: 4px;
 }
 
-.navLinks li a {
+#navLinks li a {
   padding: 0 15.5px;
 	text-decoration: none;
   color: #FFC15E; /* For IE, Safari and Opera */
@@ -35,7 +35,7 @@
   transition: all 0.45s;
 }
 
-.navLinks li:hover a {
+#navLinks li:hover a {
   color: #CC5803;
 }
 /* login/register buttons
@@ -81,7 +81,7 @@
 }
 */
 
-#floatRightLinks {
+.floatRightLinks {
   float: right;
 }
 
@@ -96,20 +96,14 @@ nav #login-trigger {
   font-weight: bold;
   text-decoration: none;
   color: #591f1f;
-  background-color: var(--thirdColor);
 }
 
 nav #login-trigger {
-  border-radius: 3px 0 0 3px;
-}
-
-nav #login-trigger:hover,
-nav #login .active,
-nav #signup a:hover {
-  background-color: var(--secondColor);
+  border-radius: 3px;
 }
 
 nav #login-content {
+  margin-top: 10px;
   display: none;
   position: absolute;
   top: 24px;
