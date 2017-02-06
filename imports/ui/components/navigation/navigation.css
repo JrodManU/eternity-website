@@ -23,7 +23,6 @@
 #navLinks li {
   display: inline-block;
   margin-top: 4px;
-  float: left;
 }
 
 #navLinks li a {
@@ -82,14 +81,15 @@
 }
 */
 
-.floatRightLinks {
-  float: right;
+li:last-child {
+  float:right;
 }
+
 
 nav #login {
   position: relative;
   display: block;
-  float: right;
+  text-align: left;
 }
 
 nav #login-trigger {
