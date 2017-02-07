@@ -1,38 +1,46 @@
 #bannerInfo {
-  margin-left: 10%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
-  background-color: rgba(0, 0, 0, 0.6);
+
+  width: 80%;
+  margin-left: 10%;
+
   border-radius:10px;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #backgroundImageContainer {
-  width: 100%;
   overflow:hidden;
+
+  width: 100%;
 }
 
 #logo {
-  max-width:90%;
-  max-height:90%;
-  margin-left:1.5%;
-  margin-right:1.5%;
-  float:left;
-
   /* centers object vertically */
   position:relative;
   top:50%;
+
+  float:left;
+
+  max-width:90%;
+  max-height:90%;
+  margin-right:1.5%;
+  margin-left:1.5%;
+
   transform: translateY(-50%);
 }
 #logoInfo {
   display:inline-block;
+  display: flex;
+  /* centers text vertically */
+
+  height:100%;
+
   color: #FFC15E; /* For IE, Safari, and Opera */
   color: var(--thirdColor);
+
   font-family: monospace;
 
-  /* centers text vertically */
-  height:100%;
-  display: flex;
   align-items: center;
 }
