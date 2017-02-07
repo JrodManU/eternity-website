@@ -1,4 +1,8 @@
 <template name="orderFormPage">
-  {{> orderForm}}
-  {{> userOrders}}
+  {{#if currentUser}}
+    {{> orderForm}}
+    {{> userOrders}}
+  {{else}}
+    {{> pleaseLogin}}
+  {{/if}}
 </template>

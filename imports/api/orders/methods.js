@@ -27,8 +27,11 @@ Meteor.methods({
   "updateOrder"(orderId, text){
     Orders.update(orderId, {$set: { text: text}});
   },
-  deleteOrder(orderId){
+  "deleteOrder"(orderId){
     Orders.remove({_id: orderId});
+  },
+  "resetOrder"(orderId) {
+    Orders.update(orderId, {$set: { text: "lol"}});
   }
 
 });

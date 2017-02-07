@@ -1,6 +1,10 @@
 <template name="orderForm">
   <h1>Order Form</h1>
-
+  {{#if order}}
+    <button class="resetOrder">Reset Order</button>
+  {{else}}
+    <button class="newOrder">New Order</button>
+  {{/if}}
   <form class="orderForm">
     <textarea placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription">{{order.text}}</textarea>
     <input type="text" name="typeOfOrder" placeholder="Insert the type of order you are making.">
@@ -10,6 +14,5 @@
     <input type="email" name="emailAddress" placeholder="Email Address">
     <input type="submit" name="submitOrder" value="Save">
     <input class="deleteOrder" type="button" name="deleteOrder" value="Delete">
-    <input class="newOrder" type="button" name="newOrder" value="New Order">
   </form>
 </template>

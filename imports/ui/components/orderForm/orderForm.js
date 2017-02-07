@@ -23,6 +23,8 @@ Template.orderForm.events({
   },
   "click .newOrder"(){
     Meteor.call("insertOrderAndGo", "");
+  },
+  "click .resetOrder"() {
+    Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
   }
-
 });
