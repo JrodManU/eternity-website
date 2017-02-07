@@ -1,3 +1,2 @@
-import "loginModal.css";
-
-import "loginModal.html";
+import "./loginModal.css";
+import "./loginModal.html";
