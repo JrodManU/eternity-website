@@ -2,6 +2,7 @@
   <link rel="stylesheet" href="./loginModal.css">
 </head>
 <template name="loginModal">
+{{#if showLoginModal}}
   <div class="modalBackground">
     <div class="loginModalContent">
       <header>
@@ -11,4 +12,5 @@
       <p>Content</p>
     </div>
   </div>
+{{/if}}
 </template>
