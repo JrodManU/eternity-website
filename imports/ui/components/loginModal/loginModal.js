@@ -12,9 +12,3 @@ Template.loginModal.helpers({
     return Session.get("showLoginModalContent");
   }
 });
-
-Template.loginModal.events({
-  "click .closeLoginModal"() {
-    Session.set("showLoginModal", false);
-  }
-})
