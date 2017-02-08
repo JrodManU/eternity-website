@@ -14,15 +14,18 @@ import "../../../ui/pages/orderFormPage/orderFormPage.js"
 
 
 import "../../../ui/components/banner/banner.js";
+import "../../../ui/components/closeLoginModal.js";
 import "../../../ui/components/footer/footer.js";
 import "../../../ui/components/login/login.js";
 import "../../../ui/components/loginButtons/loginButtons.js";
 import "../../../ui/components/loginModal/loginModal.js";
+import "../../../ui/components/loginModalContent/loginModalContent.js";
 import "../../../ui/components/logout/logout.js";
 import "../../../ui/components/navigation/navigation.js";
 import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
 import "../../../ui/components/register/register.js";
+import "../../../ui/components/registerModalContent/registerModalContent.js";
 import "../../../ui/components/userOrders/userOrders.js";
 
 FlowRouter.route("/", {
