@@ -1,3 +1,3 @@
-import "registerModalContent.css";
+import "./registerModalContent.css";
 
-import "registerModalContent.html";
+import "./registerModalContent.html";

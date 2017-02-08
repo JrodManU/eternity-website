@@ -14,7 +14,6 @@ import "../../../ui/pages/orderFormPage/orderFormPage.js"
 
 
 import "../../../ui/components/banner/banner.js";
-import "../../../ui/components/closeLoginModal.js";
 import "../../../ui/components/footer/footer.js";
 import "../../../ui/components/login/login.js";
 import "../../../ui/components/loginButtons/loginButtons.js";

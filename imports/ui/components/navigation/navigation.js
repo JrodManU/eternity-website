@@ -18,6 +18,7 @@ Template.navigation.rendered = function() {
   });
   $(document).ready(function(){
   $('#login-trigger').click(function(){
+    Session.set("showLoginModal", true);
     $(this).next('#login-content').slideToggle();
     $(this).toggleClass('active');
 
