@@ -1,4 +1,4 @@
-import { Meteor } from "meteor/meteor";
+import { Template } from "meteor/templating";
 import { Session } from "meteor/session";
 
 import "./navigation.css";
@@ -16,14 +16,10 @@ Template.navigation.rendered = function() {
       $('.navbar').removeClass('navbarFixed');
     }
   });
-  $(document).ready(function(){
-  $('#login-trigger').click(function(){
-    Session.set("showLoginModal", true);
-    $(this).next('#login-content').slideToggle();
-    $(this).toggleClass('active');
-
-    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
-      else $(this).find('span').html('&#x25BC;')
-    })
-});
 }
+
+Template.navigation.events({
+  "click #loginButton"() {
+    Session.set("showLoginModal", true);
+  }
+});

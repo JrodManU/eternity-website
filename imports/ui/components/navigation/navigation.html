@@ -4,31 +4,11 @@
 </head>
 <template name="navigation">
   <nav role="navigation" class="navbar">
-    <!--<div class="loginButtons">
-      <button class="loginButton"><span>Login</span></button>
-      <button class="loginButton"><span>Register</span></button>
-    </div>-->
     <ul id="navLinks">
-      <li class="floatLeftLinks"><a href="/" title="Home">Home</a></li>
-      <li class="floatLeftLinks"><a href="/orderForm/none" title="Products">Products</a></li>
-      <li class="floatLeftLinks"><a href="/aboutUs" title="About Us">About Us.</a></li>
-      <li id="login" class="floatRightLinks">
-        <a id="login-trigger">
-          Log in <span>▼</span>
-        </a>
-        <div id="login-content">
-          <form>
-            <fieldset id="inputs">
-              <input id="username" type="email" name="Email" placeholder="Your email address" required>
-              <input id="password" type="password" name="Password" placeholder="Password" required>
-            </fieldset>
-            <fieldset id="actions">
-              <input type="submit" id="submit" value="Log in">
-              <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-            </fieldset>
-          </form>
-        </div>
-      </li>
+      <li><a href="/" title="Home">Home</a></li>
+      <li><a href="/orderForm/none" title="Products">Products</a></li>
+      <li><a href="/aboutUs" title="About Us">About Us.</a></li>
+      <li><a id="loginButton" title="Login">Login</a></li>
     </ul>
   </nav>
 </template>
