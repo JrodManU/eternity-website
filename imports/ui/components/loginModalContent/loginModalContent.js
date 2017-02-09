@@ -2,9 +2,9 @@ import { Meteor } from "meteor/meteor";
 import { Template } from "meteor/templating";
 import { Session } from "meteor/session";
 
-import "./login.html";
+import "./loginModalContent.html";
 
-Template.login.events({
+Template.loginModalContent.events({
   "submit #loginForm": function(event) {
     event.preventDefault();
 

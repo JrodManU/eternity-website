@@ -1,8 +1,8 @@
 import { Template } from "meteor/templating";
 
-import "./register.html";
+import "./registerModalContent.html";
 
-Template.register.events({
+Template.registerModalContent.events({
   "submit #registerForm": function(event) {
     event.preventDefault();
 
