@@ -17,9 +17,3 @@ Template.navigation.rendered = function() {
     }
   });
 }
-
-Template.navigation.events({
-  "click #loginButton"() {
-    Session.set("showLoginModal", true);
-  }
-});
