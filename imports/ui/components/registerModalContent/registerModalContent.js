@@ -12,5 +12,8 @@ Template.registerModalContent.events({
       email: email,
       password: password
     });
+  },
+  "click .switchToLogin"() {
+    Session.set("showLoginModalContent", true);
   }
 });
