@@ -7,7 +7,10 @@
       <li>
         <div class="orderFormLinkImgWrap">
           <img class="orderFormLinkImg" src="/SpiciestMeme.jpg">
-          <a class="orderFormLinkDesc" href={{pathForOrderForm}}><span>This {{title}} looks super neat.</span></a>
+          <a class="orderFormLinkDesc" id={{_id}}>
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </a>
         </div>
       </li>
     {{/each}}

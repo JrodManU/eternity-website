@@ -1,19 +1,15 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.methods({
-  "insertOrder"(text) {
+  "insertOrderAndGo"(orderFormLinkId) {
     var orderId;
+    console.log(orderFormLinkId);
+    console.log(OrderFormLinks.find().count());
+    var orderFormLink = OrderFormLinks.findOne({_id: orderFormLinkId});
+    console.log(orderFormLink);
     Orders.insert({
       userId: this.userId,
-      text: text,
-      createdAt: new Date()
-    });
-  },
-  "insertOrderAndGo"(text) {
-    var orderId;
-    Orders.insert({
-      userId: this.userId,
-      text: text,
+      type: orderFormLink.type,
       createdAt: new Date()
     }, function(error, order) {
       if(error) {
