@@ -13,6 +13,8 @@
 .loginModalHeader {
   padding: 2%;
   background-color: var(--secondColor);
+  display: block;
+  text-align: right;
 }
 
 .loginModal {
@@ -20,12 +22,12 @@
   margin: 15% auto; /* 15% from the top and centered */
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  min-height: 30px;
 }
 
 .closeLoginModal {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  font-size: 2em;
   font-weight: bold;
 }
 
