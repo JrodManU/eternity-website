@@ -11,6 +11,12 @@ Template.registerModalContent.events({
     Accounts.createUser({
       email: email,
       password: password
+    }, function(error) {
+      if(error) {
+        console.log(error.reason);
+      } else {
+        Meteor.call("sendVerificationLink");
+      }
     });
   },
   "click .switchToLogin"() {
