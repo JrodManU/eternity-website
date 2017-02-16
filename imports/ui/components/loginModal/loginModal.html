@@ -6,14 +6,21 @@
   <div class="modalBackground">
     <div class="loginModal">
       <header class="loginModalHeader">
-        <span class="closeLoginModal">&times;</span>
-        <h1>{{loginModalHeader}}</h1>
+        <div class="closeFloatRight">
+          <span class="closeLoginModal">&times;</span>
+        </div>
+        <div class="h1FloatLeft">
+          <h1>{{loginModalHeader}}</h1>
+        </div>
       </header>
       {{#if showLoginModalContent}}
         {{> loginModalContent}}
       {{else}}
         {{> registerModalContent}}
       {{/if}}
+      <footer class="loginModalFooter">
+        <p>Hello</p>
+      </footer>
     </div>
   </div>
 {{/if}}
