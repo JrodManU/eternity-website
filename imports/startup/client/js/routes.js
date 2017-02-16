@@ -44,4 +44,4 @@ FlowRouter.route("/aboutUs", {
     BlazeLayout.render("mainLayout", {page: "aboutUsPage"});
   },
   name: "aboutUs"
-})
+});
