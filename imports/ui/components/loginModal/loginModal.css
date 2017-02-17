@@ -15,12 +15,15 @@
   background-color: var(--secondColor);
   display: block;
   text-align: right;
+  font-family: var(--mainFont);
 }
 
 .loginModalFooter {
   padding: 1%;
   background-color: var(--secondColor);
   display: block;
+  text-align: left;
+  font-family: var(--mainFont);
 }
 
 .loginModal {

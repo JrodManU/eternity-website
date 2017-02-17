@@ -1,8 +1,10 @@
 <template name="loginModalContent">
-  <form id="loginForm">
-    <input type="email" name="loginEmail">
-    <input type="password" name="loginPassword">
-    <input type="submit" value="Login">
-  </form>
-  <button class="switchToRegister" >Don't have an account? Register</button>
+    <form id="loginForm">
+      <label>E-mail</label>
+      <input type="email" name="loginEmail">
+      <label>Password</label>
+      <input type="password" name="loginPassword">
+      <button type="submit" class="submitButton"><span>Login</span></button>
+      <button class="switchToRegister"><span>Don't have an account? Register</span></button>
+    </form>
 </template>

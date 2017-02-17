@@ -1,0 +1,97 @@
+#registerForm {
+  padding: 2% 2% 2% 2%;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.registerButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.registerButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.registerButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.registerButton:hover span {
+  padding-right: 25px;
+}
+
+.registerButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.switchToLogin {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.switchToLogin span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.switchToLogin span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.switchToLogin:hover span {
+  padding-right: 25px;
+}
+
+.switchToLogin:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+label {
+  font-family: var(--mainFont);
+}

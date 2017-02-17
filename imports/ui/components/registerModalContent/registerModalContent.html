@@ -1,8 +1,10 @@
 <template name="registerModalContent">
   <form id="registerForm">
+      <label>E-mail</label>
       <input type="email" name="registerEmail">
+      <label>Password</label>
       <input type="password" name="registerPassword">
-      <input type="submit" value="Register">
+      <button type="submit" class="registerButton"><span>Register</span></button>
+      <button class="switchToLogin" ><span>Already have an account? Login</span></button>
   </form>
-  <button class="switchToLogin" >Already have an account? Login</button>
 </template>

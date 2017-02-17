@@ -4,6 +4,8 @@ import { Session } from "meteor/session";
 
 import "./loginModalContent.html";
 
+import "./loginModalContent.css";
+
 Template.loginModalContent.events({
   "submit #loginForm": function(event) {
     event.preventDefault();
