@@ -28,6 +28,8 @@
   display: inline-block;
 
   margin-top: 4px;
+
+  float: left;
 }
 
 #navLinks li a {
