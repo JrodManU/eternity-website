@@ -21,3 +21,17 @@
 
   background-color: rgba(153, 153, 153, .5);
 }
+
+h3, p {
+  text-align: center;
+  font-family: var(--mainFont);
+  color: var(--secondColor);
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+}
