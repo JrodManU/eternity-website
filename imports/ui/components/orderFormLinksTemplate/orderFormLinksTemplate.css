@@ -22,16 +22,16 @@
   background-color: rgba(153, 153, 153, .5);
 }
 
-h3, p {
+.orderFormLinkTitle, .orderFormLinkBody {
   text-align: center;
   font-family: var(--mainFont);
   color: var(--secondColor);
 }
 
-h3 {
+.orderFormLinkTitle {
   font-size: 1.5em;
 }
 
-p {
+.orderFormLinkBody {
   font-size: 1em;
 }

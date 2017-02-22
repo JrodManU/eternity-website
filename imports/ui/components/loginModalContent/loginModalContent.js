@@ -12,7 +12,12 @@ Template.loginModalContent.events({
 
     var email = event.target.loginEmail.value;
     var password = event.target.loginPassword.value;
-    Meteor.loginWithPassword(email, password);
+    Meteor.loginWithPassword(email, password, function(error) {
+      if(error) {
+      } else {
+        Session.set("showLoginModal", false);
+      }
+    });
   },
   "click .switchToRegister"() {
     Session.set("showLoginModalContent", false);
