@@ -17,6 +17,7 @@ Template.registerModalContent.events({
       if(error) {
         console.log(error.reason);
       } else {
+        Session.set("showLoginModal", false);
         Meteor.call("sendVerificationLink");
       }
     });
