@@ -1,6 +1,14 @@
 import { Template } from "meteor/templating";
 import "./orderForm.html";
 
+import "./orderForm.css";
+
+Template.orderForm.onRender({
+  $(".selectTypeOfOrder").change(function(){
+
+  });
+});
+
 Template.orderForm.helpers({
   "order":function(){
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});

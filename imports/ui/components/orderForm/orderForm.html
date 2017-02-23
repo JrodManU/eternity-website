@@ -7,7 +7,15 @@
   {{/if}}
   <form class="orderForm">
     <textarea placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription">{{order.type}}</textarea>
-    <input type="text" name="typeOfOrder" placeholder="Insert the type of order you are making.">
+    <br>
+    <select class="selectTypeOfOrder"name="typeOfOrder">
+      <option>Standard Paper</option>
+      <option>Card Stock</option>
+      <option>Business Card</option>
+      <option>Banner</option>
+      <option>Other</option>
+    </select>
+    <input class="hideOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for">
     <input type="text" name="firstName" placeholder="First Name">
     <input type="text" name="lastName" placeholder="Last Name">
     <input type="tel" name="phoneNumber" placeholder="Phone Number">
