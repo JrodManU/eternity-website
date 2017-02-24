@@ -3,12 +3,6 @@ import "./orderForm.html";
 
 import "./orderForm.css";
 
-Template.orderForm.onRender({
-  $(".selectTypeOfOrder").change(function (){
-
-  });
-});
-
 Template.orderForm.helpers({
   "order":function(){
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
@@ -34,5 +28,12 @@ Template.orderForm.events({
   },
   "click .resetOrder"() {
     Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
+  },
+  "change .selectTypeOfOrder"(event, template) {
+    if(event.target.value == "Other") {
+      template.$(".hideOtherType").show();
+    } else {
+      template.$(".hideOtherType").hide();
+    }
   }
 });
