@@ -6,7 +6,7 @@
     <button class="newOrder">New Order</button>
   {{/if}}
   <form class="orderForm">
-    <textarea placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription">{{order.text}}</textarea>
+    <textarea class="orderFormTextField" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription">{{order.text}}</textarea>
     <br>
     <select class="selectTypeOfOrder" name="typeOfOrder">
       <option>Standard Paper</option>
@@ -16,10 +16,10 @@
       <option>Other</option>
     </select>
     <input class="hideOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for">
-    <input type="text" name="firstName" placeholder="First Name">
-    <input type="text" name="lastName" placeholder="Last Name">
-    <input type="tel" name="phoneNumber" placeholder="Phone Number">
-    <input type="email" name="emailAddress" placeholder="Email Address">
+    <input class="orderFormTextField" type="text" name="firstName" placeholder="First Name">
+    <input class="orderFormTextField" type="text" name="lastName" placeholder="Last Name">
+    <input class="orderFormTextField" type="tel" name="phoneNumber" placeholder="Phone Number">
+    <input class="orderFormTextField" type="email" name="emailAddress" placeholder="Email Address">
     <input type="submit" name="submitOrder" value="Save">
     <input class="deleteOrder" type="button" name="deleteOrder" value="Delete">
   </form>

@@ -1,7 +1,7 @@
-input[type=text], .selectTypeOfOrder {
+.orderFormTextField, .selectTypeOfOrder {
     width: 50%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 0px 0px 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -9,8 +9,10 @@ input[type=text], .selectTypeOfOrder {
 
 .hideOtherType {
   display: none;
-}
-
-.selectTypeOfOrder {
-  
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0px 0px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
