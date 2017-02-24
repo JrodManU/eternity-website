@@ -3,10 +3,15 @@ import { Meteor } from "meteor/meteor";
 Meteor.methods({
   "insertOrderAndGo"(orderFormLinkId) {
     var orderId;
-    var orderFormLink = OrderFormLinks.findOne({_id: orderFormLinkId});
+    var type = null;
+
+    if(orderFormLinkId) {
+      type = OrderFormLinks.findOne({_id: orderFormLinkId}).type;
+    }
+
     Orders.insert({
       userId: this.userId,
-      type: orderFormLink.type,
+      type: type,
       createdAt: new Date()
     }, function(error, order) {
       if(error) {
@@ -22,6 +27,7 @@ Meteor.methods({
   },
   "deleteOrder"(orderId){
     Orders.remove({_id: orderId});
+    FlowRouter.go("orderForm", {orderId: "none"}, null);
   },
   "resetOrder"(orderId) {
     Orders.update(orderId, {$set: { text: "lol"}});

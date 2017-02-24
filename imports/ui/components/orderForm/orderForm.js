@@ -18,13 +18,12 @@ Template.orderForm.events({
     var text = target.orderDescription.value;
     //insert task into current collection
     Meteor.call("updateOrder", FlowRouter.getParam("orderId"), text);
-    target.orderDescription.value="";
   },
-  "click .deleteOrder"(){
+  "click .deleteOrder"(event, template){
     Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));
   },
   "click .newOrder"(){
-    Meteor.call("insertOrderAndGo", "");
+    Meteor.call("insertOrderAndGo", null);
   },
   "click .resetOrder"() {
     Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
