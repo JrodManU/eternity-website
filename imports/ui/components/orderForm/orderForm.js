@@ -4,7 +4,7 @@ import "./orderForm.html";
 import "./orderForm.css";
 
 Template.orderForm.onRender({
-  $(".selectTypeOfOrder").change(function(){
+  $(".selectTypeOfOrder").change(function (){
 
   });
 });
