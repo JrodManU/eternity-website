@@ -10,6 +10,7 @@
 
   background-color: #1F1300; /* For IE, Safari and Opera */
   background-color: var(--mainColor);
+  border-bottom: solid 2px var(--secondColor);
 }
 
 #navLinks {
@@ -17,11 +18,8 @@
 
   padding: 10px 20px 10px 20px;
 
-  text-transform: uppercase;
-
   font-family: var(--mainFont);
   font-size: 22px;
-  font-weight: bold;
 }
 
 #navLinks li {
@@ -45,5 +43,5 @@
 }
 
 #navLinks li:hover a {
-  color: #CC5803;
+  color: var(--secondColor);
 }
