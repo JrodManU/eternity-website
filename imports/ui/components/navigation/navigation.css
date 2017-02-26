@@ -19,7 +19,7 @@
 
   text-transform: uppercase;
 
-  font-family: "Comic Sans MS";
+  font-family: var(--mainFont);
   font-size: 22px;
   font-weight: bold;
 }

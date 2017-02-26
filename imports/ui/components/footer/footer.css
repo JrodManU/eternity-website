@@ -6,9 +6,9 @@
 
 footer {
     color: #FFC15E; /* For IE, Safari, and Opera */
+    background-color: #1F1300; /* For IE, Safari, and Opera */
     color: var(--thirdColor);
     background: var(--mainColor);
-    background-color: #1F1300; /* For IE, Safari, and Opera */
 }
 
 a {
