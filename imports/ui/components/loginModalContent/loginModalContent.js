@@ -14,7 +14,9 @@ Template.loginModalContent.events({
     var password = event.target.loginPassword.value;
     Meteor.loginWithPassword(email, password, function(error) {
       if(error) {
+        MeteorAlerts.alert(error.reason, 2000, []);
       } else {
+        MeteorAlerts.alert("Successfully logged in!", 2000, []);
         Session.set("showLoginModal", false);
       }
     });

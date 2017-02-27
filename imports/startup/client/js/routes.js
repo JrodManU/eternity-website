@@ -3,6 +3,7 @@ import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
 import "../css/reset.css";
 import "../css/root.css";
+import "../css/meteorAlert.css";
 
 import "./startupFunctions.js";
 
