@@ -5,6 +5,7 @@ import "../../api/users/methods.js";
 import "../../api/orderFormLinks/orderFormLinks.js";
 import "../../api/orders/methods.js";
 import "../../api/orderFormLinks/server/publications.js";
+import "../../api/orderFormLinks/server/emptyDB";
 
 import "../../api/orders/orders.js";
 import "../../api/orders/methods.js";

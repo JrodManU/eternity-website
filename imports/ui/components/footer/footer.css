@@ -22,11 +22,6 @@ p > a:hover{
 
     color: #FFC15E;
 }
-ul {
-    padding:0;
-
-    list-style: none;
-}
 .footer-social-icons {
     display:block;
 
@@ -37,10 +32,13 @@ ul {
     color: #1F1300; /* For IE, Safari, and Opera */
     color: var(--mainColor);
 }
-ul.social-icons {
+.socialIcons {
     margin-top: 10px;
+    padding:0;
+
+    list-style: none;
 }
-.social-icons li {
+.socialIcons li {
     display: inline;
 
     height: 100px;
