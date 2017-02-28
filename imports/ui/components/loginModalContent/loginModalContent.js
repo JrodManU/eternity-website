@@ -12,9 +12,15 @@ Template.loginModalContent.events({
 
     var email = event.target.loginEmail.value;
     var password = event.target.loginPassword.value;
+    if(email.trim() == String.empty) {
+      MeteorAlerts.alert("Please enter a username", 2000, []);
+    }
+    if(password.trim() == String.empty) {
+      MeteorAlerts.alert("Please enter a password", 2000, []);
+    }
     Meteor.loginWithPassword(email, password, function(error) {
       if(error) {
-        MeteorAlerts.alert(error.reason, 2000, []);
+        MeteorAlerts.alert("User does not exist or password is incorrect.", 2000, []);
       } else {
         MeteorAlerts.alert("Successfully logged in!", 2000, []);
         Session.set("showLoginModal", false);
@@ -22,6 +28,7 @@ Template.loginModalContent.events({
     });
   },
   "click .switchToRegister"() {
+    event.preventDefault();
     Session.set("showLoginModalContent", false);
   }
 });

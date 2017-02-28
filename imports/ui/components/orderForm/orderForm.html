@@ -2,25 +2,26 @@
   <h1>Order Form</h1>
   {{#if order}}
     <button class="resetOrder">Reset Order</button>
+    <form class="orderForm">
+      <textarea class="orderFormTextField" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription">{{order.text}}</textarea>
+      <br>
+      <select class="selectTypeOfOrder" name="typeOfOrder" value="{{order.type}}">
+        <option>Standard Paper</option>
+        <option>Card Stock</option>
+        <option>Business Card</option>
+        <option>Banner</option>
+        <option value="carDecal">Car Decal</option>
+        <option>Other</option>
+      </select>
+      <input class="hideOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for">
+      <input class="orderFormTextField" type="text" name="firstName" placeholder="First Name">
+      <input class="orderFormTextField" type="text" name="lastName" placeholder="Last Name">
+      <input class="orderFormTextField" type="tel" name="phoneNumber" placeholder="Phone Number">
+      <input class="orderFormTextField" type="email" name="emailAddress" placeholder="Email Address">
+      <input type="submit" name="submitOrder" value="Save">
+      <input class="deleteOrder" type="button" name="deleteOrder" value="Delete">
+    </form>
   {{else}}
     <button class="newOrder">New Order</button>
   {{/if}}
-  <form class="orderForm">
-    <textarea class="orderFormTextField" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription">{{order.text}}</textarea>
-    <br>
-    <select class="selectTypeOfOrder" name="typeOfOrder">
-      <option>Standard Paper</option>
-      <option>Card Stock</option>
-      <option>Business Card</option>
-      <option>Banner</option>
-      <option>Other</option>
-    </select>
-    <input class="hideOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for">
-    <input class="orderFormTextField" type="text" name="firstName" placeholder="First Name">
-    <input class="orderFormTextField" type="text" name="lastName" placeholder="Last Name">
-    <input class="orderFormTextField" type="tel" name="phoneNumber" placeholder="Phone Number">
-    <input class="orderFormTextField" type="email" name="emailAddress" placeholder="Email Address">
-    <input type="submit" name="submitOrder" value="Save">
-    <input class="deleteOrder" type="button" name="deleteOrder" value="Delete">
-  </form>
 </template>
