@@ -11,18 +11,18 @@ Template.registerModalContent.events({
     var email = event.target.registerEmail.value;
     var password = event.target.registerPassword.value;
     var password2 = event.target.registerPassword2.value;
-    if(email.trim().equals(String.empty)) {
+    if(!email.trim()) {
       MeteorAlerts.alert("Please enter a username", 2000, []);
       return;
     }
-    if(password.trim().equals(String.empty)) {
+    if(!password.trim()) {
       MeteorAlerts.alert("Please enter a password", 2000, []);
       return;
     }
     if(password !== password2) {
       MeteorAlerts.alert("Passwords do not match.", 2000, []);
     }
-    /*Accounts.createUser({
+    Accounts.createUser({
       email: email,
       password: password
     }, function(error) {
@@ -33,7 +33,7 @@ Template.registerModalContent.events({
         Session.set("showLoginModal", false);
         Meteor.call("sendVerificationLink");
       }
-    });*/
+    });
   },
   "click .switchToLogin"() {
     Session.set("showLoginModalContent", true);
