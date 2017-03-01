@@ -4,12 +4,20 @@
   position:absolute;
   width:100%;
   z-index: 2;
-  color:blue;
   font-size: 2em;
   background-color: var(--mainColor);
   padding: 10px 10px 10px 10px;
   font-family: var(--mainFont);
+  animation: meteorAlert 1s ease forwards;
+
 }
+
+@keyframes meteorAlert {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 0; }
+}
+
 .meteorAlertVisible {
   display:block;
 }
