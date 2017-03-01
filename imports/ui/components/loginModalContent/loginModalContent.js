@@ -12,11 +12,14 @@ Template.loginModalContent.events({
 
     var email = event.target.loginEmail.value;
     var password = event.target.loginPassword.value;
-    if(email.trim() == String.empty) {
+    if(email.trim().equals(String.empty)) {
       MeteorAlerts.alert("Please enter a username", 2000, []);
+      return;
     }
-    if(password.trim() == String.empty) {
+    console.log()
+    if(password.trim().equals(String.empty)) {
       MeteorAlerts.alert("Please enter a password", 2000, []);
+      return;
     }
     Meteor.loginWithPassword(email, password, function(error) {
       if(error) {
