@@ -28,6 +28,7 @@
   margin-top: 4px;
 
   float: left;
+  cursor: pointer;
 }
 
 #navLinks li a {

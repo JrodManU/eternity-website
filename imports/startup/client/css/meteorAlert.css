@@ -5,12 +5,22 @@
   width:100%;
   z-index: 2;
   color:blue;
-  font-size: 100px;
-  background-color:red;
+  font-size: 2em;
+  background-color: var(--mainColor);
+  padding: 10px 10px 10px 10px;
+  font-family: var(--mainFont);
 }
 .meteorAlertVisible {
   display:block;
 }
 .meteorAlertHidden {
   display:none;
+}
+
+.meteorAlertWarning {
+
+}
+
+.meteorAlertSuccess {
+
 }
