@@ -12,6 +12,6 @@ Template.orderFormLinksTemplate.helpers({
 
 Template.orderFormLinksTemplate.events({
   "click .orderFormLinkDesc"(event) {
-    Meteor.call("insertOrderAndGo", event.target.id);
+    Meteor.call("insertOrderAndGo", this._id);
   }
 });

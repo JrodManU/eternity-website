@@ -4,7 +4,7 @@ import "./orderForm.html";
 import "./orderForm.css";
 
 Template.orderForm.helpers({
-  "order":function(){
+  "order":function() {
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
   }
 });
