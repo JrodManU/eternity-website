@@ -13,9 +13,9 @@ Meteor.startup(function() {
   if (Accounts._verifyEmailToken) {
     Accounts.verifyEmail(Accounts._verifyEmailToken, function(error) {
       if (error) {
-        console.log(err.reason);
+        MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
       } else {
-        console.log("Thank you! Your email address has been confirmed.");
+        MeteorAlerts.alert("Your email has been verified!", 2000, ["meteorAlertSuccess"]);
       }
     });
   }
