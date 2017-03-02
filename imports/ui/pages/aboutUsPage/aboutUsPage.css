@@ -1,3 +1,9 @@
 .aboutUsPage {
   text-align: center;
+  padding: 20px 0px 20px 0px;
+}
+
+.aboutUsPageHeader {
+  font-size: 3em;
+  font-family: var(--mainFont);
 }

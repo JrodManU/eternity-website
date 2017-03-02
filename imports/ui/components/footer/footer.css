@@ -4,7 +4,7 @@
   text-align: left;
 }
 
-footer {
+.footerInfo {
     color: #FFC15E; /* For IE, Safari, and Opera */
     background-color: #1F1300; /* For IE, Safari, and Opera */
     color: var(--thirdColor);
@@ -12,16 +12,18 @@ footer {
     border-top: solid 2px var(--secondColor);
 }
 
-a {
+.returnToTop {
     text-decoration: none;
 
     color: #fff;
 }
-p > a:hover{
+
+.returnToTop:hover{
     text-decoration:  underline;
 
     color: #FFC15E;
 }
+
 .footer-social-icons {
     display:block;
 
