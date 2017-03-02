@@ -1,7 +1,6 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+/*@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);*/
 
 .meteorAlert {
-  top:0;
   left:0;
   position:absolute;
   width:100%;
@@ -10,27 +9,33 @@
   background-color: var(--mainColor);
   padding: 10px 10px 10px 10px;
   font-family: var(--mainFont);
-  -webkit-animation: mymove 2.5s; /* Safari 4.0 - 8.0 */
-  animation: mymove 2.5s;
+  /*-webkit-animation: mymove 2.5s; /* Safari 4.0 - 8.0
+  animation: mymove 2.5s;*/
+  -webkit-transition: top .5s; /* Safari */
+  transition: top .5s;
 
 }
 
-@-webkit-keyframes mymove {
+/*@-webkit-keyframes mymove {
     0%   {top: -50px;}
     25%  {top: 0px;}
 }
 
-/* Standard syntax */
 @keyframes mymove {
     0%   {top: -50px;}
     25%  {top: 0px;}
-}
+}*/
 
 .meteorAlertVisible {
   display:block;
+  -webkit-transition: top .5s; /* Safari */
+  transition: top .5s;
 }
 .meteorAlertHidden {
+  top:-5%;
   display:none;
+  -webkit-transition: top .5s; /* Safari */
+  transition: top .5s;
 }
 
 .meteorAlertWarning {
