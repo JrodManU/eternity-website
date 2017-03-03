@@ -1,15 +1,13 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
-#copyrightInfo {
-  text-align: left;
-}
-
 .footerInfo {
     color: #FFC15E; /* For IE, Safari, and Opera */
     background-color: #1F1300; /* For IE, Safari, and Opera */
     color: var(--thirdColor);
     background: var(--mainColor);
     border-top: solid 2px var(--secondColor);
+    font-family: var(--mainFont);
+    text-align: center;
 }
 
 .returnToTop {
@@ -26,7 +24,6 @@
 
 .footer-social-icons {
     display:block;
-
     width: 350px;
     margin: 0 auto;
 }
