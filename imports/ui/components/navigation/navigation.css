@@ -33,7 +33,8 @@
 
 #navLinks li a {
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 20px;
+
   padding: 0 15.5px;
 
   transition: all 0.45s;

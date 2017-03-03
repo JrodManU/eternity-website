@@ -2,10 +2,13 @@
   <link rel="stylesheet" href="./userOrders.css">
 </head>
 <template name="userOrders">
-  {{#each userOrders}}
-    {{createdAt}}
-    {{text}}
-    <a class="editMessage" href="/orderForm/{{_id}}">Edit</a>
-    <br>
-  {{/each}}
+  <br>
+  <div class="userOrders">
+    {{#each userOrders}}
+      {{createdAt}}
+      {{text}}
+      <a class="editMessage" href="/orderForm/{{_id}}">Edit</a>
+      <br>
+    {{/each}}
+  </div>
 </template>
