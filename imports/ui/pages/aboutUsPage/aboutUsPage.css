@@ -1,23 +1,31 @@
 .aboutUsPage {
   text-align: center;
   padding: 20px 0px 20px 0px;
+  font-family: var(--mainFont);
 }
 
 .aboutUsPageHeader {
   font-size: 3em;
-  font-family: var(--mainFont);
 }
 
-.mySlides {
-  display:none;
+#slideshow {
+    margin: 25px auto;
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-.w3-left, .w3-right, .w3-badge {
-  cursor:pointer;
+#slideshow > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
 }
 
-.w3-badge {
-  height:13px;
-  width:13px;
-  padding:0;
+#slideshow img {
+  width: 1000px;
+  height: 500px;
 }
