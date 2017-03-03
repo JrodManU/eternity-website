@@ -24,6 +24,7 @@ import "../../../ui/components/navigation/navigation.js";
 import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
 import "../../../ui/components/registerModalContent/registerModalContent.js";
+import "../../../ui/components/slideshow/slideshow.js";
 import "../../../ui/components/userOrders/userOrders.js";
 
 FlowRouter.route("/", {
