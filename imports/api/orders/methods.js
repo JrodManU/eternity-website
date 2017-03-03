@@ -42,7 +42,7 @@ Meteor.methods({
     FlowRouter.go("orderForm", {orderId: "none"}, null);
   },
   "resetOrder"(orderId) {
-    Orders.update(orderId, {$set: { text: "lol"}}, function(error) {
+    Orders.update(orderId, {$set: { text: ""}}, function(error) {
       if(error) {
         MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
       } else {
