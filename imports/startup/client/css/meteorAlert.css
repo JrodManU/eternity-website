@@ -4,13 +4,14 @@
   width:90%;
   margin:0 5% 0 5%;
   z-index: 2;
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: var(--mainColor);
   font-family: var(--mainFont);
   -webkit-transition: top .5s;
   transition: top .5s;
   border-radius:5px;
   padding:1%;
+  text-align:center;
 }
 
 .meteorAlertVisible {
@@ -21,9 +22,13 @@
 }
 
 .meteorAlertWarning {
-  background-color: red;
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border: solid 2px #faebcc;
 }
 
 .meteorAlertSuccess {
-  background-color: green;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border:solid 2px #d6e9c6;
 }

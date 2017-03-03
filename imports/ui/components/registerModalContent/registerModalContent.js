@@ -35,7 +35,8 @@ Template.registerModalContent.events({
       }
     });
   },
-  "click .switchToLogin"() {
+  "click .switchToLogin"(event) {
+    event.preventDefault();
     Session.set("showLoginModalContent", true);
   }
 });
