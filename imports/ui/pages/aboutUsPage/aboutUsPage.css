@@ -1,7 +1,7 @@
 .aboutUsPage {
   text-align: center;
-  padding: 20px 0px 20px 0px;
   font-family: var(--mainFont);
+  /*please do not re-add padding here*/
 }
 
 .aboutUsPageHeader {

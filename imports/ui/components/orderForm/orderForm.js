@@ -28,6 +28,9 @@ Template.orderForm.events({
   "click .resetOrder"() {
     Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
   },
+  "click .submitOrder"() {
+    Meteor.call("submitOrder", FlowRouter.getParam("orderId"));
+  },
   "change .selectTypeOfOrder"(event, template) {
     if(event.target.value == "Other") {
       template.$(".hideOtherType").show();

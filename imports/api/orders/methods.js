@@ -1,4 +1,5 @@
 import { Meteor } from "meteor/meteor";
+import { Email } from "meteor/email";
 
 Meteor.methods({
   "insertOrderAndGo"(orderFormLinkId) {
@@ -48,6 +49,14 @@ Meteor.methods({
       } else {
         MeteorAlerts.alert("Order reset successfully", 2000, ["meteorAlertSuccess"]);
       }
+    });
+  },
+  "submitOrder" (orderId) {
+    Email.send({
+      to: "mrjrodmac@gmail.com",
+      from: Meteor.user().emails[0].address,
+      subject: "Order from website",
+      text: Orders.find({_id: orderId}).type
     });
   }
 });
