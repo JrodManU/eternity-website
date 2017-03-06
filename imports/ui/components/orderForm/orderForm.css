@@ -16,3 +16,7 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.resetOrder, .newOrder, .saveOrder, .deleteOrder {
+  margin: 8px 0px 0px 8px;
+}

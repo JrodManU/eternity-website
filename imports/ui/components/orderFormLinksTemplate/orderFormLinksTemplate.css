@@ -1,9 +1,9 @@
 .orderFormLinkImgWrap, .orderFormLinkImg {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 275px;
 }
 .orderFormLinkImgWrap {
-  margin:0 auto;
+  margin: 0 auto;
 }
 .orderFormLinkDesc {
   position: absolute;
@@ -25,7 +25,7 @@
 .orderFormLinkTitle, .orderFormLinkBody {
   text-align: center;
   font-family: var(--mainFont);
-  color: var(--secondColor);
+  color: var(--thirdColor);
 }
 
 .orderFormLinkTitle {
@@ -37,6 +37,7 @@
 }
 
 .imgList li {
-  position:relative;
-  display:inline-block;
+  position: relative;
+  display: inline-block;
+  margin: 2em 10% 2em 10%;
 }
