@@ -1,3 +1,4 @@
+import { Meteor } from "meteor/meteor";
 import { FlowRouter } from "meteor/kadira:flow-router";
 import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
@@ -47,3 +48,10 @@ FlowRouter.route("/aboutUs", {
   },
   name: "aboutUs"
 });
+
+FlowRouter.route("/admin", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "adminPage"});
+  },
+  name: "admin"
+})
