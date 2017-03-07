@@ -15,9 +15,9 @@
 .submitButton {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: var(--secondColor);
   border: none;
-  color: #FFFFFF;
+  color: var(--mainColor);
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -55,9 +55,9 @@
 .switchToRegister {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: var(--secondColor);
   border: none;
-  color: #FFFFFF;
+  color: var(--mainColor);
   text-align: center;
   font-size: 28px;
   padding: 20px;
