@@ -2,6 +2,7 @@ import "./mailUrl.js";
 
 import "../../api/users/methods.js";
 import "../../api/users/server/adminUser.js";
+import "../../api/users/server/publications.js";
 
 import "../../api/orderFormLinks/orderFormLinks.js";
 import "../../api/orders/methods.js";

@@ -14,7 +14,8 @@ import "../../../ui/pages/adminPage/adminPage.js";
 import "../../../ui/pages/homePage/homePage.js";
 import "../../../ui/pages/orderFormPage/orderFormPage.js"
 
-
+import "../../../ui/components/allOrders/allOrders.js";
+import "../../../ui/components/allUsers/allUsers.js";
 import "../../../ui/components/banner/banner.js";
 import "../../../ui/components/footer/footer.js";
 import "../../../ui/components/loginButtons/loginButtons.js";

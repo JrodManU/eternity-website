@@ -1,5 +1,9 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.publish("orders", function() {
-  return Orders.find({"userId": this.userId});
+  if(Roles.userIsInRole(this.userId, ["admin"])) {
+    return Orders.find({});
+  } else {
+    return Orders.find({"userId": this.userId});
+  }
 });

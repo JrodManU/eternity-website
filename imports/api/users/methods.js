@@ -7,10 +7,16 @@ Meteor.methods({
       return Accounts.sendVerificationEmail(userId);
     }
   },
-  "assignRole"() {
+  "selfAssignDefaultRole"() {
     var userId = Meteor.userId();
     if(userId) {
       Roles.addUsersToRoles(userId, ["normal"]);
+    }
+  },
+  "assignRole"(role) {
+    var userId = Meteor.userId();
+    if(userId && Roles.userIsInRole(userId, ["admin"])) {
+      Roles.setUserRoles(userId, [role]);
     }
   }
 });

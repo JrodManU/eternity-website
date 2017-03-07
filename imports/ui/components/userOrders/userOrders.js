@@ -8,6 +8,6 @@ Meteor.subscribe("orders");
 
 Template.userOrders.helpers({
   "userOrders": function() {
-    return Orders.find({});
+    return Orders.find({_id: Meteor.userId()});
   }
 });
