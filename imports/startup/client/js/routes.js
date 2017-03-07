@@ -1,4 +1,3 @@
-import { Meteor } from "meteor/meteor";
 import { FlowRouter } from "meteor/kadira:flow-router";
 import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
@@ -11,6 +10,7 @@ import "./startupFunctions.js";
 import "../../../ui/layouts/mainLayout/mainLayout.js";
 
 import "../../../ui/pages/aboutUsPage/aboutUsPage.js";
+import "../../../ui/pages/adminPage/adminPage.js";
 import "../../../ui/pages/homePage/homePage.js";
 import "../../../ui/pages/orderFormPage/orderFormPage.js"
 

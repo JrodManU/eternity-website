@@ -29,6 +29,7 @@ Template.registerModalContent.events({
       if(error) {
         MeteorAlerts.alert(error.message, 1000, ["meteorAlertWarning"]);
       } else {
+        Meteor.call("assignRole");
         MeteorAlerts.alert("Successfully registered!", 2000, ["meteorAlertSuccess"]);
         Session.set("showLoginModal", false);
         Meteor.call("sendVerificationLink");

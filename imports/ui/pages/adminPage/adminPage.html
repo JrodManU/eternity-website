@@ -1,0 +1,7 @@
+<template name="adminPage">
+  {{#if isInRole "admin"}}
+    Welcome admin!
+  {{else}}
+    You are not authorized to view this page.
+  {{/if}}
+</template>
