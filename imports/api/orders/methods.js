@@ -10,7 +10,7 @@ Meteor.methods({
     }
 
     Orders.insert({
-      userId: this.userId,
+      userId: Meteor.userId(),
       type: type,
       createdAt: new Date()
     }, function(error, order) {
@@ -23,31 +23,38 @@ Meteor.methods({
     FlowRouter.go("orderForm", {orderId: orderId}, null);
   },
   "updateOrder"(orderId, text){
-    Orders.update(orderId, {$set: { text: text}}, function(error) {
-      if(error) {
-        MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
-      } else {
-        MeteorAlerts.alert("Order updated successfully", 2000, ["meteorAlertSuccess"]);
-      }
-    });
+    if(Orders.find({_id: orderId}).userId === Meteor.userId()) {
+      Orders.update(orderId, {$set: { text: text}}, function(error) {
+        if(error) {
+          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+        } else {
+          MeteorAlerts.alert("Order updated successfully", 2000, ["meteorAlertSuccess"]);
+        }
+      });
+    }
   },
   "deleteOrder"(orderId){
-    Orders.remove({_id: orderId}, function(error) {
-      if(error) {
-        MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
-      } else {
-        MeteorAlerts.alert("Order deleted successfully", 2000, ["meteorAlertSuccess"]);
-      }
-    });
-    FlowRouter.go("orderForm", {orderId: "none"}, null);
+    var user = Meteor.user();
+    if(user && (Roles.userIsInRole(user, ["admin"]) || Orders.find({_id: orderId}).userId === user._id))
+      Orders.remove({_id: orderId}, function(error) {
+        if(error) {
+          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+        } else {
+          MeteorAlerts.alert("Order deleted successfully", 2000, ["meteorAlertSuccess"]);
+          FlowRouter.go("orderForm", {orderId: "none"}, null);
+        }
+      });
+    }
   },
   "resetOrder"(orderId) {
-    Orders.update(orderId, {$set: { text: ""}}, function(error) {
-      if(error) {
-        MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
-      } else {
-        MeteorAlerts.alert("Order reset successfully", 2000, ["meteorAlertSuccess"]);
-      }
-    });
+    if(Orders.find({_id: orderId}).userId === Meteor.userId()) {
+      Orders.update(orderId, {$set: { text: ""}}, function(error) {
+        if(error) {
+          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+        } else {
+          MeteorAlerts.alert("Order reset successfully", 2000, ["meteorAlertSuccess"]);
+        }
+      });
+    }
   }
 });
