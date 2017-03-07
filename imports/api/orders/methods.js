@@ -68,7 +68,7 @@ Meteor.methods({
     var userId = Meteor.userId();
     if(userId && Orders.find(orderId).userId == userId) {
       var newValue = !Orders.find(orderId).markedForReview;
-      Orders.update(orderId, {$set { markedForReview: newValue}}, function(error) {
+      Orders.update(orderId, {$set: { markedForReview: newValue}}, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {
