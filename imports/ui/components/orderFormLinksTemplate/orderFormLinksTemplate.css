@@ -1,6 +1,6 @@
 .orderFormLinkImg {
-  width: 250px;
-  height: 275px;
+  width: 225px;
+  height: 250px;
 }
 .orderFormLinkImgWrap {
   margin: 0 auto;
@@ -39,7 +39,7 @@
 .imgList li {
   position: relative;
   display: inline-block;
-  margin: 15px 5% 0px 5%;
+  margin: 20px 5% 0px 5%;
 }
 
 .imgList {

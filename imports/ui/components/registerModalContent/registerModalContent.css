@@ -17,14 +17,13 @@
   border-radius: 4px;
   background-color: var(--secondColor);
   border: none;
-  color: var(--mainColor);
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin: 2.5px;
 }
 
 .registerButton span {
@@ -39,12 +38,12 @@
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -20px;
+  right: -10px;
   transition: 0.5s;
 }
 
 .registerButton:hover span {
-  padding-right: 25px;
+  padding-right: 12.5px;
 }
 
 .registerButton:hover span:after {
@@ -52,44 +51,15 @@
   right: 0;
 }
 
-.switchToLogin {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: var(--secondColor);
-  border: none;
-  color: var(--mainColor);
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 50%;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+.switchToLogin:link {
+  font-family: var(--mainFont);
+  font-size: .7em;
+  padding: 5px;
+  text-decoration: none;
 }
 
-.switchToLogin span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.switchToLogin span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.switchToLogin:hover span {
-  padding-right: 25px;
-}
-
-.switchToLogin:hover span:after {
-  opacity: 1;
-  right: 0;
+.switchToLogin:hover {
+  text-decoration: underline;
 }
 
 label {
