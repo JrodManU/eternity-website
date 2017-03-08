@@ -16,7 +16,8 @@ Meteor.methods({
         type: type,
         createdAt: new Date(),
         reviewed: false,
-        markedForReview: false
+        markedForReview: false,
+        text: null
       }, function(error, order) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
@@ -29,7 +30,7 @@ Meteor.methods({
   },
   "updateOrder"(orderId, text){
     var userId = Meteor.userId();
-    if(userId && Orders.find(orderId).userId === userId) {
+    if(userId && Orders.findOne(orderId).userId === userId) {
       Orders.update(orderId, {$set: { text: text}}, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
@@ -41,7 +42,7 @@ Meteor.methods({
   },
   "deleteOrder"(orderId) {
     var userId = Meteor.userId();
-    if(userId && (Roles.userIsInRole(userId, ["admin"]) || Orders.find({_id: orderId}).userId === userId)) {
+    if(userId && (Roles.userIsInRole(userId, ["admin"]) || Orders.findOne({_id: orderId}).userId === userId)) {
       Orders.remove(orderId, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
@@ -54,7 +55,7 @@ Meteor.methods({
   },
   "resetOrder"(orderId) {
     var userId = Meteor.userId();
-    if(userId && Orders.find(orderId).userId === userId) {
+    if(userId && Orders.findOne(orderId).userId === userId) {
       Orders.update(orderId, {$set: { text: "" }}, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
@@ -66,8 +67,8 @@ Meteor.methods({
   },
   "toggleOrderForReview"(orderId) {
     var userId = Meteor.userId();
-    if(userId && Orders.find(orderId).userId == userId) {
-      var newValue = !Orders.find(orderId).markedForReview;
+    if(userId && Orders.findOne(orderId).userId == userId) {
+      var newValue = !Orders.findOne(orderId).markedForReview;
       Orders.update(orderId, {$set: { markedForReview: newValue}}, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);

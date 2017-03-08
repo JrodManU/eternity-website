@@ -10,12 +10,9 @@ Template.orderForm.helpers({
 });
 
 Template.orderForm.events({
-  "submit .orderForm"(event){
-    //prevent default submit
-    event.preventDefault();
+  "click .saveOrder"(event, template) {
     //get value from form element
-    var target = event.target;
-    var text = target.orderDescription.value;
+    var text = template.$(".orderFormTextField").val();
     //insert task into current collection
     Meteor.call("updateOrder", FlowRouter.getParam("orderId"), text);
   },
