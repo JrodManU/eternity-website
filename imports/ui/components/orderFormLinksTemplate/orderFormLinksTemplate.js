@@ -1,12 +1,16 @@
 import "./orderFormLinksTemplate.css";
 import "./orderFormLinksTemplate.html";
 import {Meteor} from "meteor/meteor";
+import { Session } from "meteor/session";
 
 Meteor.subscribe("orderFormLinks");
 
 Template.orderFormLinksTemplate.helpers({
   "orderFormLinks": function(){
     return OrderFormLinks.find({});
+  },
+  "linkSize": function() {
+    return Session.get("bannerHeight") + "px";
   }
 });
 
