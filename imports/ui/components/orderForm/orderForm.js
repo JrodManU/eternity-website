@@ -6,6 +6,9 @@ import "./orderForm.css";
 Template.orderForm.helpers({
   "order":function() {
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
+  },
+  "disabled":function() {
+    return Orders.findOne({_id:FlowRouter.getParam("orderId")}) ? "" : "disabled";
   }
 });
 

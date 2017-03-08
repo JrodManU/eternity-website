@@ -26,6 +26,8 @@ Meteor.methods({
         }
       });
       FlowRouter.go("orderForm", {orderId: orderId}, null);
+    } else {
+      MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }
   },
   "updateOrder"(orderId, text){
