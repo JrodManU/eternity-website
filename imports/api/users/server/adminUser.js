@@ -6,6 +6,6 @@ Meteor.startup(function() {
       email: "eternitytrading1@gmail.com",
       password: "password"
     });
-    Roles.addUsersToRoles(userId, ["admin"]);
+    Roles.addUsersToRoles(userId, ["owner", "admin"]);
   }
 })

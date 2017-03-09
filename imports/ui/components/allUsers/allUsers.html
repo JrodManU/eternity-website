@@ -2,6 +2,11 @@
   {{#each users}}
     {{#each emails}}
       {{address}}
+      {{#if isInRole 'normal'}}
+        <button class="promoteToAdmin">Promote to Admin</button>
+      {{else}}
+        <button class="demoteToNormal">Demote to Normal</button>
+      {{/if}}
     {{/each}}
   {{/each}}
 </template>
