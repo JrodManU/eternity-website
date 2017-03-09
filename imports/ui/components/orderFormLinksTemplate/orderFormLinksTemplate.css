@@ -41,9 +41,13 @@
 .imgList li {
   position: relative;
   display: inline-block;
-  margin: 20px 5% 0px 5%;
+  margin: 20px 1% 0px 1%;
 }
 
 .imgList {
   text-align:center;
+}
+
+.orderFormLinkImg, .orderFormLinkDesc {
+  border-radius: 15px;
 }
