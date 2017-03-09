@@ -9,13 +9,13 @@ Meteor.methods({
   },
   "selfAssignDefaultRole"() {
     var userId = Meteor.userId();
-    if(userId) {
+    if(userId && !Roles.userIsInRole(userId, ["owner"])) {
       Roles.addUsersToRoles(userId, ["normal"]);
     }
   },
   "assignRole"(role) {
     var userId = Meteor.userId();
-    if(userId && Roles.userIsInRole(userId, ["admin"])) {
+    if(userId && Roles.userIsInRole(userId, ["owner"])) {
       Roles.setUserRoles(userId, [role]);
     }
   }
