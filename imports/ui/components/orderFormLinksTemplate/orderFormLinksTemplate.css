@@ -12,21 +12,30 @@
 .orderFormLinkImgWrap:hover .orderFormLinkDesc {
   visibility: visible;
 
-  background-color: rgba(153, 153, 153, .5);
+  background-color: rgba(237, 152, 8, 0.67);
 }
 
 .orderFormLinkTitle, .orderFormLinkBody {
   text-align: center;
   font-family: var(--mainFont);
-  color: var(--thirdColor);
+
 }
 
 .orderFormLinkTitle {
-  font-size: 1.5em;
+  font-size: 2em;
+  margin: 10px 0px 10px 0px;
 }
 
 .orderFormLinkBody {
   font-size: 1em;
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  position:absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  border: 2px solid var(--thirdColor);
+  border-radius: 10px;
 }
 
 .imgList li {
