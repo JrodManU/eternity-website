@@ -1,7 +1,6 @@
 import { FlowRouter } from "meteor/kadira:flow-router";
 import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
-import "../css/font-awesome.min.css";
 import "../css/reset.css";
 import "../css/root.css";
 import "../css/meteorAlert.css";
