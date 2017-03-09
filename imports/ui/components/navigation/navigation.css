@@ -1,3 +1,4 @@
+
 /* used by javascript */
 .navbarFixed {
   position: fixed;
@@ -13,7 +14,7 @@
   border-bottom: solid 2px var(--secondColor);
 }
 
-#navLinks {
+#navLinksDesktop {
   display:inline-block;
 
   padding: 10px 20px 10px 20px;
@@ -22,7 +23,7 @@
   font-size: 22px;
 }
 
-#navLinks li {
+#navLinksDesktop li {
   display: inline-block;
 
   margin-top: 4px;
@@ -31,7 +32,7 @@
   cursor: pointer;
 }
 
-#navLinks li a {
+#navLinksDesktop li a {
   margin-right: 20px;
   margin-left: 20px;
 
@@ -44,6 +45,29 @@
   color: var(--thirdColor);
 }
 
-#navLinks li:hover a {
+#navLinksDesktop li:hover a {
   color: var(--secondColor);
+}
+#mobileNav {
+  display:none;
+}
+@media (max-width: 600px) {
+  #navLinksDesktop {
+    display: none;
+  }
+  #mobileNav {
+    display: block;
+  }
+}
+#mobileMenu {
+  line-height:100px;
+  display: block;
+  float:right;
+  font-size:2em;
+  color:var(--thirdColor);
+  margin-right:20px;
+}
+#logoNav {
+  height:90px;
+  margin:5px;
 }
