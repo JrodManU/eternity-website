@@ -6,27 +6,34 @@
   top: 0;
   left: 0;
   visibility: hidden;
-
   background-color: rgba(153, 153, 153, 0);
 }
 .orderFormLinkImgWrap:hover .orderFormLinkDesc {
   visibility: visible;
 
-  background-color: rgba(237, 152, 8, 0.67);
+  background-color: rgba(153, 153, 153, 0.67);
+  cursor:pointer;
 }
 
 .orderFormLinkTitle, .orderFormLinkBody {
   text-align: center;
   font-family: var(--mainFont);
-
+  padding:5%;
 }
 
 .orderFormLinkTitle {
+  /*
   font-size: 2em;
   margin: 10px 0px 10px 0px;
+  */
+  padding-bottom:0%;
+  font-weight: bold;
+  color:var(--mainColor);
+  font-size:3.5vw;
 }
 
 .orderFormLinkBody {
+  /*
   font-size: 1em;
   margin: 20px 20px 20px 20px;
   text-align: center;
@@ -36,13 +43,15 @@
   left: 0px;
   border: 2px solid var(--thirdColor);
   border-radius: 10px;
-  background: red;
+  background: red;*/
+  color:white;
+  font-size:2.5vw;
 }
 
 .imgList li {
   position: relative;
   display: inline-block;
-  margin: 20px 1% 0px 1%;
+  margin: 1% 1% 1% 1%;
 }
 
 .imgList {
@@ -50,5 +59,9 @@
 }
 
 .orderFormLinkImg, .orderFormLinkDesc {
-  border-radius: 15px;
+  border-radius: 5px;
+  max-width:250px;
+  max-height:250px;
+  min-width:100px;
+  min-height:100px;
 }
