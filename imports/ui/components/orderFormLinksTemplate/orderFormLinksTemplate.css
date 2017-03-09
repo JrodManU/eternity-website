@@ -36,6 +36,7 @@
   left: 0px;
   border: 2px solid var(--thirdColor);
   border-radius: 10px;
+  background: red;
 }
 
 .imgList li {
