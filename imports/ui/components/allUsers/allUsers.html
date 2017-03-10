@@ -1,12 +1,24 @@
 <template name="allUsers">
   {{#each users}}
-    {{#each emails}}
-      {{address}}
-      {{#if isInRole 'normal'}}
-        <button class="promoteToAdmin">Promote to Admin</button>
-      {{else}}
-        <button class="demoteToNormal">Demote to Normal</button>
+    {{#unless iteratedUserIsInRole "owner"}}
+      {{#each emails}}
+        {{address}}
+      {{/each}}
+
+      {{#if isInRole "owner"}}
+        {{#if iteratedUserIsInRole "normal"}}
+          <button class="promoteToAdmin">Promote to Admin</button>
+        {{else}}
+          <button class="demoteToNormal">Demote to Normal</button>
+        {{/if}}
       {{/if}}
-    {{/each}}
+      {{#if iteratedUserIsInRole "normal"}}
+        <button class="deleteUser">Delete User</button>
+      {{else}}
+        {{#if isInRole "owner"}}
+          <button class="deleteUser">Delete User</button>
+        {{/if}}
+      {{/if}}
+    {{/unless}}
   {{/each}}
 </template>

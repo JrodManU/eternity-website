@@ -13,10 +13,23 @@ Meteor.methods({
       Roles.addUsersToRoles(userId, ["normal"]);
     }
   },
-  "assignRole"(role) {
-    var userId = Meteor.userId();
-    if(userId && Roles.userIsInRole(userId, ["owner"])) {
+  "assignRole"(userId, role) {
+    var actingUser = Meteor.user();
+    var targetUser = Meteor.users.find(userId);
+    if(targetUser && targetUser != actingUser && Roles.userIsInRole(actingUser, ["owner"])) {
       Roles.setUserRoles(userId, [role]);
+    }
+  },
+  "deleteUser"(userId) {
+    var actingUser = Meteor.user();
+    var targetUser = Meteor.users.find(userId);
+    console.log(Roles.userIsInRole(userId, ["normal"]));
+    console.log();
+    console.log();
+    console.log();
+    console.log();
+    if(targetUser && targetUser != actingUser && ((Roles.userIsInRole(targetUser, ["normal"]) && Roles.userIsInRole(actingUser, ["admin"])) || (Roles.userIsInRole(targetUser, ["admin"]) && Roles.userIsInRole(actingUser, ["owner"])))) {
+      Meteor.users.remove(userId);
     }
   }
 });
