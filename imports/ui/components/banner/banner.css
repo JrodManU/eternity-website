@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media only screen and (max-device-width: 736px), (max-width:600px) {
   #backgroundImageContainer {
     display: none;
   }
