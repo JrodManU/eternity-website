@@ -8,7 +8,8 @@ Template.orderForm.helpers({
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
   },
   "disabled":function() {
-    return Orders.findOne({_id:FlowRouter.getParam("orderId")}) ? "" : "disabled";
+    var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
+    return order && !order.markedForReview ? "" : "disabled";
   }
 });
 
@@ -29,6 +30,9 @@ Template.orderForm.events({
     Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
   },
   "click .submitOrder"() {
+    Meteor.call("toggleOrderForReview", FlowRouter.getParam("orderId"));
+  },
+  "click .unsubmitOrder"() {
     Meteor.call("toggleOrderForReview", FlowRouter.getParam("orderId"));
   },
   "change .selectTypeOfOrder"(event, template) {
