@@ -46,9 +46,9 @@ FlowRouter.route("/orderForm/:orderId", {
   name: "orderForm"
 });
 
-FlowRouter.route("/orderView/:orderId" , {
-  action: function(parms, queryParams) {
-    BlazeLayout.render("mainLayout", {page: "orderView"});
+FlowRouter.route("/orderView/:orderId", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "orderViewPage"});
   },
   name: "orderView"
 });

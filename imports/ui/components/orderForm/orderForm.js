@@ -42,5 +42,10 @@ Template.orderForm.events({
     } else {
       template.$(".hideOtherType").hide();
     }
+  },
+  "click .previewOrder":function() {
+    FlowRouter.go("orderView", {
+      orderId: FlowRouter.getParam("orderId")
+    });
   }
 });
