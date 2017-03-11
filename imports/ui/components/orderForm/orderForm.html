@@ -6,13 +6,15 @@
     <input class="saveOrder" type="button" name="saveOrder" value="Save" {{disabled}}>
     <input class="deleteOrder" type="button" name="deleteOrder" value="Delete" {{disabled}}>
     <input class="resetOrder" type="button" name="resetOrder" value="Reset" {{disabled}}>
+    <input class="previewOrder" type="button" name="previewOrder" value="Preview" {{disabled}}>
     {{#if order.markedForReview}}
       <input class="unsubmitOrder" type="button" name="unsubmitOrder" value="Unsubmit">
     {{else}}
       <input class="submitOrder" type="button" name="submitOrder" value="Submit" {{disabled}}>
     {{/if}}
     <br>
-    <textarea class="orderFormTextField" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription" {{disabled}}>{{order.text}}</textarea>
+    <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order">
+    <textarea class="orderFormTextField" id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription" {{disabled}}>{{order.text}}</textarea>
     <br>
     <select class="selectTypeOfOrder" name="typeOfOrder" value="{{order.type}}" {{disabled}}>
       <option>Standard Paper</option>

@@ -16,9 +16,10 @@ Template.orderForm.helpers({
 Template.orderForm.events({
   "click .saveOrder"(event, template) {
     //get value from form element
-    var text = template.$(".orderFormTextField").val();
+    var name = template.$("#orderName").val();
+    var text = template.$("#orderDescription").val();
     //insert task into current collection
-    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), text);
+    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, text);
   },
   "click .deleteOrder"(event, template){
     Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));

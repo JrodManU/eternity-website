@@ -3,12 +3,18 @@
 </head>
 <template name="userOrders">
   <br>
-  <div class="userOrders">
-    {{#each userOrders}}
-      {{createdAt}}
-      {{text}}
-      <a class="editMessage" href="/orderForm/{{_id}}">Edit</a>
-      <br>
-    {{/each}}
-  </div>
+    <table class="userOrders">
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+      {{#each userOrders}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{formatDate createdAt}}</td>
+          <td><a class="editMessage" href="/orderForm/{{_id}}">Edit</a></td>
+        </tr>
+      {{/each}}
+    </table>
 </template>

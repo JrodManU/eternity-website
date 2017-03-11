@@ -5,6 +5,7 @@ import "../css/reset.css";
 import "../css/root.css";
 import "../css/meteorAlert.css";
 
+import "./globalHelpers.js";
 import "./startupFunctions.js";
 
 import "../../../ui/layouts/mainLayout/mainLayout.js";
@@ -12,7 +13,8 @@ import "../../../ui/layouts/mainLayout/mainLayout.js";
 import "../../../ui/pages/aboutUsPage/aboutUsPage.js";
 import "../../../ui/pages/adminPage/adminPage.js";
 import "../../../ui/pages/homePage/homePage.js";
-import "../../../ui/pages/orderFormPage/orderFormPage.js"
+import "../../../ui/pages/orderFormPage/orderFormPage.js";
+import "../../../ui/pages/orderViewPage/orderViewPage.js";
 
 import "../../../ui/components/allOrders/allOrders.js";
 import "../../../ui/components/allUsers/allUsers.js";
@@ -23,6 +25,7 @@ import "../../../ui/components/loginModal/loginModal.js";
 import "../../../ui/components/loginModalContent/loginModalContent.js";
 import "../../../ui/components/logout/logout.js";
 import "../../../ui/components/navigation/navigation.js";
+import "../../../ui/components/order/order.js";
 import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
 import "../../../ui/components/registerModalContent/registerModalContent.js";
@@ -41,6 +44,13 @@ FlowRouter.route("/orderForm/:orderId", {
     BlazeLayout.render("mainLayout", {page: "orderFormPage"});
   },
   name: "orderForm"
+});
+
+FlowRouter.route("/orderView/:orderId" , {
+  action: function(parms, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "orderView"});
+  },
+  name: "orderView"
 });
 
 FlowRouter.route("/aboutUs", {

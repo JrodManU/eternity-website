@@ -30,10 +30,13 @@ Meteor.methods({
       MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }
   },
-  "updateOrder"(orderId, text){
+  "updateOrder"(orderId, name, text){
     var userId = Meteor.userId();
     if(userId && Orders.findOne(orderId).userId === userId) {
-      Orders.update(orderId, {$set: { text: text}}, function(error) {
+      Orders.update(orderId, {$set:
+        { name: name,
+          text: text},
+      }, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {

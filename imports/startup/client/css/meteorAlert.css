@@ -1,6 +1,6 @@
 .meteorAlert {
   left:0;
-  position:absolute;
+  position:fixed;
   width:90%;
   margin:0 5% 0 5%;
   z-index: 2;

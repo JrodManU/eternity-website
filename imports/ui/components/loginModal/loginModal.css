@@ -30,7 +30,7 @@
 .loginModal {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
   min-height: 30px;
   border-radius:10px;
 }

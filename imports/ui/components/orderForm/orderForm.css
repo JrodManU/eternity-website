@@ -17,6 +17,6 @@
   box-sizing: border-box;
 }
 
-.resetOrder, .newOrder, .saveOrder, .deleteOrder {
+.resetOrder, .newOrder, .saveOrder, .deleteOrder, .previewOrder {
   margin: 8px 0px 0px 8px;
 }
