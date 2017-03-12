@@ -5,3 +5,42 @@
 .userOrders {
   margin: 8px 0px 0px 8px;
 }
+
+.userOrders {
+  margin-bottom: 10px;
+  font-family: var(--mainFont);
+  border-radius: 10px;
+  border-collapse: collapse;
+}
+
+.userOrders, .orderTableHeader, .orderTableInfo {
+  padding: 10px;
+}
+
+.orderTableOrders:nth-child(odd) {
+  background-color: var(--thirdColor);
+}
+
+.orderTableOrders:nth-child(even) {
+  background-color: var(--mainColor);
+}
+
+.orderTableHeader {
+  background-color: var(--thirdColor);
+}
+
+.orderTableOrders:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.orderTableOrders:last-child .orderTableInfo:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.orderTableRowTitles:first-child .orderTableHeader:first-child {
+  border-top-left-radius: 10px;
+}
+
+.orderTableRowTitles:first-child .orderTableHeader:last-child {
+  border-top-right-radius: 10px;
+}

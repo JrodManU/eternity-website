@@ -1,6 +1,14 @@
 <template name="order">
-  <button class="orderGoBack">Back</button>
-  {{order.name}}
-  {{order.type}}
-  {{order.text}}
+  <body class="orderInfo">
+    <h2 class="orderHeaders">Title:</h2>
+    <p>{{order.name}}</p>
+    <br>
+    <h2 class="orderHeaders">Order Type:</h2>
+    <p>{{order.type}}</p>
+    <br>
+    <h2 class="orderHeaders">Description</h2>
+    <p>{{order.text}}</p>
+    <br>
+    <button class="orderGoBack">Back</button>
+  </body>
 </template>

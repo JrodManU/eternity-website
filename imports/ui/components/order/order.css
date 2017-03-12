@@ -1,1 +1,13 @@
+.orderInfo {
+  padding: 10px 0px 10px 0px;
+  font-family: var(--mainFont);
+  text-align: center;
+  background: var(--thirdColor);
+  max-width: 50%;
+  max-width: 50%;
+  margin: auto;
+}
 
+.orderHeaders {
+  font-size: 1.5em;
+}
