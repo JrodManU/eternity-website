@@ -4,6 +4,15 @@ import "./allOrders.html";
 
 Template.allOrders.helpers({
   "orders":function() {
-    return Orders.find({markedForReview: true});
+    return Orders.find({$and: [
+      {markedForReview: true},
+      {reviewed: false}
+    ]});
   }
-})
+});
+
+Template.allOrders.events({
+  "click .markAsReviewed":function() {
+    Meteor.call("markOrderAsReviewed", this._id);
+  }
+});

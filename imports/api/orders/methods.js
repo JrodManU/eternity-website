@@ -4,6 +4,10 @@ Meteor.methods({
   "insertOrderAndGo"(orderFormLinkId) {
     var userId = Meteor.userId();
     if(userId) {
+      if(Roles.userIsInRole(userId, ["owner"])) {
+        MeteorAlerts.alert("The owner cannot make orders", 2000, ["meteorAlertWarning"]);
+        return;
+      }
       var orderId;
       var type = null;
 
