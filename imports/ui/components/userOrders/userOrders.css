@@ -3,14 +3,12 @@
 }
 
 .userOrders {
-  margin: 8px 0px 0px 8px;
+  margin: auto;
 }
 
 .userOrders {
   margin-bottom: 10px;
   font-family: var(--mainFont);
-  border-radius: 10px;
-  border-collapse: collapse;
 }
 
 .userOrders, .orderTableHeader, .orderTableInfo {
@@ -29,7 +27,7 @@
   background-color: var(--thirdColor);
 }
 
-.orderTableOrders:last-child td:first-child {
+.orderTableOrders:last-child .orderTableInfo:first-child {
     border-bottom-left-radius: 10px;
 }
 

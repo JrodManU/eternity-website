@@ -20,3 +20,13 @@
 .resetOrder, .newOrder, .saveOrder, .deleteOrder, .previewOrder {
   margin: 8px 0px 0px 8px;
 }
+
+.orderFormHeader {
+  margin: 8px 0px 0px 8px;
+  font-size: 2em;
+}
+
+.orderForm, .orderFormHeader {
+  text-align: center;
+  font-family: var(--mainFont);
+}
