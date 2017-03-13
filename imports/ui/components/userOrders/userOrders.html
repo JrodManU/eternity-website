@@ -4,18 +4,18 @@
 <template name="userOrders">
   <br>
     <table class="userOrders">
-      <tr class="orderTableRowTitles">
-        <th class="orderTableHeader">Name</th>
-        <th class="orderTableHeader">Date</th>
-        <th class="orderTableHeader">Status</th>
-        <th class="orderTableHeader"></th>
+      <tr class="tableRowTitles">
+        <th class="tableHeader">Name</th>
+        <th class="tableHeader">Date</th>
+        <th class="tableHeader">Status</th>
+        <th class="tableHeader"></th>
       </tr>
       {{#each userOrders}}
-        <tr class="orderTableOrders">
-          <td class="orderTableInfo">{{name}}</td>
-          <td class="orderTableInfo">{{formatDate createdAt}}</td>
-          <td class="orderTableInfo">{{orderStatus}}</td>
-          <td class="orderTableInfo"><a class="editMessage" href="/orderForm/{{_id}}">Edit</a></td>
+        <tr class="tableRow">
+          <td class="tableInfo">{{name}}</td>
+          <td class="tableInfo">{{formatDate createdAt}}</td>
+          <td class="tableInfo">{{orderStatus}}</td>
+          <td class="tableInfo"><a class="editMessage" href="/orderForm/{{_id}}">Edit</a></td>
         </tr>
       {{/each}}
     </table>

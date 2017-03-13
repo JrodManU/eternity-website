@@ -1,0 +1,42 @@
+.mainContainer {
+  text-align:center;
+}
+.pageHeader {
+  margin: 8px 0px 0px 8px;
+  font-size: 2em;
+  color:var(--thirdColor);
+  border-bottom:solid 2px var(--mainColor);
+  display:inline-block;
+}
+
+.tableHeader, .tableInfo {
+  padding: 10px;
+}
+
+.tableHeader {
+    color:white;
+}
+
+.tableRow:nth-child(odd) {
+  background-color: var(--mainColor);
+}
+
+.tableHeader {
+  background-color: var(--secondColor);
+}
+
+.tableRow:last-child .tableInfo:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+.tableRow:last-child .tableInfo:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+.tableRowTitles:first-child .tableHeader:first-child {
+  border-top-left-radius: 5px;
+}
+
+.tableRowTitles:first-child .tableHeader:last-child {
+  border-top-right-radius: 5px;
+}

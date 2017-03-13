@@ -4,45 +4,5 @@
 
 .userOrders {
   margin: auto;
-}
-
-.userOrders {
-  margin-bottom: 10px;
-  font-family: var(--mainFont);
-}
-
-.userOrders, .orderTableHeader, .orderTableInfo {
-  padding: 10px;
-}
-
-/*.orderTableOrders:nth-child(odd) {
-  background-color: var(--thirdColor);
-}*/
-
-.orderTableHeader {
-    color:white;
-}
-
-.orderTableOrders:nth-child(odd) {
-  background-color: var(--mainColor);
-}
-
-.orderTableHeader {
-  background-color: var(--secondColor);
-}
-
-.orderTableOrders:last-child .orderTableInfo:first-child {
-    border-bottom-left-radius: 5px;
-}
-
-.orderTableOrders:last-child .orderTableInfo:last-child {
-    border-bottom-right-radius: 5px;
-}
-
-.orderTableRowTitles:first-child .orderTableHeader:first-child {
-  border-top-left-radius: 5px;
-}
-
-.orderTableRowTitles:first-child .orderTableHeader:last-child {
-  border-top-right-radius: 5px;
+  margin-bottom:10px;
 }

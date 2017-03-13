@@ -4,44 +4,7 @@
   /*please do not re-add padding here*/
 }
 
-.aboutUsPageHeader {
-  font-size: 3em;
-  margin: 8px 0px 0px 8px;
-}
-
 .contactInfo {
   margin-bottom: 10px;
   margin: auto;
-}
-
-.contactInfo, .contactTableHeader, .contactTableInfo {
-  padding: 10px;
-}
-
-.contactTableData:nth-child(odd) {
-  background-color: var(--thirdColor);
-}
-
-.contactTableData:nth-child(even) {
-  background-color: var(--mainColor);
-}
-
-.contactTableHeader {
-  background-color: var(--thirdColor);
-}
-
-.contactTableData:last-child .contactTableInfo:first-child {
-    border-bottom-left-radius: 10px;
-}
-
-.contactTableData:last-child .contactTableInfo:last-child {
-    border-bottom-right-radius: 10px;
-}
-
-.contactTableRowTitle:first-child .contactTableHeader:first-child {
-  border-top-left-radius: 10px;
-}
-
-.contactTableRowTitle:first-child .contactTableHeader:last-child {
-  border-top-right-radius: 10px;
 }

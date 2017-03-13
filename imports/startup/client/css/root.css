@@ -4,3 +4,6 @@
   --thirdColor: #545454;
   --mainFont: "Arial";
 }
+* {
+  font-family: var(--mainFont);
+}
