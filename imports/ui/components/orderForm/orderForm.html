@@ -1,18 +1,20 @@
 <template name="orderForm">
   <h1 class="orderFormHeader">Order Form</h1>
   <form class="orderForm">
-    <input class="newOrder" type="button" namne="newOrder" value="New Order">
-    <br>
-    <input class="saveOrder" type="button" name="saveOrder" value="Save" {{disabled}}>
-    <input class="deleteOrder" type="button" name="deleteOrder" value="Delete" {{disabled}}>
-    <input class="resetOrder" type="button" name="resetOrder" value="Reset" {{disabled}}>
-    <input class="previewOrder" type="button" name="previewOrder" value="Preview" {{disabled}}>
-    {{#if order.markedForReview}}
-      <input class="unsubmitOrder" type="button" name="unsubmitOrder" value="Unsubmit">
-    {{else}}
-      <input class="submitOrder" type="button" name="submitOrder" value="Submit" {{disabled}}>
-    {{/if}}
-    <br>
+    <ul class="buttonGroup">
+      <li><input class="newOrder orderFormButton" type="button" namne="newOrder" value="New Order"></li>
+      <li>{{#if order.markedForReview}}
+        <input class="unsubmitOrder orderFormButton" type="button" name="unsubmitOrder" value="Unsubmit">
+      {{else}}
+        <input class="submitOrder orderFormButton" type="button" name="submitOrder" value="Submit" {{disabled}}>
+      {{/if}}</li>
+    </ul>
+    <ul class="buttonGroup">
+      <li><input class="saveOrder orderFormButton" type="button" name="saveOrder" value="Save" {{disabled}}></li>
+      <li><input class="deleteOrder orderFormButton" type="button" name="deleteOrder" value="Delete" {{disabled}}></li>
+      <li><input class="resetOrder orderFormButton" type="button" name="resetOrder" value="Reset" {{disabled}}></li>
+      <li><input class="previewOrder orderFormButton" type="button" name="previewOrder" value="Preview" {{disabled}}></li>
+    </ul>
     <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" {{disabled}}>
     <textarea class="orderFormTextField" id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription" {{disabled}}>{{order.text}}</textarea>
     <br>

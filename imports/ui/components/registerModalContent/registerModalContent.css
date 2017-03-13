@@ -13,6 +13,7 @@
 }
 
 .registerButton {
+  color:white;
   display: inline-block;
   border-radius: 4px;
   background-color: var(--secondColor);
