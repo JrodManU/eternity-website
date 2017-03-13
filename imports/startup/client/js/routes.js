@@ -13,6 +13,7 @@ import "../../../ui/layouts/mainLayout/mainLayout.js";
 import "../../../ui/pages/aboutUsPage/aboutUsPage.js";
 import "../../../ui/pages/adminPage/adminPage.js";
 import "../../../ui/pages/homePage/homePage.js";
+import "../../../ui/pages/orderFormLinkEditPage/orderFormLinkEditPage.js";
 import "../../../ui/pages/orderFormPage/orderFormPage.js";
 import "../../../ui/pages/orderViewPage/orderViewPage.js";
 
@@ -28,6 +29,7 @@ import "../../../ui/components/navigation/navigation.js";
 import "../../../ui/components/order/order.js";
 import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
+import "../../../ui/components/orderFormLinkTemplateEditor/orderFormLinkTemplateEditor.js";
 import "../../../ui/components/registerModalContent/registerModalContent.js";
 import "../../../ui/components/slideshow/slideshow.js";
 import "../../../ui/components/userOrders/userOrders.js";
@@ -37,6 +39,27 @@ FlowRouter.route("/", {
     BlazeLayout.render("mainLayout", {page: "homePage"});
   },
   name: "home"
+});
+
+FlowRouter.route("/admin", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "adminPage"});
+  },
+  name: "admin"
+});
+
+FlowRouter.route("/aboutUs", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "aboutUsPage"});
+  },
+  name: "aboutUs"
+});
+
+FlowRouter.route("/orderFormLinkEdit/:orderFormLinkId", {
+  action: function(params, queryParams) {
+    BlazeLayout.render("mainLayout", {page: "orderFormLinkEditPage"});
+  },
+  name: "orderFormLinkEdit"
 });
 
 FlowRouter.route("/orderForm/:orderId", {
@@ -52,17 +75,3 @@ FlowRouter.route("/orderView/:orderId", {
   },
   name: "orderView"
 });
-
-FlowRouter.route("/aboutUs", {
-  action: function(params, queryParams) {
-    BlazeLayout.render("mainLayout", {page: "aboutUsPage"});
-  },
-  name: "aboutUs"
-});
-
-FlowRouter.route("/admin", {
-  action: function(params, queryParams) {
-    BlazeLayout.render("mainLayout", {page: "adminPage"});
-  },
-  name: "admin"
-})
