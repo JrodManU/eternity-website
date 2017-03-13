@@ -29,7 +29,7 @@ import "../../../ui/components/navigation/navigation.js";
 import "../../../ui/components/order/order.js";
 import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
-import "../../../ui/components/orderFormLinkTemplateEditor/orderFormLinkTemplateEditor.js";
+import "../../../ui/components/orderFormLinkForm/orderFormLinkForm.js";
 import "../../../ui/components/registerModalContent/registerModalContent.js";
 import "../../../ui/components/slideshow/slideshow.js";
 import "../../../ui/components/userOrders/userOrders.js";
