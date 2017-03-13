@@ -1,6 +1,27 @@
 <template name="allOrders">
-  {{#each orders}}
-    {{text}}
-    <button class="markAsReviewed">Mark As Reviewed</button>
-  {{/each}}
+  <table>
+    <tr class="tableRowTitles">
+      <th class="tableHeader">Order Name</th>
+      <th class="tableHeader">Email</th>
+      <th class="tableHeader">Type</th>
+      <th class="tableHeader"></th>
+    </tr>
+    {{#each orders}}
+      <tr class="tableRow">
+        <td class="tableInfo">
+          {{text}}
+        </td>
+        <td class="tableInfo">
+          {{email}}
+        </td>
+        <td class="tableInfo">
+          {{type}}
+        </td>
+        <td class="tableInfo">
+          <button class="markAsReviewed">Mark As Reviewed</button>
+          <button class="viewOrder">View</button>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
 </template>

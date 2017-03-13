@@ -1,25 +1,35 @@
 <template name="allUsers">
-  {{#each users}}
-    {{#unless iteratedUserIsInRole "owner"}}
-      {{#each emails}}
-        {{address}}
-      {{/each}}
-
-      {{#if isInRole "owner"}}
-        {{#if iteratedUserIsInRole "normal"}}
-          <button class="promoteToAdmin">Promote to Admin</button>
-        {{else}}
-          <button class="demoteToNormal">Demote to Normal</button>
-        {{/if}}
-      {{/if}}
-      {{#if iteratedUserIsInRole "normal"}}
-        <button class="deleteUser">Delete User</button>
-      {{else}}
-        {{#if isInRole "owner"}}
-          <button class="deleteUser">Delete User</button>
-        {{/if}}
-      {{/if}}
-      <br>
-    {{/unless}}
-  {{/each}}
+  <table>
+    <tr class="tableRowTitles">
+      <th class="tableHeader">Email</th>
+      <th class="tableHeader"></th>
+    </tr>
+    {{#each users}}
+      <tr class="tableRow">
+        {{#unless iteratedUserIsInRole "owner"}}
+          <td class="tableInfo">
+            {{#each emails}}
+              {{address}}
+            {{/each}}
+          </td>
+          <td class="tableInfo">
+            {{#if isInRole "owner"}}
+              {{#if iteratedUserIsInRole "normal"}}
+                <button class="promoteToAdmin">Promote to Admin</button>
+              {{else}}
+                <button class="demoteToNormal">Demote to Normal</button>
+              {{/if}}
+            {{/if}}
+            {{#if iteratedUserIsInRole "normal"}}
+              <button class="deleteUser">Delete User</button>
+            {{else}}
+              {{#if isInRole "owner"}}
+                <button class="deleteUser">Delete User</button>
+              {{/if}}
+            {{/if}}
+          </td>
+        {{/unless}}
+      </tr>
+    {{/each}}
+  </table>
 </template>
