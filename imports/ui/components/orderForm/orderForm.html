@@ -13,7 +13,7 @@
       <input class="submitOrder" type="button" name="submitOrder" value="Submit" {{disabled}}>
     {{/if}}
     <br>
-    <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order">
+    <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" {{disabled}}>
     <textarea class="orderFormTextField" id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription" {{disabled}}>{{order.text}}</textarea>
     <br>
     <select class="selectTypeOfOrder" name="typeOfOrder" value="{{order.type}}" {{disabled}}>
