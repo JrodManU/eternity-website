@@ -1,0 +1,16 @@
+<template name="allOrderFormLinks">
+  <table>
+    <tr class="tableRowTitles">
+      <th class="tableHeader">Name</th>
+      <th class="tableHeader"></th>
+    </tr>
+    {{#each orderFormLinks}}
+      <tr class="tableRow">
+        <td>{{title}}</td>
+        <td class="tableInfo">
+          <button class="editOrderFormLink basicButton">Edit</button>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</template>

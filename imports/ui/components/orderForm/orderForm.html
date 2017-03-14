@@ -1,18 +1,18 @@
 <template name="orderForm">
   <form class="orderForm">
     <ul class="buttonGroup">
-      <li><input class="newOrder orderFormButton" type="button" namne="newOrder" value="New Order"></li>
+      <li><input class="newOrder basicButton" type="button" namne="newOrder" value="New Order"></li>
       <li>{{#if order.markedForReview}}
-        <input class="unsubmitOrder orderFormButton" type="button" name="unsubmitOrder" value="Unsubmit">
+        <input class="unsubmitOrder basicButton" type="button" name="unsubmitOrder" value="Unsubmit">
       {{else}}
-        <input class="submitOrder orderFormButton" type="button" name="submitOrder" value="Submit" {{disabled}}>
+        <input class="submitOrder basicButton" type="button" name="submitOrder" value="Submit" {{disabled}}>
       {{/if}}</li>
     </ul>
     <ul class="buttonGroup">
-      <li><input class="saveOrder orderFormButton" type="button" name="saveOrder" value="Save" {{disabled}}></li>
-      <li><input class="deleteOrder orderFormButton" type="button" name="deleteOrder" value="Delete" {{disabled}}></li>
-      <li><input class="resetOrder orderFormButton" type="button" name="resetOrder" value="Reset" {{disabled}}></li>
-      <li><input class="previewOrder orderFormButton" type="button" name="previewOrder" value="Preview" {{disabled}}></li>
+      <li><input class="saveOrder basicButton" type="button" name="saveOrder" value="Save" {{disabled}}></li>
+      <li><input class="deleteOrder basicButton" type="button" name="deleteOrder" value="Delete" {{disabled}}></li>
+      <li><input class="resetOrder basicButton" type="button" name="resetOrder" value="Reset" {{disabled}}></li>
+      <li><input class="previewOrder basicButton" type="button" name="previewOrder" value="Preview" {{disabled}}></li>
     </ul>
     <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" {{disabled}}>
     <select class="selectTypeOfOrder" id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>

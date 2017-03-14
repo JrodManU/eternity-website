@@ -13,20 +13,24 @@
             {{/each}}
           </td>
           <td class="tableInfo">
-            {{#if isInRole "owner"}}
-              {{#if iteratedUserIsInRole "normal"}}
-                <button class="promoteToAdmin">Promote to Admin</button>
-              {{else}}
-                <button class="demoteToNormal">Demote to Normal</button>
-              {{/if}}
-            {{/if}}
-            {{#if iteratedUserIsInRole "normal"}}
-              <button class="deleteUser">Delete User</button>
-            {{else}}
+            <ul class="buttonGroup">
               {{#if isInRole "owner"}}
-                <button class="deleteUser">Delete User</button>
+                <li>
+                  {{#if iteratedUserIsInRole "normal"}}
+                    <button class="promoteToAdmin basicButton">Promote to Admin</button>
+                  {{else}}
+                    <button class="demoteToNormal basicButton">Demote to Normal</button>
+                  {{/if}}
+                </li>
               {{/if}}
-            {{/if}}
+              {{#if iteratedUserIsInRole "normal"}}
+                <li><button class="deleteUser basicButton">Delete User</button></li>
+              {{else}}
+                {{#if isInRole "owner"}}
+                  <li><button class="deleteUser basicButton">Delete User</button></li>
+                {{/if}}
+              {{/if}}
+            </ul>
           </td>
         {{/unless}}
       </tr>

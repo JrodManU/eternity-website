@@ -17,6 +17,7 @@ import "../../../ui/pages/orderFormLinkEditPage/orderFormLinkEditPage.js";
 import "../../../ui/pages/orderFormPage/orderFormPage.js";
 import "../../../ui/pages/orderViewPage/orderViewPage.js";
 
+import "../../../ui/components/allOrderFormLinks/allOrderFormLinks.js";
 import "../../../ui/components/allOrders/allOrders.js";
 import "../../../ui/components/allUsers/allUsers.js";
 import "../../../ui/components/banner/banner.js";

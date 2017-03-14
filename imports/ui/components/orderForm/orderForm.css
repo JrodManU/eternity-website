@@ -21,33 +21,3 @@
   text-align: center;
   font-family: var(--mainFont);
 }
-
-.orderFormButton {
-  color:white;
-  display: inline-block;
-  background-color: var(--secondColor);
-  border: none;
-  text-align: center;
-  font-size: 14px;
-  padding: 5px;
-  width: 100px;
-  cursor: pointer;
-  margin:0;
-  -webkit-appearance:none;
-}
-
-.buttonGroup {
-  margin:5px;
-}
-
-.buttonGroup li {
-  display:inline-block;
-  margin:0;
-}
-
-.buttonGroup > :first-child input {
-  border-radius:4px 0 0 4px;
-}
-.buttonGroup > :last-child input {
-  border-radius:0 4px 4px 0;
-}
