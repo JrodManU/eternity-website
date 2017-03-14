@@ -1,1 +1,1 @@
-import "./orderFormLinkForm";
+import "./orderFormLinkForm.html";

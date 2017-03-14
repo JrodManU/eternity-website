@@ -8,9 +8,17 @@
       <tr class="tableRow">
         <td>{{title}}</td>
         <td class="tableInfo">
-          <button class="editOrderFormLink basicButton">Edit</button>
+          <ul class="buttonGroup">
+            <li><button class="editOrderFormLink basicButton">Edit</button></li>
+            <li><button class="deleteOrderFormLink basicButton">Delete</button></li>
+          </ul>
         </td>
       </tr>
     {{/each}}
+    <tr class="tableRow">
+      <td class="tableInfo" colspan="2">
+        <button class="addOrderFormLink basicButton">Add Order Form Link</button>
+      </td>
+    </tr>
   </table>
 </template>

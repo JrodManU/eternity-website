@@ -5,8 +5,8 @@
       <th class="tableHeader"></th>
     </tr>
     {{#each users}}
-      <tr class="tableRow">
-        {{#unless iteratedUserIsInRole "owner"}}
+      {{#unless iteratedUserIsInRole "owner"}}
+        <tr class="tableRow">
           <td class="tableInfo">
             {{#each emails}}
               {{address}}
@@ -32,8 +32,8 @@
               {{/if}}
             </ul>
           </td>
-        {{/unless}}
-      </tr>
+        </tr>
+      {{/unless}}
     {{/each}}
   </table>
 </template>
