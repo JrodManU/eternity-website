@@ -9,9 +9,3 @@ Template.order.helpers({
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
   }
 });
-
-Template.order.events({
-  "click .orderGoBack":function() {
-    window.history.back();
-  }
-});

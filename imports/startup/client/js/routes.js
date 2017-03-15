@@ -20,6 +20,7 @@ import "../../../ui/pages/orderViewPage/orderViewPage.js";
 import "../../../ui/components/allOrderFormLinks/allOrderFormLinks.js";
 import "../../../ui/components/allOrders/allOrders.js";
 import "../../../ui/components/allUsers/allUsers.js";
+import "../../../ui/components/backButton/backButton.js";
 import "../../../ui/components/banner/banner.js";
 import "../../../ui/components/footer/footer.js";
 import "../../../ui/components/loginButtons/loginButtons.js";
