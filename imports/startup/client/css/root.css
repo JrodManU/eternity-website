@@ -1,8 +1,11 @@
 :root {
   --mainColor: #dadada;
   --secondColor: #feaa2c;
+  --secondColorDark: #e9b565;
+  --secondColorHighlight: #f79400;
   --thirdColor: #545454;
   --mainFont: "Arial";
+
 }
 html * {
   font-family: Arial;
