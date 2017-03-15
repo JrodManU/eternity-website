@@ -21,3 +21,9 @@ Template.userOrders.helpers({
     }
   }
 });
+
+Template.userOrders.events({
+  "click .editMessage": function() {
+    FlowRouter.go("orderForm", {orderId: this._id});
+  }
+});

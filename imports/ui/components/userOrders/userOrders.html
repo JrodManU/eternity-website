@@ -15,7 +15,9 @@
         <td class="tableInfo">{{name}}</td>
         <td class="tableInfo">{{formatDate createdAt}}</td>
         <td class="tableInfo">{{orderStatus}}</td>
-        <td class="tableInfo"><a class="editMessage" href="/orderForm/{{_id}}">Edit</a></td>
+        <td class="tableInfo">
+          <button class="editMessage basicButton">Edit</button>
+        </td>
       </tr>
     {{/each}}
   </table>

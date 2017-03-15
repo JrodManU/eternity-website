@@ -71,5 +71,9 @@
 }
 
 .basicButton:hover {
-  
+  background-color: var(--secondColorHighlight);
+}
+
+.basicButton:disabled {
+  background-color: var(--secondColorDark);
 }
