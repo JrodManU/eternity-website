@@ -4,10 +4,9 @@
 <template name="aboutUsPage">
   <article class="aboutUsPage" role="article">
     <h1 class="pageHeader">About Us</h1>
-    <br>
-    <p class="aboutUsPageContactInfo">We here at the Eternity Trading Group work with you, the customers to ensure the best of quality paper products. All you have to do is sign and make a request, but if you have any problem just contact us.</p>
-    <br>
-    <caption>Contact Us</caption>
+    {{> slideshow}}
+    <p class="aboutUsPageContactInfo">We here at the Eternity Trading Group work with you, the customers to ensure the best logos for your business. And make sure you can get the word out in a variety of different ways. Just sign up, and start your order today!</p>
+    <h2 class="contactInfoHeader">Contact Info</h2>
     <table class="contactInfo">
       <tr class="tableRowTitles">
         <th class="tableHeader" colspan="3">Eternity Trading Group</th>
@@ -21,7 +20,5 @@
         <td class="tableInfo">eternitytrading1@gmail.com</td>
       </tr>
     </table>
-    <br>
-    {{> slideshow}}
   </article>
 </template>
