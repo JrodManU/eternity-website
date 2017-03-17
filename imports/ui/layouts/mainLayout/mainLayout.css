@@ -45,6 +45,20 @@
   border-top-right-radius: 5px;
 }
 
+.basicButton {
+  color:white;
+  display: inline-block;
+  background-color: var(--secondColor);
+  border: none;
+  border-radius:4px;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  margin:0;
+  -webkit-appearance:none;
+}
+
 .buttonGroup {
   margin:5px;
 }
@@ -59,19 +73,6 @@
 }
 .buttonGroup > :last-child * {
   border-radius:0 4px 4px 0;
-}
-
-.basicButton {
-  color:white;
-  display: inline-block;
-  background-color: var(--secondColor);
-  border: none;
-  text-align: center;
-  font-size: 14px;
-  padding: 5px;
-  cursor: pointer;
-  margin:0;
-  -webkit-appearance:none;
 }
 
 .basicButton:hover {
