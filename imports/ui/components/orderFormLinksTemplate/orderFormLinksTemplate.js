@@ -8,9 +8,6 @@ Meteor.subscribe("orderFormLinks");
 Template.orderFormLinksTemplate.helpers({
   "orderFormLinks": function(){
     return OrderFormLinks.find({});
-  },
-  "linkSize": function() {
-    return Session.get("bannerHeight") + "px";
   }
 });
 

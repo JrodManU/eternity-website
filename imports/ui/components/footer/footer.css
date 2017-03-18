@@ -9,9 +9,9 @@
 }
 
 .returnToTop {
-    text-decoration: none;
+  text-decoration: none;
 
-    color: #fff;
+  color: #fff;
 }
 
 .returnToTop:hover{
@@ -57,4 +57,7 @@
   background: #007bb5;
   color: white;
   border-radius: 0 5px 5px 0;
+}
+#copyrightInfo {
+  padding-top:5px;
 }

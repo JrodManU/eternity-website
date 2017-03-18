@@ -9,9 +9,9 @@ Template.slideshow.onRendered(function() {
 
   setInterval(function() {
     this.$('#slideshow > div:first')
-      .fadeOut(1000)
+      .hide()
       .next()
-      .fadeIn(1000)
+      .show()
       .end()
       .appendTo('#slideshow');
   },  5000);

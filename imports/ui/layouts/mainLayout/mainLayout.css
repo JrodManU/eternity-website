@@ -100,6 +100,7 @@
 .infoText  {
   margin: auto;
   width: 50%;
+  min-width:500px;
   background-color: var(--secondColor);
   padding: 10px;
   border-radius: 10px;
