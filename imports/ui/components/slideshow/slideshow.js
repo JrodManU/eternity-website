@@ -4,6 +4,7 @@ import "./slideshow.css";
 import { Template } from "meteor/templating";
 
 Template.slideshow.onRendered(function() {
+  console.log("hi");
   this.$("#slideshow > div:gt(0)").hide();
 
   setInterval(function() {
