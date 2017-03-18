@@ -1,24 +1,8 @@
 .aboutUsPage {
-  text-align: center;
   font-family: var(--mainFont);
   /*please do not re-add padding here*/
 }
 
 .contactInfo {
-  margin: 0px auto 0px auto;
-}
-
-.aboutUsPageContactInfo {
-  margin: auto;
-  width: 400px;
-  background-color: var(--secondColor);
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1.2em;
-  color:white;
-}
-
-.contactInfoHeader {
-  padding-top: 10px;
-  font-size: 1.5em;
+  margin: 0px auto 10px auto;
 }

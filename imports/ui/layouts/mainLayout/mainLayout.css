@@ -1,12 +1,16 @@
 .mainContainer {
   text-align:center;
 }
-.pageHeader {
-  margin: 8px 0px 0px 8px;
+.pageHeader, .secondaryPageHeader {
+  margin: 10px;
   font-size: 2em;
   color:var(--thirdColor);
   border-bottom:solid 2px var(--mainColor);
   display:inline-block;
+}
+
+.secondaryPageHeader {
+  font-size:1.5em;
 }
 
 .tableContainer {
@@ -85,9 +89,20 @@
 
 .orderFormTextField {
   width: 50%;
+  min-width:400px;
   padding: 12px 20px;
   margin: 8px 0px 0px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.infoText  {
+  margin: auto;
+  width: 50%;
+  background-color: var(--secondColor);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  color:white;
 }

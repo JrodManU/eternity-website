@@ -36,7 +36,7 @@ Template.orderForm.events({
   "click .unsubmitOrder"() {
     Meteor.call("toggleOrderForReview", FlowRouter.getParam("orderId"));
   },
-  "change .selectTypeOfOrder"(event, template) {
+  "change #selectType"(event, template) {
     if(event.target.value == "Other") {
       template.$(".hideOtherType").show();
     } else {

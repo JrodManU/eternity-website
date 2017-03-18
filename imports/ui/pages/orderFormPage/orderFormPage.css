@@ -1,0 +1,6 @@
+.orderFormPage table,
+.orderFormPage .orderFormTextField
+ {
+  width:50%;
+  min-width:500px;
+}
