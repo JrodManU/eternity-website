@@ -5,17 +5,17 @@
 }
 
 .contactInfo {
-  margin: 0px auto 10px auto;
+  margin: 0px auto 0px auto;
 }
 
 .aboutUsPageContactInfo {
   margin: auto;
   width: 400px;
-  height: 200px;
   background-color: var(--secondColor);
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2em;
+  color:white;
 }
 
 .contactInfoHeader {
