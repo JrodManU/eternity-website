@@ -6,9 +6,6 @@ import "./navigation.html";
 
 Template.navigation.onRendered(function() {
   $(window).scroll(function () {
-      //if you hard code, then use console
-      //.log to determine when you want the
-      //nav bar to stick.
     if ($(window).scrollTop() >= Session.get("bannerHeight")) {
       $('.navbar').addClass('navbarFixed');
     }

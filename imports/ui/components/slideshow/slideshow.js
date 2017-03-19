@@ -14,5 +14,5 @@ Template.slideshow.onRendered(function() {
       .show()
       .end()
       .appendTo('#slideshow');
-  },  5000);
+  }, 5000);
 });
