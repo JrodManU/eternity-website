@@ -47,7 +47,7 @@ OrderSchema = new SimpleSchema({
     optional: true,
     max: 50
   },
-  phoneNumber {
+  phoneNumber: {
     type: String,
     label: "Phone number of orderer",
     optional: true,
