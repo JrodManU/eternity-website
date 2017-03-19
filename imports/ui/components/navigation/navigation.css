@@ -59,13 +59,44 @@
     display: block;
   }
 }
-#mobileMenu {
+
+#navLinksMobile {
+  text-align:center;
+  position:absolute;
+  right:0px;
+  width:300px;
+  z-index:1000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-bottom-left-radius:10px;
+  display:none;
+}
+
+#navLinksMobile li:last-child {
+  border-bottom-left-radius:10px;
+}
+
+#navLinksMobile li {
+  background-color:var(--secondColor);
+  border-bottom:solid 3px var(--mainColor);
+}
+
+#navLinksMobile li a {
+  color:white;
+  text-decoration:none;
+  font-size:3em;
+  padding:5px;
+  display:block;
+}
+
+#mobileTripleBar {
   line-height:100px;
   display: block;
   float:right;
-  font-size:2em;
+  font-size:3em;
   color:var(--thirdColor);
   margin-right:20px;
+  text-decoration:none;
+  cursor:pointer;
 }
 #logoNav {
   height:90px;

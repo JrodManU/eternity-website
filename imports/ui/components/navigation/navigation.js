@@ -4,7 +4,7 @@ import { Session } from "meteor/session";
 import "./navigation.css";
 import "./navigation.html";
 
-Template.navigation.rendered = function() {
+Template.navigation.onRendered(function() {
   $(window).scroll(function () {
       //if you hard code, then use console
       //.log to determine when you want the
@@ -16,15 +16,13 @@ Template.navigation.rendered = function() {
       $('.navbar').removeClass('navbarFixed');
     }
   });
-}
+});
 
-$(document).ready(function() {
-    $( '.dropdown' ).hover(
-        function(){
-            $(this).children('.sub-menu').slideDown(200);
-        },
-        function(){
-            $(this).children('.sub-menu').slideUp(200);
-        }
-    );
-}); // end ready
+Template.navigation.events({
+  "click #mobileTripleBar":function(event, template) {
+    template.$("#navLinksMobile").toggle();
+  },
+  "click #navLinksMobile li a":function(event, template) {
+    template.$("#navLinksMobile").hide();
+  }
+})

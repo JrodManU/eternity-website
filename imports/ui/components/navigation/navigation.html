@@ -11,9 +11,13 @@
     </ul>
     <div id="mobileNav">
       <img id="logoNav" src="/eternityLogo.png" alt="Eternity Trading Group Logo">
-      <div id="mobileMenu">
-              <!--<a href="#">☰</a>-->
-      </div>
+      <a id="mobileTripleBar">☰</a>
+      <ul id="navLinksMobile">
+        <li><a href="/" title="Home">Home</a></li>
+        <li><a href="/orderForm/none" title="Products">Products</a></li>
+        <li><a href="/aboutUs" title="About Us">About Us.</a></li>
+        {{> loginButtons}}
+      </ul>
     </div>
   </nav>
 </template>
