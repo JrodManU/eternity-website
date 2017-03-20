@@ -6,15 +6,12 @@
     border-radius: 10px;
 }
 
-#slideshow > div {
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    width:800px;
-}
-
 #slideshow img {
   max-width:800px;
   border-radius: 10px;
+  display:none;
+}
+
+#slideshow img:first-child {
+  display:block;
 }
