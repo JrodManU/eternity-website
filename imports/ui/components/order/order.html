@@ -1,14 +1,16 @@
 <template name="order">
-  <body class="orderInfo">
-    <h2 class="orderHeaders">Title:</h2>
+  <h1 class="pageHeader">Order Info</h1>
+  <ul class="buttonGroup">
+    {{> backButton}}
+  </ul>
+  <body class="infoText">
+    <h2 class="secondaryPageHeader">Title:</h2>
     <p>{{order.name}}</p>
     <br>
-    <h2 class="orderHeaders">Order Type:</h2>
+    <h2 class="secondaryPageHeader">Order Type:</h2>
     <p>{{order.type}}</p>
     <br>
-    <h2 class="orderHeaders">Description</h2>
+    <h2 class="secondaryPageHeader">Description</h2>
     <p>{{order.text}}</p>
-    <br>
-    {{> backButton}}
   </body>
 </template>
