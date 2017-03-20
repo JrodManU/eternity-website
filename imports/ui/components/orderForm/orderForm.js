@@ -30,7 +30,6 @@ Template.orderForm.events({
     var firstName = template.$("#orderFirstName").val();
     var lastName = template.$("#orderLastName").val();
     var phoneNumber = template.$("#orderPhoneNumber").val();
-    //insert task into current collection
     Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, type, amount, width, height, description, firstName, lastName, phoneNumber);
   },
   "click .deleteOrder"(event, template){

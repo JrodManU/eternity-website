@@ -14,7 +14,7 @@
       <li><input class="resetOrder basicButton" type="button" name="resetOrder" value="Reset" {{disabled}}></li>
       <li><input class="previewOrder basicButton" type="button" name="previewOrder" value="Preview" {{disabled}}></li>
     </ul>
-    <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" {{disabled}}>
+    <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" value="{{order.name}}" {{disabled}}>
     <select class="orderFormTextField" id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
       <option>Standard Paper</option>
       <option>Card Stock</option>
@@ -23,14 +23,14 @@
       <option value="carDecal">Car Decal</option>
       <option>Other</option>
     </select>
-    <input class="orderFormTextField" id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" {{disabled}}>
-    <input class="orderFormTextField" id="orderQuantity" type="number" name="orderQuantity" placeholder="Estimated amount" {{disabled}}>
-    <input class="orderFormTextField" id="orderWidth" type="number" name="orderWidth" placeholder="Estimated width" {{disabled}}>
-    <input class="orderFormTextField" id="orderHeight" type="number" name="orderHeight" placeholder="Estimated height" {{disabled}}>
-    <textarea class="orderFormTextField" id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription" {{disabled}}>{{order.text}}</textarea>
+    <input class="orderFormTextField" id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.Type}}" {{disabled}}>
+    <input class="orderFormTextField" id="orderAmount" type="number" name="orderQuantity" placeholder="Estimated amount" value="{{order.amount}}" {{disabled}}>
+    <input class="orderFormTextField" id="orderWidth" type="number" name="orderWidth" placeholder="Estimated width" value="{{order.width}}" {{disabled}}>
+    <input class="orderFormTextField" id="orderHeight" type="number" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>
+    <textarea class="orderFormTextField" id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" maxlength="300" name="orderDescription" {{disabled}}>{{order.description}}</textarea>
     <br>
-    <input class="orderFormTextField" id="orderFirstName" type="text" name="orderFirstName" placeholder="First Name" {{disabled}}>
-    <input class="orderFormTextField" id="orderLastName" type="text" name="orderLastName" placeholder="Last Name" {{disabled}}>
-    <input class="orderFormTextField" id="orderPhoneNumber" type="tel" name="orderPhoneNumber" placeholder="Phone Number" {{disabled}}>
+    <input class="orderFormTextField" id="orderFirstName" type="text" name="orderFirstName" placeholder="First Name" value="{{order.firstName}}" {{disabled}}>
+    <input class="orderFormTextField" id="orderLastName" type="text" name="orderLastName" placeholder="Last Name" value="{{order.lastName}}" {{disabled}}>
+    <input class="orderFormTextField" id="orderPhoneNumber" type="tel" name="orderPhoneNumber" placeholder="Phone Number" value="{{order.phoneNumber}}" {{disabled}}>
   </form>
 </template>

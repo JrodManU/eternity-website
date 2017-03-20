@@ -46,12 +46,20 @@ Meteor.methods({
       MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }
   },
-  "updateOrder"(orderId, name, text){
+  "updateOrder"(orderId, name, type, amount, width, height, description, firstName, lastName, phoneNumber){
     var userId = Meteor.userId();
     if(userId && Orders.findOne(orderId).userId === userId) {
       Orders.update(orderId, {$set:
         { name: name,
-          text: text},
+          type: type,
+          amount: amount,
+          width: width,
+          height: height,
+          description: description,
+          firstName: firstName,
+          lastName: lastName,
+          phoneNumber: phoneNumber
+        },
       }, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
