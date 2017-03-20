@@ -88,7 +88,7 @@ Meteor.methods({
     if(userId && order.userId === userId) {
       var type;
       if(order.orderFormLinkId != null) {
-        type = OrderFormLinks.findOne(order.orderFormLinkId).type;
+        type = OrderFormLinks.findOne(order.orderFormLinkId).title;
       } else {
         type = null;
       }

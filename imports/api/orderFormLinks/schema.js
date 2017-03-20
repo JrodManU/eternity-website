@@ -3,30 +3,28 @@ OrderFormLinkSchema = new SimpleSchema({
     type: String,
     label: "Order form link title",
     optional: true,
-    max: 30
+    max: 30,
+    defaultValue: ""
   },
   body: {
     type: String,
     label: "Order form link body",
     optional: true,
-    max: 100
+    max: 100,
+    defaultValue: ""
   },
   image: {
     type: String,
     label: "Order form link image",
     optional: true,
-    max: 50
+    max: 50,
+    defaultValue: null
   },
   imageLink: {
     type: String,
     label: "Order form link image link",
     optional: true,
-    max: 300
-  },
-  type: {
-    type:String,
-    label: "Order form link type",
-    optional: true,
-    max: 30
+    max: 500,
+    defaultValue: null
   }
 });

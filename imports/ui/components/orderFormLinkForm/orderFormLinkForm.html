@@ -4,7 +4,7 @@
       <li>{{> backButton}}</li>
       <li><input class="submitOrderFormLink basicButton" type="button" name="submitOrderFormLink" value="Submit"></li>
     </ul>
-    <input class="orderFormTextField" id="orderFormLinkTitle" type="text" name="orderFormLinkTitle" placeholder="Title of link">
-    <input class="orderFormTextField" id="orderFormLinkBody" type="text" name="orderFormLinkBody" placeholder="Description of link">
+    <input class="orderFormTextField" id="orderFormLinkTitle" type="text" name="orderFormLinkTitle" placeholder="Title of link" value="{{orderFormLink.title}}">
+    <input class="orderFormTextField" id="orderFormLinkBody" type="text" name="orderFormLinkBody" placeholder="Description of link" value="{{orderFormLink.body}}">
   </form>
 </template>

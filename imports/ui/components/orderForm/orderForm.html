@@ -17,7 +17,7 @@
     <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" value="{{order.name}}" {{disabled}}>
     <select class="orderFormTextField" id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
       {{#each orderFormLinks}}
-        <option value="{{type}}">{{title}}</option>
+        <option value="{{title}}">{{title}}</option>
       {{/each}}
       <option value="other">Other</option>
     </select>
