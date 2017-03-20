@@ -98,7 +98,7 @@
 }
 
 .infoText  {
-  margin: auto;
+  margin: 0px auto 10px auto;
   width: 50%;
   min-width:500px;
   background-color: var(--secondColor);

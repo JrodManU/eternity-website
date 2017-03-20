@@ -1,0 +1,9 @@
+<template name="navLinks">
+  <li><a href="/" title="Home">Home</a></li>
+  <li><a href="/orderForm/none" title="Products">Products</a></li>
+  <li><a href="/aboutUs" title="About Us">About Us.</a></li>
+  {{#if isInRole 'admin'}}
+    <li><a href="/admin" title="Admin">Admin</a></li>
+  {{/if}}
+  {{> loginButtons}}
+</template>
