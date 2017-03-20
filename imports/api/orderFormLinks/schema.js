@@ -17,13 +17,6 @@ OrderFormLinkSchema = new SimpleSchema({
     type: String,
     label: "Order form link image",
     optional: true,
-    max: 50,
-    defaultValue: null
-  },
-  imageLink: {
-    type: String,
-    label: "Order form link image link",
-    optional: true,
     max: 500,
     defaultValue: null
   }

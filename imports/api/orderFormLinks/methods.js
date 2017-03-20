@@ -7,18 +7,13 @@ Meteor.methods({
       OrderFormLinks.remove(orderFormLinkId);
     }
   },
-  "insertOrderFormLink"(orderFormLinkId, title, body, imageLink) {
+  "insertOrderFormLink"(orderFormLinkId, title, body, image) {
     var userId = Meteor.userId();
     if(userId && Roles.userIsInRole(userId, ["admin"])) {
-
-      if(imageLink != null && imageLink.trim().length == 0) {
-        imageLink = null;
-      }
-      imageLink = "orderFormLinkImages/carDecal.jpg";
       var orderFormLink = {
         title: title,
         body: body,
-        imageLink: imageLink
+        image: image
       }
       OrderFormLinkSchema.clean(orderFormLink);
       var orderFormLinkSchemaContext = OrderFormLinkSchema.newContext();
@@ -29,18 +24,13 @@ Meteor.methods({
       }
     }
   },
-  "updateOrderFormLink"(orderFormLinkId, title, body, imageLink) {
+  "updateOrderFormLink"(orderFormLinkId, title, body, image) {
     var userId = Meteor.userId();
     if(userId && Roles.userIsInRole(userId, ["admin"])) {
-
-      if(imageLink != null && imageLink.trim().length == 0) {
-        imageLink = null;
-      }
-
       var orderFormLink = {
         title: title,
         body: body,
-        imageLink: imageLink
+        image: image
       }
       OrderFormLinkSchema.clean(orderFormLink);
       var orderFormLinkSchemaContext = OrderFormLinkSchema.newContext();
@@ -50,7 +40,7 @@ Meteor.methods({
         OrderFormLinks.update({_id: orderFormLinkId}, {$set: {
           title: orderFormLink.title,
           body: orderFormLink.body,
-          imageLink: orderFormLink.imageLink
+          image: orderFormLink.image
         }});
       }
     }

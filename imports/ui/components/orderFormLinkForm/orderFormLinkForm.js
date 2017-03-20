@@ -13,14 +13,14 @@ Template.orderFormLinkForm.helpers({
 
 Template.orderFormLinkForm.events({
   "click .submitOrderFormLink":function(event, template) {
-    var title = template.$("#orderFormLinkTitle").val();
-    var body = template.$("#orderFormLinkBody").val();
-    var imageLink = "";
+    var title = template.$("#orderFormLinkFormTitle").val();
+    var body = template.$("#orderFormLinkFormBody").val();
+    var image = template.$("#orderFormLinkFormImage").val();
     var orderFormLinkId = FlowRouter.getParam("orderFormLinkId");
     if(OrderFormLinks.findOne(orderFormLinkId)) {
-      Meteor.call("updateOrderFormLink", orderFormLinkId, title, body, imageLink);
+      Meteor.call("updateOrderFormLink", orderFormLinkId, title, body, image);
     } else {
-      Meteor.call("insertOrderFormLink", orderFormLinkId, title, body, imageLink);
+      Meteor.call("insertOrderFormLink", orderFormLinkId, title, body, image);
     }
   }
 });
