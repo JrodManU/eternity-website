@@ -17,9 +17,21 @@ Template.orderForm.events({
   "click .saveOrder"(event, template) {
     //get value from form element
     var name = template.$("#orderName").val();
-    var text = template.$("#orderDescription").val();
+    var type;
+    if(template.$("#orderType").val() == "Other") {
+      type = template.$("#orderOtherType").val();
+    } else {
+      type = template.$("#orderType").val();
+    }
+    var amount = template.$("#orderAmount").val();
+    var width = template.$("#orderWidth").val();
+    var height = template.$("#orderHeight").val();
+    var description = template.$("#orderDescription").val();
+    var firstName = template.$("#orderFirstName").val();
+    var lastName = template.$("#orderLastName").val();
+    var phoneNumber = template.$("#orderPhoneNumber").val();
     //insert task into current collection
-    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, text);
+    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, type, amount, width, height, description, firstName, lastName, phoneNumber);
   },
   "click .deleteOrder"(event, template){
     Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));
@@ -38,9 +50,9 @@ Template.orderForm.events({
   },
   "change #selectType"(event, template) {
     if(event.target.value == "Other") {
-      template.$(".hideOtherType").show();
+      template.$("#orderOtherType").show();
     } else {
-      template.$(".hideOtherType").hide();
+      template.$("#orderOtherType").hide();
     }
   },
   "click .previewOrder":function() {

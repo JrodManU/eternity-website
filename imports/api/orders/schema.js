@@ -1,4 +1,33 @@
 OrderSchema = new SimpleSchema({
+  userId: {
+    type: String,
+    label: "Author of order",
+    optional: true,
+    max: 20
+  },
+  orderFormLinkId: {
+    type: String,
+    label: "Base of order",
+    optional: true,
+    max: 20
+  },
+  createdAt: {
+    type: Date,
+    label: "Timestamp of order",
+    optional: true
+  },
+  markedForReview: {
+    type: Boolean,
+    label: "Order marked for review status",
+    optional: true,
+    defaultValue: false
+  },
+  reviewed: {
+    type: Boolean,
+    label: "Order reviewed status",
+    optional: true,
+    defaultValue: false
+  },
   name: {
     type: String,
     label: "Name of order",

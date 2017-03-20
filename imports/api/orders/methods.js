@@ -1,28 +1,40 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.methods({
-  "insertOrderAndGo"(orderFormLinkId) {
+  "insertOrderAndGo"(orderFormLinkId, name, type, amount, width, height, description, firstName, lastName, phoneNumber) {
     var userId = Meteor.userId();
     if(userId) {
       if(Roles.userIsInRole(userId, ["owner"])) {
         MeteorAlerts.alert("The owner cannot make orders", 2000, ["meteorAlertWarning"]);
         return;
       }
-      var orderId;
-      var type = null;
 
-      if(orderFormLinkId) {
-        type = OrderFormLinks.findOne(orderFormLinkId).type;
+      var orderToInsert = {
+        userId: userId,
+        orderFormLinkId: orderFormLinkId,
+        createdAt: new Date(),
+        markedForReview: false,
+        reviewed: false,
+        name: name,
+        type: type,
+        amount: amount,
+        width: width,
+        height: height,
+        description: description,
+        firstName: firstName,
+        lastName: lastName,
+        phoneNUmber: phoneNumber
       }
 
-      Orders.insert({
-        userId: userId,
-        type: type,
-        createdAt: new Date(),
-        reviewed: false,
-        markedForReview: false,
-        text: null
-      }, function(error, order) {
+      OrderSchema.clean(orderToInsert);
+      var orderSchemaContext = OrderSchema.newContext();
+      if(!orderSchemaContext.validate(orderToInsert)) {
+        MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
+        return;
+      }
+
+      var orderId;
+      Orders.insert(orderToInsert, function(error, order) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {
