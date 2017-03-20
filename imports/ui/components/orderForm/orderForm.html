@@ -16,14 +16,12 @@
     </ul>
     <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" value="{{order.name}}" {{disabled}}>
     <select class="orderFormTextField" id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
-      <option>Standard Paper</option>
-      <option>Card Stock</option>
-      <option>Business Card</option>
-      <option>Banner</option>
-      <option value="carDecal">Car Decal</option>
-      <option>Other</option>
+      {{#each orderFormLinks}}
+        <option value="{{type}}">{{title}}</option>
+      {{/each}}
+      <option value="other">Other</option>
     </select>
-    <input class="orderFormTextField" id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.Type}}" {{disabled}}>
+    <input class="orderFormTextField" id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.type}}" {{disabled}}>
     <input class="orderFormTextField" id="orderAmount" type="number" name="orderQuantity" placeholder="Estimated amount" value="{{order.amount}}" {{disabled}}>
     <input class="orderFormTextField" id="orderWidth" type="number" name="orderWidth" placeholder="Estimated width" value="{{order.width}}" {{disabled}}>
     <input class="orderFormTextField" id="orderHeight" type="number" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>

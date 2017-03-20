@@ -84,8 +84,25 @@ Meteor.methods({
   },
   "resetOrder"(orderId) {
     var userId = Meteor.userId();
-    if(userId && Orders.findOne(orderId).userId === userId) {
-      Orders.update(orderId, {$set: { text: "" }}, function(error) {
+    var order = Orders.findOne(orderId);
+    if(userId && order.userId === userId) {
+      var type;
+      if(order.orderFormLinkId != null) {
+        type = OrderFormLinks.findOne(order.orderFormLinkId).type;
+      } else {
+        type = null;
+      }
+      Orders.update(orderId, {$set: {
+        name: null,
+        type: type,
+        amount: null,
+        width: null,
+        height: null,
+        description: null,
+        firstName: null,
+        lastName: null,
+        phoneNumber: null
+      }}, function(error) {
         if(error) {
           MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {

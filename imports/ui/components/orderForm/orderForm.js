@@ -3,6 +3,15 @@ import "./orderForm.html";
 
 import "./orderForm.css";
 
+Template.orderForm.onRendered(function() {
+  //TODO: make dry
+  if(this.$("#orderType").val() == "other") {
+    this.$("#orderOtherType").show();
+  } else {
+    this.$("#orderOtherType").hide();
+  }
+});
+
 Template.orderForm.helpers({
   "order":function() {
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
@@ -10,6 +19,9 @@ Template.orderForm.helpers({
   "disabled":function() {
     var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
     return order && !order.markedForReview ? "" : "disabled";
+  },
+  "orderFormLinks":function() {
+    return OrderFormLinks.find();
   }
 });
 
@@ -18,7 +30,7 @@ Template.orderForm.events({
     //get value from form element
     var name = template.$("#orderName").val();
     var type;
-    if(template.$("#orderType").val() == "Other") {
+    if(template.$("#orderType").val() == "other") {
       type = template.$("#orderOtherType").val();
     } else {
       type = template.$("#orderType").val();
@@ -47,8 +59,8 @@ Template.orderForm.events({
   "click .unsubmitOrder"() {
     Meteor.call("toggleOrderForReview", FlowRouter.getParam("orderId"));
   },
-  "change #selectType"(event, template) {
-    if(event.target.value == "Other") {
+  "change #orderType"(event, template) {
+    if(template.$("#orderType").val() == "other") {
       template.$("#orderOtherType").show();
     } else {
       template.$("#orderOtherType").hide();
