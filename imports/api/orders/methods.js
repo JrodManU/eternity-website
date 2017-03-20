@@ -30,18 +30,18 @@ Meteor.methods({
       var orderSchemaContext = OrderSchema.newContext();
       if(!orderSchemaContext.validate(orderToInsert)) {
         MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
-        return;
-      }
+      } else {
 
-      var orderId;
-      Orders.insert(orderToInsert, function(error, order) {
-        if(error) {
-          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
-        } else {
-          orderId = order;
-        }
-      });
-      FlowRouter.go("orderForm", {orderId: orderId}, null);
+        var orderId;
+        Orders.insert(orderToInsert, function(error, order) {
+          if(error) {
+            MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+          } else {
+            orderId = order;
+          }
+        });
+        FlowRouter.go("orderForm", {orderId: orderId}, null);
+      }
     } else {
       MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }

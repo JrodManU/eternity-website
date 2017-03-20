@@ -18,9 +18,9 @@ Template.orderFormLinkForm.events({
     var imageLink = "";
     var orderFormLinkId = FlowRouter.getParam("orderFormLinkId");
     if(OrderFormLinks.findOne(orderFormLinkId)) {
-      Meteor.call("updateOrderFormLink", FlowRouter.getParam("orderFormLinkId"), title, body, imagelink);
+      Meteor.call("updateOrderFormLink", orderFormLinkId, title, body, imageLink);
     } else {
-      Meteor.call("insertOrderFormLink", title, body, imageLink);
+      Meteor.call("insertOrderFormLink", orderFormLinkId, title, body, imageLink);
     }
   }
 });
