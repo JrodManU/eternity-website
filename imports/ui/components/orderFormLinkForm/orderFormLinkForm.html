@@ -4,11 +4,11 @@
       <li>{{> backButton}}</li>
       <li><input class="submitOrderFormLink basicButton" type="button" name="submitOrderFormLink" value="{{#if orderFormLink}}Save{{else}}Submit{{/if}}"></li>
     </ul>
-    <label class="secondaryPageHeader" for="orderFormLinkFormTitle">Title:</label>
+    <label class="fieldLabel" for="orderFormLinkFormTitle">Title:</label>
     <input class="orderFormTextField" id="orderFormLinkFormTitle" type="text" name="orderFormLinkFormTitle" placeholder="Title of link" value="{{orderFormLink.title}}">
-    <label class="secondaryPageHeader" for="orderFormLinkFormBody">Body:</label>
+    <label class="fieldLabel" for="orderFormLinkFormBody">Body:</label>
     <input class="orderFormTextField" id="orderFormLinkFormBody" type="text" name="orderFormLinkFormBody" placeholder="Description of link" value="{{orderFormLink.body}}">
-    <label class="secondaryPageHeader" for="orderFormLinkFormImage">Image Link:</label>
+    <label class="fieldLabel" for="orderFormLinkFormImage">Image Link:</label>
     <input class="orderFormTextField" id="orderFormLinkFormImage" type="text" name="orderFormLinkFormImage" placeholder="Image in background of link" value="{{orderFormLink.image}}">
   </form>
 </template>
