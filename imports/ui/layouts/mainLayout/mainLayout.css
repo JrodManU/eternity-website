@@ -5,12 +5,13 @@
   margin: 10px;
   font-size: 2em;
   color:var(--thirdColor);
-  border-bottom:solid 2px var(--mainColor);
-  display:inline-block;
+  text-decoration: underline;
+  text-decoration-color: var(--mainColor);
+  display:block;
 }
 
 .secondaryPageHeader {
-  font-size:1.5em;
+  font-size:1.3em;
 }
 
 .tableContainer {

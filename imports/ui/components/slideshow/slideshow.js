@@ -8,7 +8,7 @@ Template.slideshow.onCreated(function() {
     var current = $("#slideshow img:nth-child(1)");
     var next = $("#slideshow img:nth-child(2)");
     $("#slideshow").append(current);
-  }, 1000);
+  }, 3000);
 });
 
 Template.slideshow.onDestroyed(function() {
