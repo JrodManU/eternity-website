@@ -20,11 +20,12 @@ Meteor.methods({
       if(!orderFormLinkSchemaContext.validate(orderFormLink)) {
         MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
       } else {
-        OrderFormLinks.insert(orderFormLink, function(error) {
+        OrderFormLinks.insert(orderFormLink, function(error, orderFormLinkId) {
           if(error) {
             MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
           } else {
             MeteorAlerts.alert("Order form link successfully inserted", 2000, ["meteorAlertSuccess"]);
+            window.history.back();
           }
         });
       }
@@ -52,6 +53,7 @@ Meteor.methods({
             MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
           } else {
             MeteorAlerts.alert("Order form link successfully updated", 2000, ["meteorAlertSuccess"]);
+            window.history.back();
           }
         });
       }

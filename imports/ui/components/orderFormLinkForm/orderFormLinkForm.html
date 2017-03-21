@@ -2,7 +2,7 @@
   <form class="orderFormLinkForm">
     <ul class="buttonGroup">
       <li>{{> backButton}}</li>
-      <li><input class="submitOrderFormLink basicButton" type="button" name="submitOrderFormLink" value="Submit"></li>
+      <li><input class="submitOrderFormLink basicButton" type="button" name="submitOrderFormLink" value="{{#if orderFormLink}}Save{{else}}Submit{{/if}}"></li>
     </ul>
     <input class="orderFormTextField" id="orderFormLinkFormTitle" type="text" name="orderFormLinkFormTitle" placeholder="Title of link" value="{{orderFormLink.title}}">
     <input class="orderFormTextField" id="orderFormLinkFormBody" type="text" name="orderFormLinkFormBody" placeholder="Description of link" value="{{orderFormLink.body}}">

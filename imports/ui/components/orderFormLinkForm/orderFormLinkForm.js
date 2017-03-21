@@ -2,7 +2,6 @@ import { Meteor } from "meteor/meteor";
 import { Template } from "meteor/templating";
 
 import "./orderFormLinkForm.css";
-
 import "./orderFormLinkForm.html";
 
 Template.orderFormLinkForm.helpers({
