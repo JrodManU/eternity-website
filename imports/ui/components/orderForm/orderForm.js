@@ -6,8 +6,10 @@ import "./orderForm.css";
 Template.orderForm.onRendered(function() {
   //TODO: make dry
   if(this.$("#orderType").val() == "other") {
+    this.$("#orderOtherTypeLabel").show();
     this.$("#orderOtherType").show();
   } else {
+    this.$("#orderOtherTypeLabel").hide();
     this.$("#orderOtherType").hide();
   }
 });
