@@ -61,8 +61,10 @@ Template.orderForm.events({
   },
   "change #orderType"(event, template) {
     if(template.$("#orderType").val() == "other") {
+      template.$("#orderOtherTypeLabel").show();
       template.$("#orderOtherType").show();
     } else {
+      template.$("#orderOtherTypeLabel").hide();
       template.$("#orderOtherType").hide();
     }
   },
