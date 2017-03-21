@@ -14,6 +14,20 @@
   font-size:1.3em;
 }
 
+.fieldLabel {
+  display:block;
+  margin-top:10px;
+}
+
+.fieldLabel + * {
+  width: 50%;
+  min-width:400px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .tableContainer {
   margin: 10px auto 10px auto;
 }
@@ -86,16 +100,6 @@
 
 .basicButton:disabled {
   background-color: var(--secondColorDark);
-}
-
-.orderFormTextField {
-  width: 50%;
-  min-width:400px;
-  padding: 12px 20px;
-  margin: 8px 0px 0px 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .infoText  {

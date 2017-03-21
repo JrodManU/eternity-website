@@ -14,30 +14,30 @@
       <li><input class="resetOrder basicButton" type="button" name="resetOrder" value="Reset" {{disabled}}></li>
       <li><input class="previewOrder basicButton" type="button" name="previewOrder" value="Preview" {{disabled}}></li>
     </ul>
-    <label class="secondaryPageHeader" for="orderName">Order Name:</label>
-    <input class="orderFormTextField" id="orderName" type="text" name="orderName" placeholder="Name of Order" value="{{order.name}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderType">Order Type:</label>
-    <select class="orderFormTextField" id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
+    <label class="fieldLabel" for="orderName">Order Name:</label>
+    <input id="orderName" type="text" name="orderName" placeholder="Name of Order" value="{{order.name}}" {{disabled}}>
+    <label id="orderOtherTypeLabel" class="fieldLabel" for="orderType">Order Type:</label>
+    <select id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
       {{#each orderFormLinks}}
         <option value="{{title}}">{{title}}</option>
       {{/each}}
       <option value="other">Other</option>
     </select>
-    <label class="secondaryPageHeader" for="orderOtherType">Specify what you are looking for:</label>
-    <input class="orderFormTextField" id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.type}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderAmount">Order Amount:</label>
-    <input class="orderFormTextField" id="orderAmount" type="number" name="orderQuantity" placeholder="Estimated amount" value="{{order.amount}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderWidth">Order Width:</label>
-    <input class="orderFormTextField" id="orderWidth" type="number" name="orderWidth" placeholder="Estimated width" value="{{order.width}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderHeight">Order Height:</label>
-    <input class="orderFormTextField" id="orderHeight" type="number" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderDescription">Order Description:</label>
-    <textarea class="orderFormTextField" id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" name="orderDescription" {{disabled}}>{{order.description}}</textarea>
-    <label class="secondaryPageHeader" for="orderFirstName">First Name:</label>
-    <input class="orderFormTextField" id="orderFirstName" type="text" name="orderFirstName" placeholder="First Name" value="{{order.firstName}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderLastName">Last Name:</label>
-    <input class="orderFormTextField" id="orderLastName" type="text" name="orderLastName" placeholder="Last Name" value="{{order.lastName}}" {{disabled}}>
-    <label class="secondaryPageHeader" for="orderPhoneNumber">Phone Number:</label>
-    <input class="orderFormTextField" id="orderPhoneNumber" type="tel" name="orderPhoneNumber" placeholder="Phone Number" value="{{order.phoneNumber}}" {{disabled}}>
+    <label class="fieldLabel" for="orderOtherType">Specify what you are looking for:</label>
+    <input id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.type}}" {{disabled}}>
+    <label class="fieldLabel" for="orderAmount">Order Amount:</label>
+    <input id="orderAmount" type="number" name="orderQuantity" placeholder="Estimated amount" value="{{order.amount}}" {{disabled}}>
+    <label class="fieldLabel" for="orderWidth">Order Width:</label>
+    <input id="orderWidth" type="number" name="orderWidth" placeholder="Estimated width" value="{{order.width}}" {{disabled}}>
+    <label class="fieldLabel" for="orderHeight">Order Height:</label>
+    <input id="orderHeight" type="number" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>
+    <label class="fieldLabel" for="orderDescription">Order Description:</label>
+    <textarea id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" name="orderDescription" {{disabled}}>{{order.description}}</textarea>
+    <label class="fieldLabel" for="orderFirstName">First Name:</label>
+    <input id="orderFirstName" type="text" name="orderFirstName" placeholder="First Name" value="{{order.firstName}}" {{disabled}}>
+    <label class="fieldLabel" for="orderLastName">Last Name:</label>
+    <input id="orderLastName" type="text" name="orderLastName" placeholder="Last Name" value="{{order.lastName}}" {{disabled}}>
+    <label class="fieldLabel" for="orderPhoneNumber">Phone Number:</label>
+    <input id="orderPhoneNumber" type="tel" name="orderPhoneNumber" placeholder="Phone Number" value="{{order.phoneNumber}}" {{disabled}}>
   </form>
 </template>
