@@ -20,7 +20,13 @@ Meteor.methods({
       if(!orderFormLinkSchemaContext.validate(orderFormLink)) {
         MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
       } else {
-        OrderFormLinks.insert(orderFormLink);
+        OrderFormLinks.insert(orderFormLink, function(error) {
+          if(error) {
+            MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
+          } else {
+            MeteorAlerts.alert("Order form link successfully inserted", 2000, ["meteorAlertSuccess"]);
+          }
+        });
       }
     }
   },
@@ -41,7 +47,13 @@ Meteor.methods({
           title: orderFormLink.title,
           body: orderFormLink.body,
           image: orderFormLink.image
-        }});
+        }}, function(error) {
+          if(error) {
+            MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
+          } else {
+            MeteorAlerts.alert("Order form link successfully updated", 2000, ["meteorAlertSuccess"]);
+          }
+        });
       }
     }
   }
