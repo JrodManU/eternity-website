@@ -31,6 +31,12 @@ Template.allUsers.events({
   },
   "submit #usersSearchForm":function(event, template) {
     event.preventDefault();
+    var filter = template.$("#usersSearchField").val().trim();
+    //254 is the max length for emails.
+    if(filter.length > 254) {
+      MeteorAlerts.alert("No email is that long.", 2000, ["meteorAlertWarning"]);
+      return;
+    }
     Session.set("usersSearchFilter", template.$("#usersSearchField").val().trim());
   }
 });

@@ -1,26 +1,29 @@
 import { Template } from "meteor/templating";
 
-import "./registerModalContent.html";
-
 import "./registerModalContent.css";
+import "./registerModalContent.html";
 
 Template.registerModalContent.events({
   "submit #registerForm": function(event) {
     event.preventDefault();
 
-    var email = event.target.registerEmail.value;
-    var password = event.target.registerPassword.value;
-    var password2 = event.target.registerPassword2.value;
-    if(!email.trim()) {
+    var email = event.target.registerEmail.value.trim();
+    var password = event.target.registerPassword.value.trim();
+    var password2 = event.target.registerPassword2.value.trim();
+    if(!email) {
       MeteorAlerts.alert("Please enter a username", 2000, ["meteorAlertWarning"]);
       return;
     }
-    if(!password.trim()) {
+    if(!password) {
       MeteorAlerts.alert("Please enter a password", 2000, ["meteorAlertWarning"]);
       return;
     }
     if(password !== password2) {
       MeteorAlerts.alert("Passwords do not match.", 2000, ["meteorAlertWarning"]);
+      return;
+    }
+    if(password.length < 8) {
+      MeteorAlerts.alert("Your password must be atleast")
     }
     Accounts.createUser({
       email: email,
@@ -29,10 +32,8 @@ Template.registerModalContent.events({
       if(error) {
         MeteorAlerts.alert(error.message, 1000, ["meteorAlertWarning"]);
       } else {
-        Meteor.call("selfAssignDefaultRole");
         MeteorAlerts.alert("Successfully registered!", 2000, ["meteorAlertSuccess"]);
         Session.set("showLoginModal", false);
-        Meteor.call("sendVerificationLink");
       }
     });
   },
