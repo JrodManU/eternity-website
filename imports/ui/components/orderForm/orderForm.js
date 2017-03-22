@@ -1,7 +1,8 @@
 import { Template } from "meteor/templating";
-import "./orderForm.html";
 
 import "./orderForm.css";
+
+import "./orderForm.html";
 
 Template.orderForm.onRendered(function() {
   //TODO: make dry

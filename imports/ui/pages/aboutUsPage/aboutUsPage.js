@@ -1,3 +1,3 @@
-import "./aboutUsPage.html";
-
 import "./aboutUsPage.css";
+
+import "./aboutUsPage.html";
