@@ -1,15 +1,11 @@
-#registerForm {
-  padding: 2% 2% 2% 2%;
-}
-
 .emailRegister, .passwordRegister {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .registerButton {
@@ -25,7 +21,6 @@
   width: 100px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 2.5px;
 }
 
 .registerButton span {
@@ -56,7 +51,6 @@
 .switchToLogin:link {
   font-family: var(--mainFont);
   font-size: .7em;
-  padding: 5px;
   text-decoration: none;
 }
 
