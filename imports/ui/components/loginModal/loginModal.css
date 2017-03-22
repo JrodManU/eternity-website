@@ -44,7 +44,7 @@
 }
 
 .closeLoginModal:hover,
-.closeLoginModal:focus { 
+.closeLoginModal:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -52,4 +52,18 @@
 
 .h1FloatLeft {
   text-align: left;
+}
+
+.forgotPassword:link {
+  font-family: var(--mainFont);
+  font-size: .7em;
+  text-decoration: none;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.modalContentHolder {
+  padding:2%;
 }

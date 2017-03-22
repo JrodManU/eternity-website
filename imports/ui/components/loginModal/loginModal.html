@@ -11,11 +11,14 @@
           <h1>{{loginModalHeader}}</h1>
         </div>
       </header>
-      {{#if showLoginModalContent}}
-        {{> loginModalContent}}
-      {{else}}
-        {{> registerModalContent}}
-      {{/if}}
+      <div class="modalContentHolder">
+        {{#if showLoginModalContent}}
+          {{> loginModalContent}}
+        {{else}}
+          {{> registerModalContent}}
+        {{/if}}
+        <p><a class="forgotPassword" href="">Forgot/want to change password? Click here</a></p>
+      </div>
       <footer class="loginModalFooter">
         <p>Eternity Trading Group</p>
       </footer>
