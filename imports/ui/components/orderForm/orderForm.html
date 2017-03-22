@@ -27,10 +27,17 @@
     <input id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.type}}" {{disabled}}>
     <label class="fieldLabel" for="orderAmount">Order Amount:</label>
     <input id="orderAmount" type="number" name="orderQuantity" placeholder="Estimated amount" value="{{order.amount}}" {{disabled}}>
-    <label class="fieldLabel" for="orderWidth">Order Width(Specify Units):</label>
+    <label class="fieldLabel" for="orderWidth">Order Width:</label>
     <input id="orderWidth" type="text" name="orderWidth" placeholder="Estimated width" value="{{order.width}}" {{disabled}}>
-    <label class="fieldLabel" for="orderHeight">Order Height(Specify Units):</label>
+    <label class="fieldLabel" for="orderHeight">Order Height:</label>
     <input id="orderHeight" type="text" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>
+    <label class="fieldLabel" for="orderUnits">Measurement Units:</label>
+    <select id="orderUnits" name="orderUnits" value="{{order.units}}" {{disabled}}>
+      <option value="Inches">Inches</option>
+      <option value="Feet">Feet</option>
+      <option value="Meters">Meters</option>
+      <option value="Centimeters">Centimeters</option>
+    </select>
     <label class="fieldLabel" for="orderDescription">Order Description:</label>
     <textarea id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" name="orderDescription" {{disabled}}>{{order.description}}</textarea>
     <label class="fieldLabel" for="orderFirstName">First Name:</label>

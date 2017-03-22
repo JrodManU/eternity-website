@@ -1,7 +1,7 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.methods({
-  "insertOrderAndGo"(orderFormLinkId, name, type, amount, width, height, description, firstName, lastName, phoneNumber) {
+  "insertOrderAndGo"(orderFormLinkId, name, type, amount, width, height, units, description, firstName, lastName, phoneNumber) {
     var userId = Meteor.userId();
     if(userId) {
       if(Roles.userIsInRole(userId, ["owner"])) {
@@ -20,6 +20,7 @@ Meteor.methods({
         amount: amount,
         width: width,
         height: height,
+        units: units,
         description: description,
         firstName: firstName,
         lastName: lastName,
@@ -29,7 +30,7 @@ Meteor.methods({
       OrderSchema.clean(orderToInsert);
       var orderSchemaContext = OrderSchema.newContext();
       if(!orderSchemaContext.validate(orderToInsert)) {
-        if(this.isSimulation) MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
+        if(this.isSimulation) MeteorAlerts.alert("Invalid Data", 2000, ["meteorAlertWarning"]);
       } else {
         Orders.insert(orderToInsert, function(error, orderId) {
           if(error) {
@@ -43,7 +44,7 @@ Meteor.methods({
       if(this.isSimulation) MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }
   },
-  "updateOrder"(orderId, name, type, amount, width, height, description, firstName, lastName, phoneNumber){
+  "updateOrder"(orderId, name, type, amount, width, height, units, description, firstName, lastName, phoneNumber){
     var userId = Meteor.userId();
     if(userId && Orders.findOne(orderId).userId === userId) {
       var update = {
@@ -52,6 +53,7 @@ Meteor.methods({
         amount: amount,
         width: width,
         height: height,
+        units: units,
         description: description,
         firstName: firstName,
         lastName: lastName,
@@ -61,7 +63,7 @@ Meteor.methods({
       OrderSchema.clean(update);
       var orderSchemaContext = OrderSchema.newContext();
       if(!orderSchemaContext.validate(update)) {
-        if(this.isSimulation) MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
+        if(this.isSimulation) MeteorAlerts.alert("Invalid Data", 2000, ["meteorAlertWarning"]);
       } else {
         Orders.update(orderId, {$set: {
           name: update.name,
@@ -69,6 +71,7 @@ Meteor.methods({
           amount: update.amount,
           width: update.width,
           height: update.height,
+          units: update.units,
           description: update.description,
           firstName: update.firstName,
           lastName: update.lastName,
@@ -112,6 +115,7 @@ Meteor.methods({
         amount: null,
         width: null,
         height: null,
+        units: null,
         description: null,
         firstName: null,
         lastName: null,
