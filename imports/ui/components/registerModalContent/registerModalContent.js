@@ -23,7 +23,8 @@ Template.registerModalContent.events({
       return;
     }
     if(password.length < 8) {
-      MeteorAlerts.alert("Your password must be at least 8 characters");
+      MeteorAlerts.alert("Your password must be at least 8 characters", 2000, ["meteorAlertWarning"]);
+      return;
     }
     Accounts.createUser({
       email: email,
