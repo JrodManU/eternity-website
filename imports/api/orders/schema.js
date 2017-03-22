@@ -52,17 +52,17 @@ OrderSchema = new SimpleSchema({
     defaultValue: null
   },
   width: {
-    type: Number,
+    type: String,
     label: "Width of items ordered",
     optional: true,
-    max: 30000,
+    max: 30,
     defaultValue: null
   },
   height: {
-    type: Number,
+    type: String,
     label: "Height of items ordered",
     optional: true,
-    max: 30000,
+    max: 30,
     defaultValue: null
   },
   description: {
