@@ -1,18 +1,6 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.methods({
-  "sendVerificationLink"() {
-    var userId = Meteor.userId();
-    if(userId) {
-      return Accounts.sendVerificationEmail(userId);
-    }
-  },
-  "selfAssignDefaultRole"() {
-    var userId = Meteor.userId();
-    if(userId && !Roles.userIsInRole(userId, ["owner"])) {
-      Roles.addUsersToRoles(userId, ["normal"]);
-    }
-  },
   "assignRole"(userId, role) {
     var actingUser = Meteor.user();
     var targetUser = Meteor.users.find(userId);
