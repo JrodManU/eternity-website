@@ -1,7 +1,11 @@
-import "./banner.css";
-import "./banner.html";
 import { Session } from "meteor/session";
 import { Template } from "meteor/templating";
+
+import "./banner.css";
+
+import "./banner.html";
+
+
 
 Template.banner.helpers({
   "bannerHeight": function() {

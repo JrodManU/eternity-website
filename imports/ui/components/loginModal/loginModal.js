@@ -1,8 +1,11 @@
-import "./loginModal.css";
-import "./loginModal.html";
-
 import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
+
+import "./loginModal.css";
+
+import "./loginModal.html";
+
+
 
 Template.loginModal.helpers({
   "showLoginModal":function() {

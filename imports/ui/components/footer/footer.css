@@ -1,8 +1,9 @@
 .footerInfo {
-    color: #FFC15E; /* For IE, Safari, and Opera */
-    background-color: #1F1300; /* For IE, Safari, and Opera */
+    color: #545454; /* For IE, Safari and Opera */
     color: var(--thirdColor);
+    background: #dadada; /* For IE, Safari and Opera */
     background: var(--mainColor);
+    border-top-color: #feaa2c; /* For IE, Safari and Opera */
     border-top: solid 2px var(--secondColor);
     font-family: var(--mainFont);
     text-align: center;

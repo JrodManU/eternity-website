@@ -1,2 +1,3 @@
-import "./adminPage.html";
 import "./adminPage.css";
+
+import "./adminPage.html";

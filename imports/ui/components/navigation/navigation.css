@@ -9,8 +9,9 @@
 .navbar {
   width: 100%;
 
-  background-color: #1F1300; /* For IE, Safari and Opera */
+  background-color: #dadada; /* For IE, Safari and Opera */
   background-color: var(--mainColor);
+  border-bottom-color: #feaa2c; /* For IE, Safari and Opera */
   border-bottom: solid 2px var(--secondColor);
 }
 
@@ -41,11 +42,12 @@
   transition: all 0.45s;
 	text-decoration: none;
 
-  color: #FFC15E; /* For IE, Safari and Opera */
+  color: #545454; /* For IE, Safari and Opera */
   color: var(--thirdColor);
 }
 
 #navLinksDesktop li:hover a {
+  color: #feaa2c; /* For IE, Safari and Opera */
   color: var(--secondColor);
 }
 #mobileNav {
@@ -76,7 +78,9 @@
 }
 
 #navLinksMobile li {
+  background-color: #feaa2c; /* For IE, Safari and Opera */
   background-color:var(--secondColor);
+  border-bottom-color: #dadada /* For IE, Safari and Opera */
   border-bottom:solid 3px var(--mainColor);
 }
 
@@ -93,6 +97,7 @@
   display: block;
   float:right;
   font-size:3em;
+  color: #545454; /* For IE, Safari and Opera */
   color:var(--thirdColor);
   margin-right:20px;
   text-decoration:none;

@@ -1,7 +1,8 @@
-import "./slideshow.html";
+import { Template } from "meteor/templating";
+
 import "./slideshow.css";
 
-import { Template } from "meteor/templating";
+import "./slideshow.html";
 
 Template.slideshow.onCreated(function() {
   this.interval = window.setInterval(function() {

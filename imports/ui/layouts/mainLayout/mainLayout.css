@@ -4,8 +4,10 @@
 .pageHeader, .secondaryPageHeader {
   margin: 10px;
   font-size: 2em;
+  color: #545454; /* For IE, Safari and Opera */
   color:var(--thirdColor);
   text-decoration: underline;
+  text-decoration-color: #dadada; /* For IE, Safari and Opera */
   text-decoration-color: var(--mainColor);
   display:block;
 }
@@ -41,10 +43,12 @@
 }
 
 .tableRow:nth-child(odd) {
+  background-color: #dadada; /* For IE, Safari and Opera */
   background-color: var(--mainColor);
 }
 
 .tableHeader {
+  background-color: #feaa2c; /* For IE, Safari and Opera */
   background-color: var(--secondColor);
 }
 
@@ -67,6 +71,7 @@
 .basicButton {
   color:white;
   display: inline-block;
+  background-color: #feaa2c; /* For IE, Safari and Opera */
   background-color: var(--secondColor);
   border: none;
   border-radius:4px;
@@ -95,10 +100,12 @@
 }
 
 .basicButton:hover {
+  background-color: #f79400; /* For IE, Safari and Opera */
   background-color: var(--secondColorHighlight);
 }
 
 .basicButton:disabled {
+  background-color: #e9b565; /* For IE, Safari and Opera */
   background-color: var(--secondColorDark);
 }
 
@@ -106,6 +113,7 @@
   margin: 0px auto 10px auto;
   width: 50%;
   min-width:500px;
+  background-color: #feaa2c; /* For IE, Safari and Opera */
   background-color: var(--secondColor);
   padding: 10px;
   border-radius: 10px;

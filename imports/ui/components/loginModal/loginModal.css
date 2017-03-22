@@ -13,6 +13,7 @@
 .loginModalHeader, .loginModalFooter {
   color:white;
   padding:2%;
+  background-color: #feaa2c; /* For IE, Safari and Opera */
   background-color: var(--secondColor);
 }
 
@@ -43,7 +44,7 @@
 }
 
 .closeLoginModal:hover,
-.closeLoginModal:focus { /* TODO: look up focus */
+.closeLoginModal:focus { 
     color: black;
     text-decoration: none;
     cursor: pointer;
