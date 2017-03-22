@@ -1,1 +1,8 @@
-.usersSeachField
+.usersSearchField {
+  width: 50%;
+  min-width:400px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
