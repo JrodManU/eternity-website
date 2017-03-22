@@ -26,5 +26,19 @@ Template.loginModal.helpers({
 Template.loginModal.events({
   "click .closeLoginModal"() {
     Session.set("showLoginModal", false);
+  },
+  "click .forgotPassword"(event, template) {
+
+    Accounts.forgotPassword({email: email}, function(err) {
+        if (err) {
+          if (err.message === 'User not found [403]') {
+            console.log('This email does not exist.');
+          } else {
+            console.log('We are sorry but something went wrong.');
+          }
+        } else {
+          console.log('Email Sent. Check your mailbox.');
+        }
+      });
   }
 });
