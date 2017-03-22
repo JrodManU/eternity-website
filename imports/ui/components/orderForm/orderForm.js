@@ -1,5 +1,4 @@
 import { Template } from "meteor/templating";
-
 import "./orderForm.html";
 
 import "./orderForm.css";
@@ -41,12 +40,11 @@ Template.orderForm.events({
     var amount = template.$("#orderAmount").val();
     var width = template.$("#orderWidth").val();
     var height = template.$("#orderHeight").val();
-    var units = template.$("#orderMeasurementUnits").val();
     var description = template.$("#orderDescription").val();
     var firstName = template.$("#orderFirstName").val();
     var lastName = template.$("#orderLastName").val();
     var phoneNumber = template.$("#orderPhoneNumber").val();
-    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, type, amount, width, height, units, description, firstName, lastName, phoneNumber);
+    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, type, amount, width, height, description, firstName, lastName, phoneNumber);
   },
   "click .deleteOrder"(event, template){
     Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));
