@@ -5,7 +5,7 @@ Meteor.methods({
     var userId = Meteor.userId();
     if(userId) {
       if(Roles.userIsInRole(userId, ["owner"])) {
-        MeteorAlerts.alert("The owner cannot make orders", 2000, ["meteorAlertWarning"]);
+        if(this.isSimulation) MeteorAlerts.alert("The owner cannot make orders", 2000, ["meteorAlertWarning"]);
         return;
       }
 
@@ -23,47 +23,64 @@ Meteor.methods({
         description: description,
         firstName: firstName,
         lastName: lastName,
-        phoneNUmber: phoneNumber
+        phoneNumber: phoneNumber
       }
 
       OrderSchema.clean(orderToInsert);
       var orderSchemaContext = OrderSchema.newContext();
       if(!orderSchemaContext.validate(orderToInsert)) {
-        MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
+        if(this.isSimulation) MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
       } else {
         Orders.insert(orderToInsert, function(error, orderId) {
           if(error) {
-            MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+            if(this.isSimulation) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
           } else {
             FlowRouter.go("orderForm", {orderId: orderId}, null);
           }
         });
       }
     } else {
-      MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
+      if(this.isSimulation) MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }
   },
   "updateOrder"(orderId, name, type, amount, width, height, description, firstName, lastName, phoneNumber){
     var userId = Meteor.userId();
     if(userId && Orders.findOne(orderId).userId === userId) {
-      Orders.update(orderId, {$set:
-        { name: name,
-          type: type,
-          amount: amount,
-          width: width,
-          height: height,
-          description: description,
-          firstName: firstName,
-          lastName: lastName,
-          phoneNumber: phoneNumber
-        },
-      }, function(error) {
-        if(error) {
-          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
-        } else {
-          MeteorAlerts.alert("Order updated successfully", 2000, ["meteorAlertSuccess"]);
-        }
-      });
+      var update = {
+        name: name,
+        type: type,
+        amount: amount,
+        width: width,
+        height: height,
+        description: description,
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber
+      }
+
+      OrderSchema.clean(update);
+      var orderSchemaContext = OrderSchema.newContext();
+      if(!orderSchemaContext.validate(update)) {
+        if(this.isSimulation) MeteorAlerts.alert("One of the input fields is way too long", 2000, ["meteorAlertWarning"]);
+      } else {
+        Orders.update(orderId, {$set: {
+          name: update.name,
+          type: update.type,
+          amount: update.amount,
+          width: update.width,
+          height: update.height,
+          description: update.description,
+          firstName: update.firstName,
+          lastName: update.lastName,
+          phoneNumber: update.phoneNumber
+        }}, function(error) {
+          if(error) {
+            if(this.isSimulation) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+          } else {
+            if(this.isSimulation) MeteorAlerts.alert("Order updated successfully", 2000, ["meteorAlertSuccess"]);
+          }
+        });
+      }
     }
   },
   "deleteOrder"(orderId) {
@@ -71,9 +88,9 @@ Meteor.methods({
     if(userId && (Roles.userIsInRole(userId, ["admin"]) || Orders.findOne({_id: orderId}).userId === userId)) {
       Orders.remove(orderId, function(error) {
         if(error) {
-          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+          if(this.isSimulation) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {
-          MeteorAlerts.alert("Order deleted successfully", 2000, ["meteorAlertSuccess"]);
+          if(this.isSimulation) MeteorAlerts.alert("Order deleted successfully", 2000, ["meteorAlertSuccess"]);
           FlowRouter.go("orderForm", {orderId: "none"}, null);
         }
       });
@@ -101,9 +118,9 @@ Meteor.methods({
         phoneNumber: null
       }}, function(error) {
         if(error) {
-          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+          if(this.isSimulation) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {
-          MeteorAlerts.alert("Order reset successfully", 2000, ["meteorAlertSuccess"]);
+          if(this.isSimulation) MeteorAlerts.alert("Order reset successfully", 2000, ["meteorAlertSuccess"]);
         }
       });
     }
@@ -114,12 +131,12 @@ Meteor.methods({
       var newValue = !Orders.findOne(orderId).markedForReview;
       Orders.update(orderId, {$set: { markedForReview: newValue}}, function(error) {
         if(error) {
-          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+          if(this.isSimulation) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         } else {
           if(newValue) {
-            MeteorAlerts.alert("Order marked for review successfully", 2000, ["meteorAlertSuccess"]);
+            if(this.isSimulation) MeteorAlerts.alert("Order marked for review successfully", 2000, ["meteorAlertSuccess"]);
           } else {
-            MeteorAlerts.alert("Order unmarked for review successfully", 2000, ["meteorAlertSuccess"]);
+            if(this.isSimulation) MeteorAlerts.alert("Order unmarked for review successfully", 2000, ["meteorAlertSuccess"]);
           }
         }
       });
@@ -130,7 +147,7 @@ Meteor.methods({
     if(userId && Roles.userIsInRole(userId, ["admin"])) {
       Orders.update(orderId, {$set: { reviewed: true }}, function(error) {
         if(error) {
-          MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+          if(this.isSimulation) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
         }
       });
     }
