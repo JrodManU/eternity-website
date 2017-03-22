@@ -1,9 +1,9 @@
 <template name="adminPage">
   <article class="adminPage">
     {{#if isInRole "admin"}}
-      {{> allUsers}}
-      {{> allOrders}}
       {{> allOrderFormLinks}}
+      {{> allOrders}}
+      {{> allUsers}}
     {{else}}
       <p>You are not authorized to view this page.</p>
     {{/if}}
