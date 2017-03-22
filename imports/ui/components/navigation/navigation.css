@@ -42,7 +42,7 @@
   transition: all 0.45s;
 	text-decoration: none;
 
-  color: #f79400; /* For IE, Safari and Opera */
+  color: #545454; /* For IE, Safari and Opera */
   color: var(--thirdColor);
 }
 
@@ -97,7 +97,7 @@
   display: block;
   float:right;
   font-size:3em;
-  color: #f79400; /* For IE, Safari and Opera */
+  color: #545454; /* For IE, Safari and Opera */
   color:var(--thirdColor);
   margin-right:20px;
   text-decoration:none;

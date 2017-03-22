@@ -4,7 +4,7 @@
 .pageHeader, .secondaryPageHeader {
   margin: 10px;
   font-size: 2em;
-  color: #f79400; /* For IE, Safari and Opera */
+  color: #545454; /* For IE, Safari and Opera */
   color:var(--thirdColor);
   text-decoration: underline;
   text-decoration-color: #dadada; /* For IE, Safari and Opera */

@@ -1,5 +1,5 @@
 .footerInfo {
-    color: #f79400; /* For IE, Safari and Opera */
+    color: #545454; /* For IE, Safari and Opera */
     color: var(--thirdColor);
     background: #dadada; /* For IE, Safari and Opera */
     background: var(--mainColor);
