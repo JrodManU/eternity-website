@@ -22,9 +22,9 @@ Meteor.methods({
       } else {
         OrderFormLinks.insert(orderFormLink, function(error, orderFormLinkId) {
           if(error) {
-            if(this.isSimulation) MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
+            MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
           } else {
-            if(this.isSimulation) MeteorAlerts.alert("Order form link successfully inserted", 2000, ["meteorAlertSuccess"]);
+            MeteorAlerts.alert("Order form link successfully inserted", 2000, ["meteorAlertSuccess"]);
             window.history.back();
           }
         });
@@ -50,9 +50,9 @@ Meteor.methods({
           image: orderFormLink.image
         }}, function(error) {
           if(error) {
-            if(this.isSimulation) MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
+            MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
           } else {
-            if(this.isSimulation) MeteorAlerts.alert("Order form link successfully updated", 2000, ["meteorAlertSuccess"]);
+            MeteorAlerts.alert("Order form link successfully updated", 2000, ["meteorAlertSuccess"]);
             window.history.back();
           }
         });
