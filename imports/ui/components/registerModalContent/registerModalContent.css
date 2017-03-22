@@ -16,6 +16,7 @@
   color:white;
   display: inline-block;
   border-radius: 4px;
+  background-color: #feaa2c; /* For IE, Safari and Opera */
   background-color: var(--secondColor);
   border: none;
   text-align: center;
