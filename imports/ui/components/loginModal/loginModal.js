@@ -27,18 +27,15 @@ Template.loginModal.events({
   "click .closeLoginModal"() {
     Session.set("showLoginModal", false);
   },
-  "click .forgotPassword"(event, template) {
-
-    Accounts.forgotPassword({email: email}, function(err) {
-        if (err) {
-          if (err.message === 'User not found [403]') {
-            console.log('This email does not exist.');
-          } else {
-            console.log('We are sorry but something went wrong.');
-          }
-        } else {
-          console.log('Email Sent. Check your mailbox.');
-        }
-      });
+  "submit #forgotPasswordForm"(event, template) {
+    event.preventDefault();
+    var email = template.$("#forgotPasswordEmail").val();
+    Accounts.forgotPassword({email: email}, function(error) {
+      if(error) {
+        MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
+      } else {
+        MeteorAlerts.alert("Email sent. Please check your inbox.", 2000, ["meteorAlertSuccess"]);
+      }
+    });
   }
 });
