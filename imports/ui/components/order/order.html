@@ -3,22 +3,20 @@
   <ul class="buttonGroup">
     {{> backButton}}
   </ul>
-  <body class="infoText">
-    <h2 class="secondaryPageHeader">Title:</h2>
+  <div class="infoText">
+    <h2 class="orderPreviewLabel">Title:</h2>
     <p>{{order.name}}</p>
-    <br>
-    <h2 class="secondaryPageHeader">Order Type:</h2>
+    <h2 class="orderPreviewLabel">Order Type:</h2>
     <p>{{order.type}}</p>
-    <br>
-    <h2 class="secondaryPageHeader">Order Amount:</h2>
+    <h2 class="orderPreviewLabel">Order Amount:</h2>
     <p>{{order.amount}}</p>
-    <h2 class="secondaryPageHeader">Order Size:</h2>
-    <p>{{order.width}} {{order.units}}  {{order.height}}</p>
-    <h2 class="secondaryPageHeader">Description:</h2>
+    <h2 class="orderPreviewLabel">Order Size:</h2>
+    <p>{{order.width}}{{order.units}} x {{order.height}}{{order.units}}</p>
+    <h2 class="orderPreviewLabel">Description:</h2>
     <p>{{order.description}}</p>
-    <h2 class="secondaryPageHeader">Order Made By:</h2>
+    <h2 class="orderPreviewLabel">Order Made By:</h2>
     <p>{{order.firstName}} {{order.lastName}}</p>
-    <h2 class="secondaryPageHeader">Phone Number:</h2>
+    <h2 class="orderPreviewLabel">Phone Number:</h2>
     <p>{{order.phoneNumber}}</p>
-  </body>
+  </div>
 </template>

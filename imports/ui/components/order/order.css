@@ -1,0 +1,10 @@
+.orderPreviewLabel {
+  font-family: "Arial";
+  font-family: var(--mainFont);
+  color: #545454;
+  color: var(--thirdColor);
+margin-top:10px;
+}
+orderPreviewLabel:first-child{
+  margin-top:0px;
+}

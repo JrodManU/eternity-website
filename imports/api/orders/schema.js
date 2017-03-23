@@ -69,8 +69,8 @@ OrderSchema = new SimpleSchema({
     type: String,
     label: "Unit of Measurement",
     optional: true,
-    allowedValues: ["Inches", "Feet", "Meters", "Centimeters"],
-    defaultValue: "Inches"
+    allowedValues: ["in", "ft", "m", "cm"],
+    defaultValue: "in"
   },
   description: {
     type: String,
