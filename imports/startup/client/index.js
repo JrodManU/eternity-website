@@ -7,5 +7,6 @@ import "../../api/orders/schema.js";
 import "../../api/orders/methods.js";
 
 import "../../api/users/methods.js";
+import "../../api/users/onResetPasswordLink.js";
 
 import './js/routes.js';
