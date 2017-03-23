@@ -34,6 +34,7 @@ import "../../../ui/components/orderForm/orderForm.js";
 import "../../../ui/components/orderFormLinksTemplate/orderFormLinksTemplate.js";
 import "../../../ui/components/orderFormLinkForm/orderFormLinkForm.js";
 import "../../../ui/components/registerModalContent/registerModalContent.js";
+import "../../../ui/components/resetPassword/resetPassword.js";
 import "../../../ui/components/slideshow/slideshow.js";
 import "../../../ui/components/userOrders/userOrders.js";
 

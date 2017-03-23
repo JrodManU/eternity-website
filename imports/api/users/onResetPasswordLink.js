@@ -1,3 +1,6 @@
+import { Template } from "meteor/templating";
+import { Session } from "meteor/session";
+
 var doneCallback;
 
 Accounts.onResetPasswordLink(function(token, done) {
@@ -5,7 +8,7 @@ Accounts.onResetPasswordLink(function(token, done) {
   doneCallback = done;
 });
 
-Template.resetPassword.events({
+/*Template.resetPassword.events({
   "submit #resetPasswordForm":function(event, template) {
     event.preventDefault();
 
@@ -24,4 +27,4 @@ Template.resetPassword.events({
 
     Session.set("resetPasswordToken", null);
   }
-});
+});*/
