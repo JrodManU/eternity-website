@@ -33,10 +33,10 @@
     <input id="orderHeight" type="text" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>
     <label class="fieldLabel" for="orderUnits">Measurement Units:</label>
     <select id="orderUnits" name="orderUnits" value="{{order.units}}" {{disabled}}>
-      <option value="in">in</option>
-      <option value="ft">ft</option>
-      <option value="m">m</option>
-      <option value="cm">cm</option>
+      <option value="in" {{measureSelected 'in'}}>in</option>
+      <option value="ft" {{measureSelected 'ft'}}>ft</option>
+      <option value="m" {{measureSelected 'm'}}>m</option>
+      <option value="cm" {{measureSelected 'cm'}}>cm</option>
     </select>
     <label class="fieldLabel" for="orderDescription">Order Description:</label>
     <textarea id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" name="orderDescription" {{disabled}}>{{order.description}}</textarea>

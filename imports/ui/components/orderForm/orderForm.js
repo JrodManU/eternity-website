@@ -5,24 +5,6 @@ import "./orderForm.css";
 
 import "./orderForm.html";
 
-Template.orderForm.onRendered(function() {
-  /*Meteor.autorun(function() {
-    if(Session.get("ordersLoaded")) {
-      var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
-      console.log("order");
-      if(OrderFormLinks.find({title: order.type})) {
-        this.$("#orderType").val(order.type);
-        this.$("#orderOtherTypeLabel").hide();
-        this.$("#orderOtherType").hide();
-      } else {
-        this.$("#orderType").val("other");
-        this.$("#orderOtherTypeLabel").show();
-        this.$("#orderOtherType").show();
-      }
-    }
-  });*/
-});
-
 Template.orderForm.helpers({
   "order":function() {
     return Orders.findOne({_id:FlowRouter.getParam("orderId")});
@@ -37,6 +19,10 @@ Template.orderForm.helpers({
   "selected":function() {
     var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
     return order.type === this.title ? "selected" : "";
+  },
+  "measureSelected":function(measure) {
+    var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
+    return measure === order.units ? "selected" : "";
   }
 });
 
