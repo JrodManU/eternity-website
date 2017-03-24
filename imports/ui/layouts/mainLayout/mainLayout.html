@@ -7,9 +7,11 @@
     {{> navigation}}
     {{> loginModal}}
     <main role="main" class="mainContainer">
+      <!-- checks if the user clicked the reset password link-->
       {{#if resetPasswordToken}}
         {{> resetPassword}}
       {{else}}
+        <!--This will show whatever page (about us, order form)-->
         {{> Template.dynamic template=page}}
       {{/if}}
     </main>

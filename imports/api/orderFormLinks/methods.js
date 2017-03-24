@@ -3,6 +3,7 @@ import { Meteor } from "meteor/meteor";
 Meteor.methods({
   "deleteOrderFormLink"(orderFormLinkId) {
     var userId = Meteor.userId();
+    //only admins can do this
     if(userId && Roles.userIsInRole(userId, ["admin"])) {
       OrderFormLinks.remove(orderFormLinkId);
     }
@@ -15,6 +16,7 @@ Meteor.methods({
         body: body,
         image: image
       }
+      //will add any missing fields and fix some stuff before validation
       OrderFormLinkSchema.clean(orderFormLink);
       var orderFormLinkSchemaContext = OrderFormLinkSchema.newContext();
       if(!orderFormLinkSchemaContext.validate(orderFormLink)) {
@@ -24,8 +26,10 @@ Meteor.methods({
           if(error) {
             if(Meteor.isClient) MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
           } else {
-            if(Meteor.isClient) MeteorAlerts.alert("Order form link successfully inserted", 2000, ["meteorAlertSuccess"]);
-            window.history.back();
+            if(Meteor.isClient) {
+              MeteorAlerts.alert("Order form link successfully inserted", 2000, ["meteorAlertSuccess"]);
+              window.history.back();
+            }
           }
         });
       }

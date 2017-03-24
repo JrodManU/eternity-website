@@ -9,3 +9,5 @@ import "../../api/orders/methods.js";
 import "../../api/users/methods.js";
 
 import './js/routes.js';
+
+/*imports the collection stuff and then the routes file which has all the components*/

@@ -1,8 +1,9 @@
+/*these variables will be used throughout the site, makes for easy thememing*/
 :root {
   --mainColor: #dadada;
   --secondColor: #feaa2c;
   --secondColorDark: #e9b565;
-  --secondColorHighlight: #f79400; 
+  --secondColorHighlight: #f79400;
   --thirdColor: #545454;
   --mainFont: "Arial";
 
