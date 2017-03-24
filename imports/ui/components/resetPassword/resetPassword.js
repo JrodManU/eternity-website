@@ -1,6 +1,7 @@
 import { Template } from "meteor/templating";
 import { Session } from "meteor/session";
 
+import "./resetPassword.css";
 import "./resetPassword.html";
 
 var doneCallback;
