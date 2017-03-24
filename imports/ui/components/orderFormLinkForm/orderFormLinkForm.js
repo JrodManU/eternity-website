@@ -17,6 +17,7 @@ Template.orderFormLinkForm.events({
     var body = template.$("#orderFormLinkFormBody").val();
     var image = template.$("#orderFormLinkFormImage").val();
     var orderFormLinkId = FlowRouter.getParam("orderFormLinkId");
+    //creates a new one if none are found
     if(OrderFormLinks.findOne(orderFormLinkId)) {
       Meteor.call("updateOrderFormLink", orderFormLinkId, title, body, image);
     } else {

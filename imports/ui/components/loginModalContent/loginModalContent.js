@@ -32,6 +32,7 @@ Template.loginModalContent.events({
   },
   "click .switchToRegister"() {
     event.preventDefault();
+    //this is the session variable that decides between register or login
     Session.set("showLoginModalContent", false);
   }
 });

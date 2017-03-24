@@ -16,6 +16,7 @@ Template.orderForm.helpers({
   "orderFormLinks":function() {
     return OrderFormLinks.find();
   },
+  //this is for the type select
   "selected":function() {
     var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
     return order.type === this.title ? "selected" : "";

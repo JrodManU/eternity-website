@@ -23,6 +23,7 @@ Template.loginModal.helpers({
 Template.loginModal.events({
   "click .closeLoginModal"() {
     Session.set("showLoginModal", false);
+    //So that login shows up when opened
     Session.set("showLoginModalContent", true);
   },
   "click .forgotPassword"(event, template) {

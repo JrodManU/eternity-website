@@ -26,6 +26,8 @@ Template.registerModalContent.events({
       MeteorAlerts.alert("Your password must be at least 8 characters", 2000, ["meteorAlertWarning"]);
       return;
     }
+    //The password checks are done on the client, so the user could bypass them
+    //But you'd have to be pretty dumb to "hack" for a weak password
     Accounts.createUser({
       email: email,
       password: password

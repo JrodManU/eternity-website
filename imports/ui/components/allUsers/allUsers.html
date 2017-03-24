@@ -9,6 +9,7 @@
       <th class="tableHeader">Email</th>
       <th class="tableHeader"></th>
     </tr>
+    <!-- alot of if statements just to add security, these are seconded on the server -->
     {{#each users}}
       {{#unless iteratedUserIsInRole "owner"}}
         <tr class="tableRow" role="row">

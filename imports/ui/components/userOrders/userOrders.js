@@ -26,6 +26,7 @@ Template.userOrders.helpers({
 });
 
 Template.userOrders.events({
+  //brings up the order
   "click .editMessage": function() {
     FlowRouter.go("orderForm", {orderId: this._id});
   }

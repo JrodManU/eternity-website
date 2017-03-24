@@ -5,6 +5,8 @@ import "./navigation.css";
 
 import "./navigation.html";
 
+//The banner requires a lot of sizing stuff in order to work
+
 Template.navigation.onRendered(function() {
   $(window).scroll(function () {
     if ($(window).scrollTop() >= Session.get("bannerHeight")) {
