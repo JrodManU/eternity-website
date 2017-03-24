@@ -5,7 +5,6 @@ import "./resetPassword.css";
 import "./resetPassword.html";
 
 var doneCallback;
-var hi = "hi";
 
 Accounts.onResetPasswordLink(function(token, done) {
   Session.set("resetPasswordToken", token);

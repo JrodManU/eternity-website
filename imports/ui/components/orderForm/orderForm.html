@@ -17,13 +17,13 @@
     <label class="fieldLabel" for="orderName">Order Name:</label>
     <input id="orderName" type="text" name="orderName" placeholder="Name of Order" value="{{order.name}}" {{disabled}}>
     <label class="fieldLabel" for="orderType">Order Type:</label>
-    <select id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
+    <select id="orderType" name="orderType" {{disabled}}>
       {{#each orderFormLinks}}
         <option value="{{title}}" {{selected}}>{{title}}</option>
       {{/each}}
       <option value="other">Other</option>
     </select>
-    <label class="fieldLabel" id="orderOtherTypeLabel" for="orderOtherType">Specify what you are looking for:</label>
+    <label class="fieldLabel" id="orderOtherTypeLabel" for="orderOtherType">Specify (If Selected Other Above):</label>
     <input id="orderOtherType" type="text" name="otherTypeOfOrder" placeholder="Specify what you are looking for" value="{{order.type}}" {{disabled}}>
     <label class="fieldLabel" for="orderAmount">Order Amount:</label>
     <input id="orderAmount" type="number" name="orderQuantity" placeholder="Estimated amount" value="{{order.amount}}" {{disabled}}>

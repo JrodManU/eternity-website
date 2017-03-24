@@ -1,7 +1,3 @@
-#orderOtherType {
-  display: none;
-}
-
 .orderForm, .orderFormHeader {
   text-align: center;
   font-family: var(--mainFont);

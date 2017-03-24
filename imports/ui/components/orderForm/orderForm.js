@@ -1,19 +1,26 @@
 import { Template } from "meteor/templating";
+import { Session } from "meteor/session";
 
 import "./orderForm.css";
 
 import "./orderForm.html";
 
 Template.orderForm.onRendered(function() {
-  //TODO: make dry
-  var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
-  if(order.type === "other") {
-    this.$("#orderOtherTypeLabel").show();
-    this.$("#orderOtherType").show();
-  } else {
-    this.$("#orderOtherTypeLabel").hide();
-    this.$("#orderOtherType").hide();
-  }
+  /*Meteor.autorun(function() {
+    if(Session.get("ordersLoaded")) {
+      var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
+      console.log("order");
+      if(OrderFormLinks.find({title: order.type})) {
+        this.$("#orderType").val(order.type);
+        this.$("#orderOtherTypeLabel").hide();
+        this.$("#orderOtherType").hide();
+      } else {
+        this.$("#orderType").val("other");
+        this.$("#orderOtherTypeLabel").show();
+        this.$("#orderOtherType").show();
+      }
+    }
+  });*/
 });
 
 Template.orderForm.helpers({
@@ -38,7 +45,7 @@ Template.orderForm.events({
     //get value from form element
     var name = template.$("#orderName").val();
     var type;
-    if(template.$("#orderType").val() == "other") {
+    if(template.$("#orderType").val() === "other") {
       type = template.$("#orderOtherType").val();
     } else {
       type = template.$("#orderType").val();
@@ -67,15 +74,6 @@ Template.orderForm.events({
   },
   "click .unsubmitOrder"() {
     Meteor.call("toggleOrderForReview", FlowRouter.getParam("orderId"));
-  },
-  "change #orderType"(event, template) {
-    if(template.$("#orderType").val() == "other") {
-      template.$("#orderOtherTypeLabel").show();
-      template.$("#orderOtherType").show();
-    } else {
-      template.$("#orderOtherTypeLabel").hide();
-      template.$("#orderOtherType").hide();
-    }
   },
   "click .previewOrder":function() {
     FlowRouter.go("orderView", {

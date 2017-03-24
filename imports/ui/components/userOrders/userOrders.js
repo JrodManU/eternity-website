@@ -5,7 +5,9 @@ import "./userOrders.css";
 
 import "./userOrders.html";
 
-Meteor.subscribe("orders");
+Meteor.subscribe("orders", function() {
+  Session.set("ordersLoaded", true);
+});
 
 Template.userOrders.helpers({
   "userOrders": function() {
