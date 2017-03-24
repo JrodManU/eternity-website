@@ -2,10 +2,7 @@ import { Meteor } from "meteor/meteor";
 import { Session } from "meteor/session";
 
 import "./loginModal.css";
-
 import "./loginModal.html";
-
-
 
 Template.loginModal.helpers({
   "showLoginModal":function() {
@@ -26,18 +23,21 @@ Template.loginModal.helpers({
 Template.loginModal.events({
   "click .closeLoginModal"() {
     Session.set("showLoginModal", false);
+    Session.set("showLoginModalContent", true);
   },
   "click .forgotPassword"(event, template) {
-    template.$("#forgotPasswordForm").toggle();
-  },
-  "submit #forgotPasswordForm"(event, template) {
-    event.preventDefault();
     var email = template.$("#forgotPasswordEmail").val();
+    if(email.length > 254) {
+      MeteorAlerts.alert("No email is that long.", 2000, ["meteorAlertWarning"]);
+      return;
+    }
     Accounts.forgotPassword({email: email}, function(error) {
       if(error) {
         MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
       } else {
-        MeteorAlerts.alert("Email sent. Please check your inbox.", 2000, ["meteorAlertSuccess"]);
+        MeteorAlerts.alert("Email Sent. Check your mailbox.", 2000, ["meteorAlertSuccess"]);
+        Session.set("showLoginModal", false);
+        Session.set("showLoginModalContent", true);
       }
     });
   }
