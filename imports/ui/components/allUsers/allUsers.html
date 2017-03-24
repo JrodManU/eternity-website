@@ -5,13 +5,13 @@
     <input class="basicButton" id="usersSearchButton" type="submit" value="Search">
   </form>
   <table class="tableContainer">
-    <tr class="tableRowTitles">
+    <tr class="tableRowTitles" role="rowheader">
       <th class="tableHeader">Email</th>
       <th class="tableHeader"></th>
     </tr>
     {{#each users}}
       {{#unless iteratedUserIsInRole "owner"}}
-        <tr class="tableRow">
+        <tr class="tableRow" role="row">
           <td class="tableInfo">
             {{#each emails}}
               {{address}}

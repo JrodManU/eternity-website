@@ -19,7 +19,7 @@
     <label class="fieldLabel" for="orderType">Order Type:</label>
     <select id="orderType" name="orderType" {{disabled}}>
       {{#each orderFormLinks}}
-        <option value="{{title}}" {{selected}}>{{title}}</option>
+        <option role="option" value="{{title}}" {{selected}}>{{title}}</option>
       {{/each}}
       <option value="other">Other</option>
     </select>
@@ -33,10 +33,10 @@
     <input id="orderHeight" type="text" name="orderHeight" placeholder="Estimated height" value="{{order.height}}" {{disabled}}>
     <label class="fieldLabel" for="orderUnits">Measurement Units:</label>
     <select id="orderUnits" name="orderUnits" value="{{order.units}}" {{disabled}}>
-      <option value="in" {{measureSelected 'in'}}>in</option>
-      <option value="ft" {{measureSelected 'ft'}}>ft</option>
-      <option value="m" {{measureSelected 'm'}}>m</option>
-      <option value="cm" {{measureSelected 'cm'}}>cm</option>
+      <option role="option" value="in" {{measureSelected 'in'}}>in</option>
+      <option role="option" vvalue="ft" {{measureSelected 'ft'}}>ft</option>
+      <option role="option" value="m" {{measureSelected 'm'}}>m</option>
+      <option role="option" value="cm" {{measureSelected 'cm'}}>cm</option>
     </select>
     <label class="fieldLabel" for="orderDescription">Order Description:</label>
     <textarea id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" name="orderDescription" {{disabled}}>{{order.description}}</textarea>

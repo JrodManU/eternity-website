@@ -1,14 +1,14 @@
 <template name="allOrders">
   <p class="secondaryPageHeader">Submitted Orders</p>
   <table class="tableContainer">
-    <tr class="tableRowTitles">
+    <tr class="tableRowTitles" role="rowheader">
       <th class="tableHeader">Order Name</th>
       <th class="tableHeader">Email</th>
       <th class="tableHeader">Type</th>
       <th class="tableHeader"></th>
     </tr>
     {{#each orders}}
-      <tr class="tableRow">
+      <tr class="tableRow" role="row">
         <td class="tableInfo">
           {{text}}
         </td>

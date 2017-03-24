@@ -1,14 +1,14 @@
 <template name="loginModal">
 {{#if showLoginModal}}
-  <div class="modalBackground">
-    <div class="loginModal">
+  <section class="modalBackground">
+    <section class="loginModal">
       <header class="loginModalHeader">
         <span class="closeLoginModal">&times;</span>
         <div class="h1FloatLeft">
           <h1>{{loginModalHeader}}</h1>
         </div>
       </header>
-      <div class="modalContentHolder">
+      <section class="modalContentHolder">
         {{#if showLoginModalContent}}
           {{> loginModalContent}}
         {{else}}
@@ -19,11 +19,11 @@
           <input id="forgotPasswordSubmit" class="basicButton" type="submit" value="Submit">
         </form>
         <p><a class="forgotPassword" href="">Forgot/want to change password? Click here</a></p>
-      </div>
+      </section>
       <footer class="loginModalFooter">
         <p>Eternity Trading Group</p>
       </footer>
-    </div>
-  </div>
+    </section>
+  </section>
 {{/if}}
 </template>

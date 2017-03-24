@@ -1,14 +1,14 @@
 <template name="userOrders">
   <br>
   <table class="userOrders">
-    <tr class="tableRowTitles">
+    <tr class="tableRowTitles" role="rowheader">
       <th class="tableHeader">Name</th>
       <th class="tableHeader">Date</th>
       <th class="tableHeader">Status</th>
       <th class="tableHeader"></th>
     </tr>
     {{#each userOrders}}
-      <tr class="tableRow">
+      <tr class="tableRow" role="row">
         <td class="tableInfo">{{name}}</td>
         <td class="tableInfo">{{formatDate createdAt}}</td>
         <td class="tableInfo">{{orderStatus}}</td>

@@ -1,12 +1,11 @@
 <template name="allOrderFormLinks">
   <p class="secondaryPageHeader">Order Form Links</p>
   <table class="tableContainer">
-    <tr class="tableRowTitles">
-      <th class="tableHeader">Name</th>
-      <th class="tableHeader"></th>
+    <tr class="tableRowTitles" role="rowheader">
+      <th class="tableHeader" colspan="2">Name</th>
     </tr>
     {{#each orderFormLinks}}
-      <tr class="tableRow">
+      <tr class="tableRow" role="row">
         <td>{{title}}</td>
         <td class="tableInfo">
           <ul class="buttonGroup">
@@ -16,7 +15,7 @@
         </td>
       </tr>
     {{/each}}
-    <tr class="tableRow">
+    <tr class="tableRow" role="row">
       <td class="tableInfo" colspan="2">
         <button class="addOrderFormLink basicButton">Add Order Form Link</button>
       </td>
