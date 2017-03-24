@@ -8,7 +8,11 @@
     {{> navigation}}
     {{> loginModal}}
     <div class="mainContainer">
-      {{> Template.dynamic template=page}}
+      {{#if resetPasswordToken}}
+        {{> resetPassword}}
+      {{else}}
+        {{> Template.dynamic template=page}}
+      {{/if}}
     </div>
     {{> footer}}
   </body>
