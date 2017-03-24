@@ -7,6 +7,7 @@ import "../css/meteorAlert.css";
 
 import "./globalHelpers.js";
 import "./startupFunctions.js";
+import "./subscriptions.js";
 
 import "../../../ui/layouts/mainLayout/mainLayout.js";
 
