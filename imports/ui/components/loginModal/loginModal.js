@@ -27,6 +27,9 @@ Template.loginModal.events({
   "click .closeLoginModal"() {
     Session.set("showLoginModal", false);
   },
+  "click .forgotPassword"(event, template) {
+    template.$("#forgotPasswordForm").toggle();
+  },
   "submit #forgotPasswordForm"(event, template) {
     event.preventDefault();
     var email = template.$("#forgotPasswordEmail").val();
