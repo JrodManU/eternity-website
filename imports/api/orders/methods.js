@@ -8,6 +8,10 @@ Meteor.methods({
         if(Meteor.isClient) MeteorAlerts.alert("The owner cannot make orders", 2000, ["meteorAlertWarning"]);
         return;
       }
+      if(!Meteor.user().email[0].verified()) {
+        if(Meteor.isClient) MeteorAlerts.alert("You must first verify your email", 2000, ["meteorAlertWarning"]);
+        return;
+      }
       var orderFormLink = OrderFormLinks.findOne(orderFormLinkId);
       if(OrderFormLinks.findOne(orderFormLinkId)) {
         type = orderFormLink.title;
