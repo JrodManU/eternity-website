@@ -2,18 +2,17 @@
   <head>
     <title> EternityWebsite </title>
   </head>
-
   <body>
     {{> banner}}
     {{> navigation}}
     {{> loginModal}}
-    <div class="mainContainer">
+    <main class="mainContainer">
       {{#if resetPasswordToken}}
         {{> resetPassword}}
       {{else}}
         {{> Template.dynamic template=page}}
       {{/if}}
-    </div>
+    </main>
     {{> footer}}
   </body>
 </template>
