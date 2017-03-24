@@ -42,7 +42,7 @@ OrderSchema = new SimpleSchema({
     label: "Type of order",
     optional: true,
     max: 50,
-    defaultValue: null
+    defaultValue: "other"
   },
   amount: {
     type: Number,

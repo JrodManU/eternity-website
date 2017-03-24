@@ -6,7 +6,8 @@ import "./orderForm.html";
 
 Template.orderForm.onRendered(function() {
   //TODO: make dry
-  if(this.$("#orderType").val() == "other") {
+  var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
+  if(order.type === "other") {
     this.$("#orderOtherTypeLabel").show();
     this.$("#orderOtherType").show();
   } else {
@@ -25,6 +26,10 @@ Template.orderForm.helpers({
   },
   "orderFormLinks":function() {
     return OrderFormLinks.find();
+  },
+  "selected":function() {
+    var order = Orders.findOne({_id:FlowRouter.getParam("orderId")});
+    return order.type === this.title ? "selected" : "";
   }
 });
 

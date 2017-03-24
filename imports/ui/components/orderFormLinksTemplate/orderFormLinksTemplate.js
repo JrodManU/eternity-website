@@ -16,7 +16,7 @@ Template.orderFormLinksTemplate.helpers({
 Template.orderFormLinksTemplate.events({
   "click .orderFormLinkDesc"(event) {
     if(Meteor.userId()) {
-      Meteor.call("insertOrderAndGo", this._id);
+      Meteor.call("insertOrderAndGo", this._id, null, null, null, null, null, null, null, null, null, null);
     } else {
       MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }

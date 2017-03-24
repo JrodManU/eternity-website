@@ -8,7 +8,10 @@ Meteor.methods({
         if(Meteor.isClient) MeteorAlerts.alert("The owner cannot make orders", 2000, ["meteorAlertWarning"]);
         return;
       }
-
+      var orderFormLink = OrderFormLinks.findOne(orderFormLinkId);
+      if(OrderFormLinks.findOne(orderFormLinkId)) {
+        type = orderFormLink.title;
+      }
       var orderToInsert = {
         userId: userId,
         orderFormLinkId: orderFormLinkId,

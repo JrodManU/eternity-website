@@ -19,7 +19,7 @@
     <label class="fieldLabel" for="orderType">Order Type:</label>
     <select id="orderType" name="orderType" value="{{order.type}}" {{disabled}}>
       {{#each orderFormLinks}}
-        <option value="{{title}}">{{title}}</option>
+        <option value="{{title}}" {{selected}}>{{title}}</option>
       {{/each}}
       <option value="other">Other</option>
     </select>
