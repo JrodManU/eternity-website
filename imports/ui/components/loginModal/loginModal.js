@@ -27,6 +27,10 @@ Template.loginModal.events({
     Session.set("showLoginModalContent", true);
   },
   "click .forgotPassword"(event, template) {
+    template.$("#forgotPasswordForm").toggle();
+  },
+  "submit #forgotPasswordForm"(event, template) {
+    event.preventDefault();
     var email = template.$("#forgotPasswordEmail").val();
     if(email.length > 254) {
       MeteorAlerts.alert("No email is that long.", 2000, ["meteorAlertWarning"]);
