@@ -5,9 +5,10 @@
   --secondColorDark: #e9b565;
   --secondColorHighlight: #f79400;
   --thirdColor: #545454;
-  --mainFont: "Arial";
+  --mainFont: Arial;
 
 }
 html * {
-  font-family: Arial;
+  font-family: Arial; /*Edge does not work with variables*/
+  font-family: var(--mainFont);
 }

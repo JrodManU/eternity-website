@@ -51,7 +51,7 @@ Template.orderForm.events({
     Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));
   },
   "click .newOrder"(){
-    Meteor.call("insertOrderAndGo", null);
+    Meteor.call("insertOrderAndGo", null, null, null, null, null, null, null, null, null, null, null);
   },
   "click .resetOrder"() {
     Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
