@@ -52,17 +52,17 @@ OrderSchema = new SimpleSchema({
     defaultValue: null
   },
   width: {
-    type: String,
+    type: Number,
     label: "Width of items ordered",
     optional: true,
-    max: 30,
+    max: 30000,
     defaultValue: null
   },
   height: {
-    type: String,
+    type: Number,
     label: "Height of items ordered",
     optional: true,
-    max: 30,
+    max: 30000,
     defaultValue: null
   },
   units: {
@@ -77,27 +77,6 @@ OrderSchema = new SimpleSchema({
     label: "Description of order",
     optional: true,
     max: 2000,
-    defaultValue: null
-  },
-  firstName: {
-    type: String,
-    label: "First name of orderer",
-    optional: true,
-    max: 50,
-    defaultValue: null
-  },
-  lastName: {
-    type: String,
-    label: "Last name of orderer",
-    optional: true,
-    max: 50,
-    defaultValue: null
-  },
-  phoneNumber: {
-    type: String,
-    label: "Phone number of orderer",
-    optional: true,
-    max: 20,
     defaultValue: null
   }
 });
