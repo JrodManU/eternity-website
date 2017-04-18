@@ -1,7 +1,7 @@
 import { Meteor } from "meteor/meteor";
 
 Meteor.methods({
-  "insertOrderAndGo"(orderFormLinkId, name, type, amount, width, height, units, description, firstName, lastName, phoneNumber) {
+  "insertOrderAndGo"(orderFormLinkId, name, type, amount, width, height, units, description) {
     var userId = Meteor.userId();
     if(userId) {
       if(Roles.userIsInRole(userId, ["owner"])) {
@@ -29,9 +29,6 @@ Meteor.methods({
         height: height,
         units: units,
         description: description,
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber
       }
 
       OrderSchema.clean(orderToInsert);
@@ -51,7 +48,7 @@ Meteor.methods({
       if(Meteor.isClient) MeteorAlerts.alert("Please log in first", 2000, ["meteorAlertWarning"]);
     }
   },
-  "updateOrder"(orderId, name, type, amount, width, height, units, description, firstName, lastName, phoneNumber){
+  "updateOrder"(orderId, name, type, amount, width, height, units, description){
     var userId = Meteor.userId();
     if(userId && Orders.findOne(orderId).userId === userId) {
       var update = {
@@ -61,10 +58,7 @@ Meteor.methods({
         width: width,
         height: height,
         units: units,
-        description: description,
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber
+        description: description
       }
 
       OrderSchema.clean(update);
@@ -79,10 +73,7 @@ Meteor.methods({
           width: update.width,
           height: update.height,
           units: update.units,
-          description: update.description,
-          firstName: update.firstName,
-          lastName: update.lastName,
-          phoneNumber: update.phoneNumber
+          description: update.description
         }}, function(error) {
           if(error) {
             if(Meteor.isClient) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);
@@ -123,10 +114,7 @@ Meteor.methods({
         width: null,
         height: null,
         units: null,
-        description: null,
-        firstName: null,
-        lastName: null,
-        phoneNumber: null
+        description: null
       }}, function(error) {
         if(error) {
           if(Meteor.isClient) MeteorAlerts.alert(error.message, 2000, ["meteorAlertWarning"]);

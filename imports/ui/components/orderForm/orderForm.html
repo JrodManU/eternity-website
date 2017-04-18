@@ -40,11 +40,5 @@
     </select>
     <label class="fieldLabel" for="orderDescription">Order Description:</label>
     <textarea id="orderDescription" placeholder="Insert the description of your order." rows="5" cols="40" name="orderDescription" {{disabled}}>{{order.description}}</textarea>
-    <label class="fieldLabel" for="orderFirstName">First Name:</label>
-    <input id="orderFirstName" type="text" name="orderFirstName" placeholder="First Name" value="{{order.firstName}}" {{disabled}}>
-    <label class="fieldLabel" for="orderLastName">Last Name:</label>
-    <input id="orderLastName" type="text" name="orderLastName" placeholder="Last Name" value="{{order.lastName}}" {{disabled}}>
-    <label class="fieldLabel" for="orderPhoneNumber">Phone Number:</label>
-    <input id="orderPhoneNumber" type="tel" name="orderPhoneNumber" placeholder="Phone Number" value="{{order.phoneNumber}}" {{disabled}}>
   </form>
 </template>
