@@ -23,7 +23,7 @@ Meteor.methods({
     var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
     if (!verifyCaptchaResponse.success) {
       errorNumber = 422;
-      errorMessage = "reCAPTCHA Failed: " + verifyCaptchaResponse.error;
+      errorMessage = "reCAPTCHA failed, please try again";
     } else if(!email) {
       errorMessage = "Please enter a username";
     } else if(!password) {
