@@ -16,23 +16,28 @@ Meteor.methods({
       Orders.remove({userId: userId});
     }
   },
-  "createUser"(email, password, captchaData) {
-    if(!email) {
-      if(Meteor.isClient) MeteorAlerts.alert("Please enter a username", 2000, ["meteorAlertWarning"]);
-      return;
+  "createUserWithCaptcha"(email, password, password2, captchaData)
+    var errorNumber = 400
+    var errorMessage = null;
+
+    var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
+    if (!verifyCaptchaResponse.success) {
+      errorNumber = 422
+      errorMessage = "reCAPTCHA Failed: " + verifyCaptchaResponse.error);
+    } else if(!email) {
+      errorMessage = "Please enter a username";
+    } else if(!password) {
+      errorMessage = "Please enter a password";
+    } else if(password !== password2) {
+      errorMessage = "Passwords do not match.";
+    } else if(password.length < 8) {
+      errorMessage = "Your password must be at least 8 characters";
     }
-    if(!password) {
-      if(Meteor.isClient) MeteorAlerts.alert("Please enter a password", 2000, ["meteorAlertWarning"]);
-      return;
+
+    if(errorMessage) {
+      throw new Meteor.Error(errorNumber, errorMessage);
     }
-    if(password !== password2) {
-      if(Meteor.isClient) MeteorAlerts.alert("Passwords do not match.", 2000, ["meteorAlertWarning"]);
-      return;
-    }
-    if(password.length < 8) {
-      if(Meteor.isClient) MeteorAlerts.alert("Your password must be at least 8 characters", 2000, ["meteorAlertWarning"]);
-      return;
-    }
+
     //The password checks are done on the client, so the user could bypass them
     //But you'd have to be pretty dumb to "hack" for a weak password
     Accounts.createUser({

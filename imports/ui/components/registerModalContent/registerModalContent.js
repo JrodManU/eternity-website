@@ -13,7 +13,8 @@ Template.registerModalContent.events({
     //get the captcha data
     var captchaData = grecaptcha.getResponse();
 
-    Meteor.call("createUser", email, password, captchaData)
+    Meteor.call("createUserWithCaptcha", email, password, password2, captchaData);
+    grecaptcha.reset();
   },
   "click .switchToLogin"(event) {
     event.preventDefault();
