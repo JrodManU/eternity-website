@@ -19,4 +19,8 @@ Meteor.startup(function() {
       }
     });
   }
+
+  reCAPTCHA.config({
+        publickey: "6Ld8gh0UAAAAAKAN6qYZHNMn74ZqvZ6r7AKNOEvo"
+    });
 });

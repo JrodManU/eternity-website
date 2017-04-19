@@ -42,16 +42,13 @@ Template.orderForm.events({
     var height = template.$("#orderHeight").val();
     var units = template.$("#orderUnits").val();
     var description = template.$("#orderDescription").val();
-    var firstName = template.$("#orderFirstName").val();
-    var lastName = template.$("#orderLastName").val();
-    var phoneNumber = template.$("#orderPhoneNumber").val();
-    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, type, amount, width, height, units, description, firstName, lastName, phoneNumber);
+    Meteor.call("updateOrder", FlowRouter.getParam("orderId"), name, type, amount, width, height, units, description);
   },
   "click .deleteOrder"(event, template){
     Meteor.call("deleteOrder", FlowRouter.getParam("orderId"));
   },
   "click .newOrder"(){
-    Meteor.call("insertOrderAndGo", null, null, null, null, null, null, null, null, null, null, null);
+    Meteor.call("insertOrderAndGo", null, null, null, null, null, null, null, null);
   },
   "click .resetOrder"() {
     Meteor.call("resetOrder", FlowRouter.getParam("orderId"));
