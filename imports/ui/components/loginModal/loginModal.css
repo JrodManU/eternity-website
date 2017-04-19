@@ -1,6 +1,6 @@
 .modalBackground {
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10000; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -32,7 +32,7 @@
 .loginModal {
   font-family: var(--mainFont);
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 3% auto; /* 15% from the top and centered */
   border-radius:10px;
   width:450px;
 }

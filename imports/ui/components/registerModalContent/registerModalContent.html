@@ -1,16 +1,16 @@
 <template name="registerModalContent">
   <form id="registerForm">
-      <label for="registerEmail">E-mail</label>
-      <input class="emailRegister" type="email" name="registerEmail">
-      <label for="passwordRegister">Password</label>
-      <input class="passwordRegister" type="password" name="registerPassword">
-      <label>Confirm password</label>
-      <input class="passwordRegister" type="password" name="registerPassword2">
-      <label for="registerFirstName">First Name</label>
+      <label class="fieldLabel" for="registerEmail">E-mail</label>
+      <input id="registerEmail" type="email" name="registerEmail">
+      <label class="fieldLabel" for="registerPassword">Password</label>
+      <input id="registerPassword" type="password" name="registerPassword">
+      <label class="fieldLabel" for="registerPassword2">Confirm password</label>
+      <input id="registerPassword2" type="password" name="registerPassword2">
+      <label class="fieldLabel" for="registerFirstName">First Name</label>
       <input id="registerFirstName" type="text" name="firstName">
-      <label for="registerLastName">Last Name</label>
+      <label class="fieldLabel" for="registerLastName">Last Name</label>
       <input id="registerLastName" type="text" name="lastName">
-      <label for="registerPhoneNumber">Phone Number</label>
+      <label class="fieldLabel" for="registerPhoneNumber">Phone Number</label>
       <input id="registerPhoneNumber" type="tel" name="registerPhoneNumber">
 
       {{> reCAPTCHA}}
