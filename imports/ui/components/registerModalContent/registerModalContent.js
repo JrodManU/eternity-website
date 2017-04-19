@@ -13,9 +13,12 @@ Template.registerModalContent.events({
     var lastName = template.$("#registerLastName").val().trim();
     var phoneNumber = template.$("#registerPhoneNumber").val().trim();
     //get the captcha data
-    var captchaData = grecaptcha.getResponse();
-    var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
-    if (!verifyCaptchaResponse.success) {
+    var captchaStatus = false;
+    Meteor.call("verifyCaptcha", grecaptcha.getResponse(), function(error, result) {
+      captchaStatus = result;
+      grecaptcha.reset();
+    });
+    if (!captchaStatus) {
       MeteorAlerts.alert("reCAPTCHA failed, please try again", 2000, ["meteorAlertWarning"]);
     } else if(!email) {
       MeteorAlerts.alert("Please enter a username", 2000, ["meteorAlertWarning"]);

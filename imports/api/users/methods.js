@@ -15,5 +15,8 @@ Meteor.methods({
       Meteor.users.remove(userId);
       Orders.remove({userId: userId});
     }
+  },
+  "verifyCaptcha"(captchaData) {
+    return reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData).success;
   }
 });
