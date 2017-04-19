@@ -6,8 +6,4 @@ Meteor.startup(function() {
   reCAPTCHA.config({
       privatekey: "6Ld8gh0UAAAAAFSocfHqA3mFMvOGvCz0nxGZXAgU"
   });
-
-  Accounts.config({
-    forbidClientAccountCreation: true
-  });
 });
