@@ -34,15 +34,15 @@ Meteor.methods({
       errorMessage = "Your password must be at least 8 characters";
     } else if(!firstName) {
       errorMessage = "Please enter a first name";
-    } else if(firstName > 30) {
+    } else if(firstName.legth > 30) {
       errorMessage = "First name is too long";
     } else if(!lastName) {
       errorMessage = "Please enter a last name";
-    } else if(lastName > 30) {
+    } else if(lastName.length > 30) {
       errorMessage = "Last name is too long";
     } else if(!phoneNumber) {
       errorMessage = "Please enter a phone number";
-    } else if(phoneNumber > 10) {
+    } else if(phoneNumber.length > 10) {
       errorMessage = "Phone number is too long, please use this format XXXXXXXXXX";
     }
 
