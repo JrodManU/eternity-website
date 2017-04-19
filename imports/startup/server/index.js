@@ -1,4 +1,4 @@
-import "./mailUrl.js";
+import "./startupFunctions.js";
 
 import "../../api/users/methods.js";
 import "../../api/users/server/adminUser.js";

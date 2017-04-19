@@ -21,6 +21,7 @@
   width: 100px;
   transition: all 0.5s;
   cursor: pointer;
+  margin-top: 8px;
 }
 
 .registerButton span {
