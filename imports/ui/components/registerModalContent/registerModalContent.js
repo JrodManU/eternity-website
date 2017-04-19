@@ -16,32 +16,27 @@ Template.registerModalContent.events({
     var captchaData = grecaptcha.getResponse();
     var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
     if (!verifyCaptchaResponse.success) {
-      errorNumber = 422;
-      errorMessage = "reCAPTCHA failed, please try again";
+      MeteorAlerts.alert("reCAPTCHA failed, please try again", 2000, ["meteorAlertWarning"]);
     } else if(!email) {
-      errorMessage = "Please enter a username";
+      MeteorAlerts.alert("Please enter a username", 2000, ["meteorAlertWarning"]);
     } else if(!password) {
-      errorMessage = "Please enter a password";
+      MeteorAlerts.alert("Please enter a password", 2000, ["meteorAlertWarning"]);
     } else if(password !== password2) {
-      errorMessage = "Passwords do not match.";
+      MeteorAlerts.alert("Passwords do not match", 2000, ["meteorAlertWarning"]);
     } else if(password.length < 8) {
-      errorMessage = "Your password must be at least 8 characters";
+      MeteorAlerts.alert("Your password must be atleast 8 characters.", 2000, ["meteorAlertWarning"]);
     } else if(!firstName) {
-      errorMessage = "Please enter a first name";
+      MeteorAlerts.alert("Please enter a first name", 2000, ["meteorAlertWarning"]);
     } else if(firstName.legth > 30) {
-      errorMessage = "First name is too long";
+        MeteorAlerts.alert("First name is too long", 2000, ["meteorAlertWarning"]);
     } else if(!lastName) {
-      errorMessage = "Please enter a last name";
+        MeteorAlerts.alert("Please enter a last name", 2000, ["meteorAlertWarning"]);
     } else if(lastName.length > 30) {
-      errorMessage = "Last name is too long";
+        MeteorAlerts.alert("Last name is too long", 2000, ["meteorAlertWarning"]);
     } else if(!phoneNumber) {
-      errorMessage = "Please enter a phone number";
+        MeteorAlerts.alert("Please enter a phone number", 2000, ["meteorAlertWarning"]);
     } else if(phoneNumber.length > 10) {
-      errorMessage = "Phone number is too long, please use this format XXXXXXXXXX";
-    }
-
-    if(errorMessage) {
-      throw new Meteor.Error(errorNumber, errorMessage);
+        MeteorAlerts.alert("Phone number is too long, please use this format XXXXXXXXXX", 2000, ["meteorAlertWarning"]);
     }
 
     //The password checks are done on the client, so the user could bypass them
@@ -56,7 +51,7 @@ Template.registerModalContent.events({
       }
     }, function(error) {
       if(error) {
-        MeteorAlerts.alert(error.reason, 1000, ["meteorAlertWarning"]);
+        MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
       } else {
         MeteorAlerts.alert("Successfully registered!", 2000, ["meteorAlertSuccess"]);
       }
