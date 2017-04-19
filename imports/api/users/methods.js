@@ -16,14 +16,14 @@ Meteor.methods({
       Orders.remove({userId: userId});
     }
   },
-  "createUserWithCaptcha"(email, password, password2, captchaData)
-    var errorNumber = 400
+  "createUserWithCaptcha"(email, password, password2, captchaData) {
+    var errorNumber = 400;
     var errorMessage = null;
 
     var verifyCaptchaResponse = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData);
     if (!verifyCaptchaResponse.success) {
-      errorNumber = 422
-      errorMessage = "reCAPTCHA Failed: " + verifyCaptchaResponse.error);
+      errorNumber = 422;
+      errorMessage = "reCAPTCHA Failed: " + verifyCaptchaResponse.error;
     } else if(!email) {
       errorMessage = "Please enter a username";
     } else if(!password) {
@@ -44,12 +44,10 @@ Meteor.methods({
       email: email,
       password: password
     }, function(error) {
-      grecaptcha.reset();
       if(error) {
         if(Meteor.isClient) MeteorAlerts.alert(error.message, 1000, ["meteorAlertWarning"]);
       } else {
         if(Meteor.isClient) MeteorAlerts.alert("Successfully registered!", 2000, ["meteorAlertSuccess"]);
-
       }
     });
   }

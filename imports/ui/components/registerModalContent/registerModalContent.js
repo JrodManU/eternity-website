@@ -13,8 +13,12 @@ Template.registerModalContent.events({
     //get the captcha data
     var captchaData = grecaptcha.getResponse();
 
-    Meteor.call("createUserWithCaptcha", email, password, password2, captchaData);
-    grecaptcha.reset();
+    Meteor.call("createUserWithCaptcha", email, password, password2, captchaData, function(error) {
+      grecaptcha.reset();
+      if(error) {
+        MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
+      }
+    });
   },
   "click .switchToLogin"(event) {
     event.preventDefault();
