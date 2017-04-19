@@ -7,12 +7,12 @@ Template.registerModalContent.events({
   "submit #registerForm": function(event, template) {
     event.preventDefault();
 
-    var email = template.$("#registerEmail").value.trim();
-    var password = template.$("#registerEmail").value.trim();
-    var password2 = template.$("#registerEmail").value.trim();
-    var firstName = template.$("#registerFirstName").value.trim();
-    var lastName = template.$("#registerLastName").value.trim();
-    var phoneNumber = template.$("#registerPhoneNumber").value.trim();
+    var email = template.$("#registerEmail").val().trim();
+    var password = template.$("#registerEmail").val().trim();
+    var password2 = template.$("#registerEmail").val().trim();
+    var firstName = template.$("#registerFirstName").val().trim();
+    var lastName = template.$("#registerLastName").val().trim();
+    var phoneNumber = template.$("#registerPhoneNumber").val().trim();
     //get the captcha data
     var captchaData = grecaptcha.getResponse();
 
