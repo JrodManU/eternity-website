@@ -16,7 +16,7 @@ Meteor.methods({
       Orders.remove({userId: userId});
     }
   },
-  "createUserWithCaptcha"(email, password, password2, captchaData) {
+  "createUserWithCaptcha"(email, password, password2, firstName, lastName, phoneNumber, captchaData) {
     var errorNumber = 400;
     var errorMessage = null;
 
@@ -32,6 +32,18 @@ Meteor.methods({
       errorMessage = "Passwords do not match.";
     } else if(password.length < 8) {
       errorMessage = "Your password must be at least 8 characters";
+    } else if(!firstName) {
+      errorMessage = "Please enter a first name";
+    } else if(firstName > 30) {
+      errorMessage = "First name is too long";
+    } else if(!lastName) {
+      errorMessage = "Please enter a last name";
+    } else if(lastName > 30) {
+      errorMessage = "Last name is too long";
+    } else if(!phoneNumber) {
+      errorMessage = "Please enter a phone number";
+    } else if(phoneNumber > 10) {
+      errorMessage = "Phone number is too long, please use this format XXXXXXXXXX";
     }
 
     if(errorMessage) {
@@ -42,7 +54,12 @@ Meteor.methods({
     //But you'd have to be pretty dumb to "hack" for a weak password
     Accounts.createUser({
       email: email,
-      password: password
+      password: password,
+      profile: {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber
+      }
     }, function(error) {
       if(error) {
         if(Meteor.isClient) MeteorAlerts.alert(error.message, 1000, ["meteorAlertWarning"]);
