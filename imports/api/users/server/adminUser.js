@@ -7,5 +7,6 @@ Meteor.startup(function() {
       password: "password"
     });
     Roles.addUsersToRoles(userId, ["owner", "admin"]);
+    Meteor.users.update({_id:userId}, {$set:{"emails.0.verified":true}});
   }
 })

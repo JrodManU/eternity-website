@@ -1,5 +1,6 @@
-.orderFormLinkImgWrap {
+.orderFormLinkItem {
   margin: 0 auto;
+  display: inline;
 }
 .orderFormLinkDesc {
   position: absolute;
@@ -15,18 +16,19 @@
   cursor:pointer;
 }
 
-.orderFormLinkTitle, .orderFormLinkBody {
+.orderFormLinkBody {
   text-align: center;
   font-family: var(--mainFont);
   padding:5%;
 }
 
 .orderFormLinkTitle {
-  padding-bottom:0%;
+  padding: 4px 0px 4px 0px;
   font-weight: bold;
-  color: #dadada; /* For IE, Safari and Opera */
-  color:var(--mainColor);
+  color: var(--secondColor);
   font-size:30px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
 }
 
 .orderFormLinkBody {

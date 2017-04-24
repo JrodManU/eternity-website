@@ -14,5 +14,11 @@
     <p>{{order.width}}{{order.units}} x {{order.height}}{{order.units}}</p>
     <h2 class="orderPreviewLabel">Description:</h2>
     <p>{{order.description}}</p>
+    {{#if IsInRole "admin"}}
+      <h2 class="orderPreviewLabel">Created By:</h2>
+      <p>{{user.profile.firstName}} {{user.profile.lastName}}</p>
+      <h2 class="orderPreviewLabel">Phone Number:</h2>
+      <p>{{user.profile.phoneNumber}}</p>
+    {{/if}}
   </section>
 </template>
