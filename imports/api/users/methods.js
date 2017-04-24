@@ -16,7 +16,47 @@ Meteor.methods({
       Orders.remove({userId: userId});
     }
   },
-  "verifyCaptcha"(captchaData) {
-    return reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData).success;
+  "createUserWithCaptcha"(captchaData) {
+    //get the captcha data
+    var captchaStatus = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData).success;;
+    if (!captchaStatus) {
+      throw new Meteor.error("422", "reCAPTCHA failed, please try again");
+    } else if(!email) {
+      throw new Meteor.error("400", "Please enter a username");
+    } else if(!password) {
+      throw new Meteor.error("400", "Please enter a password");
+    } else if(password !== password2) {
+      throw new Meteor.error("400", "Passwords do not match");
+    } else if(password.length < 8) {
+      throw new Meteor.error("400", "Your password must be atleast 8 characters.");
+    } else if(!firstName) {
+      throw new Meteor.error("400", "Please enter a first name");
+    } else if(firstName.legth > 30) {
+      throw new Meteor.error("400", "First name is too long");
+    } else if(!lastName) {
+      throw new Meteor.error("400", "Please enter a last name");
+    } else if(lastName.length > 30) {
+      throw new Meteor.error("400", "Last name is too long");
+    } else if(!phoneNumber) {
+      throw new Meteor.error("400", "Please enter a phone number");
+    } else if(phoneNumber.length > 10) {
+      throw new Meteor.error("400", "Phone number is too long, please use this format XXXXXXXXXX");
+    }
+
+    //The password checks are done on the client, so the user could bypass them
+    //But you'd have to be pretty dumb to "hack" for a weak password
+    Accounts.createUser({
+      email: email,
+      password: password,
+      profile: {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber
+      }
+    }, function(error) {
+      if(error) {
+        throw new Meteor.error("500", error.reason);
+      }
+    });
   }
 });
