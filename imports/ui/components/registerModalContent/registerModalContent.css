@@ -1,5 +1,5 @@
 .registerButton {
-  color:white;
+  color:var(--thirdColor);
   display: inline-block;
   border-radius: 4px;
   background-color: #feaa2c; /* For IE, Safari and Opera */
@@ -51,4 +51,8 @@
 
 label {
   font-family: var(--mainFont);
+}
+
+#registerPhoneNumber {
+  margin-bottom: 4px;
 }

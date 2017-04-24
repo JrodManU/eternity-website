@@ -6,7 +6,7 @@
   margin: 10px;
   font-size: 2em;
   color: #545454; /* For IE, Safari and Opera */
-  color:var(--thirdColor);
+  color:var(--secondColor);
   text-decoration: underline;
   text-decoration-color: #dadada; /* For IE, Safari and Opera */
   text-decoration-color: var(--mainColor);
@@ -40,17 +40,18 @@
 }
 
 .tableHeader {
-    color:white;
+    color: var(--thirdColor);
+    background-color: #feaa2c; /* For IE, Safari and Opera */
+    background-color: var(--mainColor);
 }
 
 .tableRow:nth-child(odd) {
   background-color: #dadada; /* For IE, Safari and Opera */
-  background-color: var(--mainColor);
+  background-color: white;
 }
 
-.tableHeader {
-  background-color: #feaa2c; /* For IE, Safari and Opera */
-  background-color: var(--secondColor);
+.tableRow:nth-child(even) {
+  background-color: var(--thirdColor);
 }
 
 .tableRow:last-child .tableInfo:first-child {

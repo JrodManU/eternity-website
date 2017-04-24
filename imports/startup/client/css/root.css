@@ -1,10 +1,10 @@
 /*these variables will be used throughout the site, makes for easy thememing*/
 :root {
-  --mainColor: #dadada;
-  --secondColor: #feaa2c;
+  --mainColor: #BD4419;
+  --secondColor: #FB7E00;
   --secondColorDark: #e9b565;
   --secondColorHighlight: #f79400;
-  --thirdColor: #545454;
+  --thirdColor: #E9EAE8;
   --mainFont: Arial;
 
 }
