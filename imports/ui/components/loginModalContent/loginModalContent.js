@@ -16,14 +16,18 @@ Template.loginModalContent.events({
       MeteorAlerts.alert("Please enter a Username", 2000, ["meteorAlertWarning"]);
       return;
     }
-    console.log()
     if(!password.trim()) {
       MeteorAlerts.alert("Please enter a password", 2000, ["meteorAlertWarning"]);
       return;
     }
     Meteor.loginWithPassword(email, password, function(error) {
       if(error) {
-        MeteorAlerts.alert("User does not exist or password is incorrect.", 2000, ["meteorAlertWarning"]);
+        console.log(error);
+        if(error.error === "notVerified") {
+          MeteorAlerts.alert(error.reason, 2000, ["meteorAlertWarning"]);
+        } else {
+          MeteorAlerts.alert("User does not exist or password is incorrect.", 2000, ["meteorAlertWarning"]);
+        }
       } else {
         MeteorAlerts.alert("Successfully logged in!", 2000, ["meteorAlertSuccess"]);
         Session.set("showLoginModal", false);

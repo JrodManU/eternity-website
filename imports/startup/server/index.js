@@ -5,6 +5,7 @@ import "../../api/users/server/adminUser.js";
 import "../../api/users/server/allowRemoving.js";
 import "../../api/users/server/onCreateUser.js";
 import "../../api/users/server/publications.js";
+import "../../api/users/server/validateLoginAttempt";
 
 import "../../api/orderFormLinks/orderFormLinks.js";
 import "../../api/orderFormLinks/schema.js";

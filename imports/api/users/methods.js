@@ -16,7 +16,7 @@ Meteor.methods({
       Orders.remove({userId: userId});
     }
   },
-  "createUserWithCaptcha"(captchaData) {
+  "createUserWithCaptcha"(email, password, password2, firstName, lastName, phoneNumber, captchaData,) {
     //get the captcha data
     var captchaStatus = reCAPTCHA.verifyCaptcha(this.connection.clientAddress, captchaData).success;;
     if (!captchaStatus) {
@@ -45,7 +45,7 @@ Meteor.methods({
 
     //The password checks are done on the client, so the user could bypass them
     //But you'd have to be pretty dumb to "hack" for a weak password
-    Accounts.createUser({
+    var userId = Accounts.createUser({
       email: email,
       password: password,
       profile: {
@@ -53,10 +53,9 @@ Meteor.methods({
         lastName: lastName,
         phoneNumber: phoneNumber
       }
-    }, function(error) {
-      if(error) {
-        throw new Meteor.error("500", error.reason);
-      }
     });
+    if(!userId) {
+      throw new Meteor.error("500", "Internal error, account not created");
+    }
   }
 });
