@@ -25,8 +25,9 @@
   padding-bottom:0%;
   font-weight: bold;
   color: #dadada; /* For IE, Safari and Opera */
-  color:var(--mainColor);
+  color:var(--thirdColor);
   font-size:30px;
+  visibility: visible;
 }
 
 .orderFormLinkBody {
