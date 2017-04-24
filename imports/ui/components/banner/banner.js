@@ -10,14 +10,5 @@ import "./banner.html";
 Template.banner.helpers({
   "bannerHeight": function() {
     return Session.get("bannerHeight");
-  },
-  "bannerInfoHeight": function() {
-    return Session.get("bannerHeight") * .8;
-  },
-  "bannerInfoMargin": function() {
-    return Session.get("bannerHeight") * .1;
-  },
-  "titleFontSize": function() {
-    return Session.get("bannerHeight") * .3;
   }
 });
