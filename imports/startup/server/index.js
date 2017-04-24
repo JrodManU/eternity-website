@@ -3,6 +3,7 @@ import "./startupFunctions.js";
 import "../../api/users/methods.js";
 import "../../api/users/server/adminUser.js";
 import "../../api/users/server/allowRemoving.js";
+import "../../api/users/server/disableClientAccountCreation.js";
 import "../../api/users/server/onCreateUser.js";
 import "../../api/users/server/publications.js";
 import "../../api/users/server/validateLoginAttempt";

@@ -11,13 +11,13 @@ Accounts.validateLoginAttempt(function(options) {
 
     // If the login has failed, just return false.
     if (!options.allowed) {
-        return false;
+      return false;
     }
 
-    if (user.emails[0].verified === true) {
-        return true;
+    if (options.user.emails[0].verified == true) {
+      return true;
     } else {
-        throw new Meteor.Error("notVerified", "You must verify your email address before you can log in.");
+      throw new Meteor.Error("notVerified", "You must verify your email address before you can log in.");
     }
-
+    return true;
 });
