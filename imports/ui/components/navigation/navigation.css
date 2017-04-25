@@ -80,13 +80,13 @@
 
 #navLinksMobile li {
   background-color: #feaa2c; /* For IE, Safari and Opera */
-  background-color:var(--secondColor);
-  border-bottom-color: #dadada /* For IE, Safari and Opera */
-  border-bottom:solid 3px var(--mainColor);
+  background-color:var(--mainColor);
+  border-bottom-color: #dadada; /* For IE, Safari and Opera */
+  border-bottom:solid 3px var(--secondColor);
 }
 
 #navLinksMobile li a {
-  color:white;
+  color:var(--thirdColor);
   text-decoration:none;
   font-size:3em;
   padding:5px;
