@@ -1,10 +1,3 @@
-
-/* used by javascript */
-.navbarFixed {
-  position: fixed;
-  top: 0;
-}
-
 .navbar {
   position: fixed;
   top: 0;
@@ -55,7 +48,7 @@
   display:none;
 }
 @media only screen and (max-device-width: 736px), (max-width:600px) {
-  #navLinksDesktop {
+  .navbar {
     display: none;
   }
   #mobileNav {
@@ -63,19 +56,26 @@
   }
 }
 
-#navLinksMobile {
-  text-align:center;
+#mobileNav {
   position:absolute;
-  right:0px;
+  z-index:20;
+  right:10px;
+}
+
+#navLinksMobile {
+  position:absolute;
+  text-align:center;
+  right:10px;
   width:300px;
-  z-index:1000;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
   display:none;
 }
 
 #navLinksMobile li:last-child {
   border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
 }
 
 #navLinksMobile li {
@@ -94,13 +94,10 @@
 }
 
 #mobileTripleBar {
-  line-height:100px;
   display: block;
-  float:right;
-  font-size:3em;
+  font-size:6em;
   color: #545454; /* For IE, Safari and Opera */
-  color:var(--thirdColor);
-  margin-right:20px;
+  color:var(--mainColor);
   text-decoration:none;
   cursor:pointer;
 }

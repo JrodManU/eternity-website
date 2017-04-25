@@ -3,11 +3,11 @@
     <ul id="navLinksDesktop">
       {{> navLinks}}
     </ul>
-    <section id="mobileNav">
-      <a id="mobileTripleBar">☰</a>
-      <ul id="navLinksMobile">
-        {{> navLinks}}
-      </ul>
-    </section>
   </nav>
+  <section id="mobileNav" style="top:{{centerWithBannerHeight}}px;">
+    <a id="mobileTripleBar">☰</a>
+    <ul id="navLinksMobile" style="top:{{bannerHeight}}px;">
+      {{> navLinks}}
+    </ul>
+  </section>
 </template>

@@ -5,18 +5,15 @@ import "./navigation.css";
 
 import "./navigation.html";
 
-//The banner requires a lot of sizing stuff in order to work
-
-Template.navigation.onRendered(function() {
-  $(window).scroll(function () {
-    if ($(window).scrollTop() >= Session.get("bannerHeight")) {
-      $('.navbar').addClass('navbarFixed');
-    }
-    if ($(window).scrollTop() < Session.get("bannerHeight")) {
-      $('.navbar').removeClass('navbarFixed');
-    }
-  });
-});
+Template.navigation.helpers({
+  "centerWithBannerHeight":function() {
+    return Session.get("bannerHeight") / 3;
+  },
+  "bannerHeight":function() {
+    var bannerHeight = Session.get("bannerHeight");
+    return bannerHeight - (bannerHeight / 3);
+  }
+})
 
 Template.navigation.events({
   "click #mobileTripleBar":function(event, template) {
@@ -25,4 +22,4 @@ Template.navigation.events({
   "click #navLinksMobile li a":function(event, template) {
     template.$("#navLinksMobile").hide();
   }
-})
+});

@@ -11,8 +11,3 @@
   position:relative;
   overflow:hidden;
 }
-@media only screen and (max-device-width: 736px), (max-width:600px) {
-  #bannerContainer {
-    display:none;
-  }
-}
