@@ -1,5 +1,4 @@
 .orderFormLinkItem {
-  margin: 0 auto;
   display: inline;
 }
 .orderFormLinkDesc {
@@ -7,12 +6,13 @@
   top: 0;
   left: 0;
   visibility: hidden;
-  background-color: rgba(153, 153, 153, 0);
+  background-color: rgba(0, 0, 0, 0);
+  line-height:325px;
 }
 .orderFormLinkImgWrap:hover .orderFormLinkDesc {
   visibility: visible;
-
-  background-color: rgba(153, 153, 153, 0.67);
+  /* this is the var(--mainColor) with transparency */
+  background-color: rgba(189, 68, 25, .75);
   cursor:pointer;
 }
 
@@ -20,25 +20,37 @@
   text-align: center;
   font-family: var(--mainFont);
   padding:5%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 .orderFormLinkTitle {
-  padding: 4px 0px 4px 0px;
-  color: black;
+  color: white;
   font-size:20px;
-  margin: 10px 0px 10px 0px;
-  border-radius: 10px;
+  padding:5px;
+  background-color:var(--secondColor);
+  position:absolute;
+  top:325px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  min-width:50%;
+  max-width:90%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index:-20;
 }
 
 .orderFormLinkBody {
-  color:var(--thirdColor);
-  font-size:25px;
+  color: var(--thirdColor);
+  font-size:30px;
 }
 
 .imgList li {
   position: relative;
   display: inline-block;
-  margin: 1% 1% 1% 1%;
+  margin: 1% 1% 4% 1%;
 }
 
 .imgList {
@@ -50,5 +62,4 @@
   width:325px;
   height:325px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }

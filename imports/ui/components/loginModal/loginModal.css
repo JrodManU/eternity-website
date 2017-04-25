@@ -13,7 +13,7 @@
   color:var(--thirdColor);
   padding:2%;
   background-color: #feaa2c; /* For IE, Safari and Opera */
-  background-color: var(--secondColor);
+  background-color: var(--mainColor);
 }
 
 .loginModalHeader {
@@ -30,14 +30,14 @@
 
 .loginModal {
   font-family: var(--mainFont);
-  background-color: #fefefe;
+  background-color: white;
   margin: 10px auto; /* 15% from the top and centered */
   border-radius:10px;
   width:450px;
 }
 
 .closeLoginModal {
-  color: #aaa;
+  color: var(--thirdColor);
   font-weight: bold;
   display: inline-block;
 }
